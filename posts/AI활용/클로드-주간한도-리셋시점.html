@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>클로드 주간 한도 리셋, 구독일과 무관합니다 (Pro·MAX 공통)</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;background:#f4f5f7;color:#222;
+       margin:0;padding:28px 16px 60px;line-height:1.78}
+  .wrap{max-width:760px;margin:0 auto}
+  header{background:#2f3e52;color:#fff;border-radius:10px;padding:22px 26px}
+  header h1{margin:0 0 6px;font-size:1.3rem}
+  header p{margin:3px 0;font-size:.9rem;color:#cfd8e3}
+  .card{background:#fff;border-radius:10px;padding:20px 26px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  h2{font-size:1.06rem;margin:0 0 13px;padding-bottom:8px;border-bottom:2px solid #e6e9ee}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:10px 0}
+  th,td{border:1px solid #dde1e7;padding:7px 10px;text-align:left;vertical-align:top}
+  th{background:#eef1f5}
+  .blue{background:#eef4fb;border-left:5px solid #2e6db4}
+  .big{font-size:1.4rem;font-weight:800;color:#2e6db4;text-align:center;margin:4px 0 10px}
+  blockquote{margin:8px 0;padding:8px 14px;border-left:4px solid #f0b429;background:#fdf6e7;
+             color:#5a4a12;font-size:.9rem}
+  code{background:#f2f3f5;border:1px solid #e0e3e8;border-radius:4px;padding:1px 6px;
+       font-family:Consolas,monospace;font-size:.85em}
+  small{color:#6b7683}
+  ul,ol{margin:8px 0;padding-left:22px}
+  li{margin:5px 0}
+  a{color:#2e6db4}
+  .warn{color:#b58900;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>클로드 주간 한도 리셋, 구독일과 무관합니다 (Pro·MAX 공통)</h1>
+  <p>2026-08-15 · MAX 업그레이드 다음 날, "일주일 한도면 구독일+7일 아닌가?"라는 제 의문을 공식 문서로 확인한 기록</p>
+  <p>지난 글 <a href="Max플랜-사용량-두개의-시계.html">「Max 플랜 사용량 — 두 개의 시계」</a>의 🟡 추정("구독일 기준 8/21경")을 바로잡는 후속편입니다</p>
+</header>
+
+<div class="card blue">
+  <h2>결론 먼저</h2>
+  <p class="big">주간 한도는 "구독일+7일"이 아니라, 계정마다 배정된 고정 요일·시각에 매주 리셋</p>
+  <ol>
+    <li>공식 도움말 원문: <em>"Your reset day and time stay the same <strong>regardless of when you start using Claude or when your subscription begins</strong>."</em> — 언제 구독했든, 언제 쓰기 시작했든 리셋 요일·시각은 변하지 않습니다.</li>
+    <li>제 계정의 배정 시각은 화요일 오전 1:00 — Pro 시절 보이던 그 시각이 MAX에서도 그대로였습니다. <strong>업그레이드는 한도의 '크기'만 키우고(5x), 리셋 '시계'는 건드리지 않습니다.</strong></li>
+    <li>결제일(월 단위)과 주간 리셋(매주 같은 요일)은 <strong>서로 다른 시계</strong>입니다. 헷갈리면 손해 보는 건 계획뿐입니다.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>사용량 패널 게이지 4개, 한 줄씩 해석</h2>
+  <p style="margin:0 0 8px"><small>2026-08-15 제 화면 실측 예시입니다.</small></p>
+  <table>
+    <tr><th>게이지</th><th>예시 값</th><th>의미</th><th>리셋</th></tr>
+    <tr><td>컨텍스트 윈도우</td><td>222.8k/1M (22%)</td><td><b>지금 이 대화 하나</b>의 기억 용량 — 사용량 한도와 무관</td><td>대화별(리셋 개념 없음)</td></tr>
+    <tr><td>5시간 한도</td><td>83%</td><td>세션 단위 한도(롤링) — 기다리면 자동 회복</td><td>표시된 시각(예: 1시간 뒤)</td></tr>
+    <tr><td>주간·전체 모델</td><td>36%</td><td>모든 모델 합산 주간 한도</td><td>계정 고정 요일(제 경우 화 01:00)</td></tr>
+    <tr><td>주간·최상위 모델</td><td class="warn">68%</td><td>최상위 모델 전용 주간 한도 — MAX는 주간 미터가 2개</td><td>같은 시각</td></tr>
+  </table>
+  <blockquote>💡 표시되는 %는 <strong>현재 플랜 한도가 분모</strong>입니다. 업그레이드하는 순간 분모가 커져서, 같은 사용량인데 게이지가 갑자기 여유로워 보입니다 — 버그가 아닙니다.</blockquote>
+</div>
+
+<div class="card">
+  <h2>이 사실로 바뀌는 사용 전략 3가지</h2>
+  <ul>
+    <li><strong>내 리셋 요일을 달력에 박아두기</strong> — 무거운 작업(대량 학습·긴 추론)은 리셋 직후에 배치하면 주간 게이지를 온전히 씁니다. 확인 위치: 설정 &gt; 사용량(또는 터미널 <code>claude</code> → <code>/usage</code>).</li>
+    <li><strong>미터별로 아끼는 대상이 다릅니다</strong> — 제 경우 전체 36%는 여유, 최상위 모델 68%가 빡빡했습니다. 리셋 전까지 최상위 모델은 고난도 추론에만 쓰고, 일반 작업은 하위 모델로 돌리는 식으로 배분합니다.</li>
+    <li><strong>5시간 한도 알림에는 당황하지 않기</strong> — 주간 한도가 아니라 세션 시계입니다. 커피 한 잔이면 돌아옵니다(지난 글 참조).</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>출처 (공식 도움말)</h2>
+  <ul>
+    <li><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan">What is the Max plan?</a> — 주간 한도는 계정 배정 고정 시각에 매주 리셋</li>
+    <li><a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan">What is the Pro plan?</a> — "구독 시작 시점과 무관" 원문</li>
+    <li><a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices">Usage limit best practices</a> — 5시간 세션 + 주간 2종 미터 구조</li>
+  </ul>
+  <p style="margin:0"><small>ⓒ 아이엠조차장 — 양이 아니라, 부하를 덜어내는 AI 활용</small></p>
+</div>
+
+</div>
+</body>
+</html>
