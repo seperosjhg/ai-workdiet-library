@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>클로드 코드 입문 가이드 — 목회자를 위한 첫 2주</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;margin:0;padding:26px 16px 70px;
+       background:#f4f1ea;color:#2c2a26;line-height:1.8}
+  .wrap{max-width:900px;margin:0 auto}
+
+  header{background:linear-gradient(135deg,#4a3f35,#6b5b4a);color:#faf8f4;
+         border-radius:16px;padding:30px 32px;box-shadow:0 6px 20px rgba(74,63,53,.25)}
+  header .eyebrow{font-size:.82rem;color:#d9cfc0;letter-spacing:2px;margin-bottom:8px}
+  header h1{margin:0 0 10px;font-size:1.6rem;letter-spacing:-.5px;line-height:1.35}
+  header p{margin:0;color:#e8e0d4;font-size:.94rem}
+  .from{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2);
+        font-size:.86rem;color:#d9cfc0}
+
+  section{background:#fff;border-radius:16px;padding:26px 30px;margin-top:18px;
+          box-shadow:0 3px 12px rgba(74,63,53,.10)}
+  h2{font-size:1.2rem;margin:0 0 16px;color:#4a3f35;padding-bottom:10px;
+     border-bottom:2px solid #e5ddd0;display:flex;align-items:center;gap:9px}
+  h2 .n{background:#6b5b4a;color:#fff;width:27px;height:27px;border-radius:50%;
+        display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;flex:none}
+  h3{font-size:1rem;margin:22px 0 10px;color:#6b5b4a}
+
+  .lead{background:#f9f6f0;border-left:4px solid #a3855f;border-radius:0 10px 10px 0;
+        padding:14px 18px;margin:0 0 18px;font-size:.96rem}
+  .lead b{color:#4a3f35}
+
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .cmp>div{border-radius:12px;padding:16px 18px;font-size:.92rem}
+  .cmp .a{background:#f1f1f0;border:1px solid #ddd}
+  .cmp .b{background:#f0f7f2;border:1px solid #b8dcc6}
+  .cmp b.t{display:block;margin-bottom:8px;font-size:.97rem;color:#4a3f35}
+  .cmp ul{margin:0;padding-left:19px}
+  .cmp li{margin-bottom:5px}
+
+  .step{display:flex;gap:15px;margin-bottom:20px;align-items:flex-start}
+  .step .num{flex:none;width:32px;height:32px;border-radius:50%;background:#a3855f;color:#fff;
+             display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;margin-top:2px}
+  .step .body{flex:1;font-size:.94rem}
+  .step .body b.h{display:block;color:#4a3f35;font-size:1rem;margin-bottom:4px}
+
+  .prompt{background:#2f2a24;color:#f5efe6;border-radius:12px;padding:16px 18px;margin:11px 0;
+          font-size:.9rem;line-height:1.75;white-space:pre-wrap;word-break:keep-all;
+          font-family:"맑은 고딕",sans-serif;border-left:4px solid #a3855f}
+  .prompt .label{display:block;color:#c9b899;font-size:.78rem;letter-spacing:1px;margin-bottom:8px}
+
+  .card{border:1px solid #e5ddd0;border-radius:12px;padding:17px 19px;margin-bottom:14px;background:#fdfcfa}
+  .card b.h{display:block;color:#4a3f35;font-size:1rem;margin-bottom:6px}
+  .card .why{font-size:.87rem;color:#7a6f62;margin-top:8px}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+  th,td{border:1px solid #e5ddd0;padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:#f4f1ea;color:#4a3f35;white-space:nowrap}
+
+  .warn{border-left:4px solid #c0724a;background:#fdf3ee;border-radius:0 10px 10px 0;
+        padding:13px 17px;margin:11px 0;font-size:.92rem}
+  .warn b.h{display:block;color:#9c4f2a;margin-bottom:4px}
+  .ok{border-left:4px solid #4f8a5f;background:#f0f7f2;border-radius:0 10px 10px 0;
+      padding:13px 17px;margin:11px 0;font-size:.92rem}
+  .ok b.h{display:block;color:#2f6b40;margin-bottom:4px}
+
+  .quote{background:#f9f6f0;border-radius:12px;padding:20px 24px;font-size:.97rem;
+         color:#4a3f35;border:1px dashed #c9b899;margin-top:8px}
+  .quote .who{display:block;margin-top:10px;font-size:.85rem;color:#8a7a68;text-align:right}
+
+  ol.plain{padding-left:20px;font-size:.94rem;margin:0}
+  ol.plain li{margin-bottom:9px}
+  ul.plain{padding-left:20px;font-size:.94rem;margin:0}
+  ul.plain li{margin-bottom:7px}
+
+  footer{text-align:center;color:#8a7a68;font-size:.83rem;margin-top:26px;line-height:1.7}
+
+  @media (max-width:700px){ .cmp{grid-template-columns:1fr} body{padding:16px 10px 50px}
+    section{padding:20px 18px} header{padding:22px 20px} }
+  @media print{ body{background:#fff} section,header{box-shadow:none;break-inside:avoid} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">비개발자를 위한 첫걸음</div>
+  <h1>클로드 코드, 이렇게 시작하시면 됩니다</h1>
+  <p>지피티·제미나이를 “글 쓰는 도구”로만 쓰셨다면 — 클로드 코드는 <b>일을 대신 정리해 두는 비서</b>에 가깝습니다.<br>
+  훈련 프로그램 운영 · 대학 출강 · 인사 관리 · 설교 준비, 그 네 가지에 맞춰 정리했습니다.</p>
+  <div class="from">드리는 사람: 아이엠조차장 (IT 사업관리) · 2026년 7월 30일 · 처음 2주만 따라 해보시면 됩니다</div>
+</header>
+
+<section>
+  <h2><span class="n">1</span>먼저, 뭐가 다른가요?</h2>
+  <div class="lead">한 문장으로 — <b>지피티는 “답을 말해주는” 도구이고, 클로드 코드는 “결과물을 만들어서 남겨두는” 도구입니다.</b>
+  설교 초안을 화면에 띄워주는 게 아니라, 목사님 컴퓨터 폴더 안에 파일로 만들어 두고 다음에 이어서 고쳐줍니다.</div>
+
+  <div class="cmp">
+    <div class="a"><b class="t">지금까지 (챗봇 방식)</b>
+      <ul>
+        <li>물어보면 답을 화면에 보여줌</li>
+        <li>내가 복사해서 한글·워드에 붙여넣기</li>
+        <li>대화창을 닫으면 맥락이 사라짐</li>
+        <li>매번 “나는 목사이고, 이런 상황이고…”를 다시 설명</li>
+      </ul>
+    </div>
+    <div class="b"><b class="t">클로드 코드</b>
+      <ul>
+        <li><b>파일을 직접 만들고 고칩니다</b> (문서·표·명단)</li>
+        <li>지정한 폴더를 계속 <b>기억</b>합니다</li>
+        <li>“지난번 그 훈련 명단”이라고 하면 알아듣습니다</li>
+        <li>내 소개를 <b>한 번만</b> 적어두면 계속 적용됩니다</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ok"><b class="h">그래서 어떤 분께 잘 맞나</b>
+  <b>매달·매주 반복되는 일이 있는 분</b>께 압도적으로 유리합니다. 설교문 한 편만 쓰신다면 지피티로 충분합니다.
+  그런데 훈련 프로그램을 <b>기수마다</b> 돌리고, 출석을 <b>매주</b> 챙기고, 사람을 <b>계속</b> 관리하신다면 —
+  그 반복이 바로 클로드 코드가 가장 잘하는 자리입니다.</div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>시작하기 — 첫날 30분</h2>
+
+  <div class="step">
+    <div class="num">1</div>
+    <div class="body"><b class="h">설치하고 로그인합니다</b>
+    claude.ai에서 계정을 만들고, <b>Claude Code 데스크톱 앱</b>을 설치하시면 됩니다.
+    검은 화면(터미널)이 나오는 버전도 있지만, <b>데스크톱 앱으로 시작하시길 권합니다</b> — 일반 프로그램처럼 생겼습니다.
+    유료 요금제가 필요하고, 처음엔 가장 낮은 단계로 충분합니다.</div>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <div class="body"><b class="h">작업 폴더를 하나 정합니다 — 이게 제일 중요합니다</b>
+    바탕화면에 폴더 하나를 만드십시오. 이름은 <b>「사역자료」</b> 정도면 충분합니다.
+    클로드 코드는 <b>“어느 폴더에서 일할지”</b>를 정해줘야 움직입니다. 앞으로 만들어지는 모든 결과물이 이 안에 쌓입니다.
+    <br><br>그 안에 미리 이렇게만 만들어 두시면 좋습니다:
+    <br><code>사역자료 / 훈련프로그램 / 강의 / 인사 / 설교</code></div>
+  </div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <div class="body"><b class="h">나를 소개하는 파일을 하나 만듭니다 (딱 한 번)</b>
+    이게 챗봇과 갈리는 결정적 차이입니다. 아래를 <b>그대로 복사해서</b> 첫 대화에 붙여넣으십시오.
+    클로드가 알아서 파일로 만들어 저장합니다. 이후부터는 매번 자기소개를 하지 않으셔도 됩니다.</div>
+  </div>
+
+  <div class="prompt"><span class="label">📋 복사해서 붙여넣기 — 첫 대화</span>이 폴더에서 앞으로 나와 계속 일할 거야. 나에 대한 정보를 CLAUDE.md 파일로 만들어줘.
+
+- 나는 목사이고, 내년부터 훈련 프로그램을 직접 운영하며 뛰어다닐 예정이야
+- 대학교 출강도 하게 되고, 인사 관리 업무도 맡게 돼
+- 컴퓨터 프로그램은 잘 모르니까 어려운 용어는 쉽게 풀어서 설명해줘
+- 결론을 먼저 말하고, 그 다음에 이유를 짧게 붙여줘
+- 결과물은 한글이나 워드로 바로 옮길 수 있는 형태로 만들어줘
+
+이 내용을 정리해서 저장하고, 앞으로 이 폴더에서 일할 때 항상 적용해줘.</div>
+
+  <div class="warn"><b class="h">한 가지만 주의하십시오</b>
+  성도님 이름·연락처·상담 내용처럼 <b>민감한 개인정보는 실명 그대로 넣지 마십시오.</b>
+  「A집사」「청년1」처럼 바꿔서 넣으셔도 클로드는 똑같이 일합니다. 이건 도구의 문제가 아니라 목회자의 기본기라 생각합니다.</div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>목사님 업무별 실전 활용 4가지</h2>
+  <div class="lead">아래 네 가지는 <b>그대로 복사해서 쓰시면 되는 문장</b>입니다.
+  처음엔 이대로 쓰시고, 익숙해지면 목사님 상황에 맞게 단어만 바꾸시면 됩니다.</div>
+
+  <div class="card"><b class="h">① 훈련 프로그램 — 커리큘럼과 진도표를 한 번에</b>
+    <div class="prompt"><span class="label">📋 복사</span>12주짜리 제자훈련 프로그램을 준비하려고 해.
+대상은 30~40대 직장인 성도 12명이고, 매주 수요일 저녁 2시간이야.
+
+1. 12주 커리큘럼을 주차별로 짜줘 (주제 / 본문 / 그 주의 목표 / 과제)
+2. 매주 출석과 과제 제출을 체크할 수 있는 표를 엑셀로 만들어줘
+3. 참가자에게 보낼 안내문도 한 장 써줘
+
+내가 확인하고 고칠 수 있게 파일로 저장해줘.</div>
+    <div class="why">💡 <b>왜 이게 좋은가</b> — 다음 기수 때 “지난번 커리큘럼 가져와서 4주차만 바꿔줘”라고 하면 끝납니다. 챗봇은 그 “지난번”을 못 찾습니다.</div>
+  </div>
+
+  <div class="card"><b class="h">② 대학 출강 — 강의계획서와 매주 자료</b>
+    <div class="prompt"><span class="label">📋 복사</span>대학교 한 학기 강의를 맡게 됐어. 과목은 [과목명], 15주 3학점이야.
+
+1. 강의계획서를 대학 제출 양식으로 만들어줘 (주차별 내용, 평가 비율, 교재)
+2. 1주차 강의안을 슬라이드 형태로 만들어줘
+3. 학생 평가 기준표(루브릭)도 같이 만들어줘
+
+앞으로 매주 “N주차 강의안 만들어줘”라고 하면 같은 형식으로 이어서 만들어줘.</div>
+    <div class="why">💡 <b>핵심은 마지막 줄입니다</b> — 형식을 한 번 잡아두면 2주차부터는 한 문장이면 됩니다. 15주 내내 같은 톤이 유지됩니다.</div>
+  </div>
+
+  <div class="card"><b class="h">③ 인사 관리 — 반복되는 문서와 명단</b>
+    <div class="prompt"><span class="label">📋 복사</span>사역자 인사 관리를 맡게 됐어. 실명은 A, B, C로 바꿔서 쓸게.
+
+1. 사역자 현황을 관리할 표를 만들어줘 (담당사역 / 임기 / 교육이수 / 면담일)
+2. 반기 면담용 질문지를 만들어줘 — 형식적이지 않고 실제로 마음을 들을 수 있는 질문으로
+3. 면담 후 기록을 남길 양식도 같이
+
+민감한 내용이 들어가니까 이 폴더 안에만 두고, 요약할 때도 이름은 A, B, C로 유지해줘.</div>
+    <div class="why">💡 <b>인사는 “기록이 곧 공정성”</b>입니다. 매번 새로 쓰는 대신 양식을 고정해두면, 나중에 “작년 이맘때 뭐라고 하셨더라”를 찾을 수 있습니다.</div>
+  </div>
+
+  <div class="card"><b class="h">④ 설교·글 — 지피티와 가장 크게 갈리는 지점</b>
+    <div class="prompt"><span class="label">📋 복사</span>설교 준비를 도와줘. 본문은 [성경 본문]이고, 대상은 [주일 장년 예배]야.
+
+1. 먼저 나에게 질문을 5개 해줘 — 내가 이 본문에서 무엇을 붙들고 있는지 끄집어내는 질문으로
+2. 내 답을 듣고 나서 개요를 잡아줘
+3. 개요를 내가 확정하면 그때 초안을 써줘
+
+처음부터 설교문을 다 써주지는 마. 내 생각이 먼저 나와야 해.</div>
+    <div class="why">⚠️ <b>이 문장을 꼭 넣으십시오</b> — “처음부터 다 써주지 마.” AI가 써준 설교는 매끄럽지만 <b>목사님의 것이 아닙니다.</b>
+    질문을 먼저 받게 하면, 도구가 <i>대신 쓰는 자리</i>가 아니라 <i>생각을 꺼내주는 자리</i>에 섭니다. 이게 이 도구를 오래 건강하게 쓰는 유일한 방법이라고 생각합니다.</div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>처음 2주, 이 순서로만 해보십시오</h2>
+  <table>
+    <tr><th>시기</th><th>할 일</th><th>목표</th></tr>
+    <tr><td><b>1~2일차</b></td><td>설치 · 폴더 만들기 · 자기소개 파일(CLAUDE.md) 저장</td><td>“내 비서가 나를 안다”</td></tr>
+    <tr><td><b>3~5일차</b></td><td>위 4가지 중 <b>가장 급한 것 하나만</b> 해보기</td><td>완성품 1개 손에 쥐기</td></tr>
+    <tr><td><b>2주차</b></td><td>같은 걸 <b>두 번째로</b> 해보기 (다음 주차 강의안 등)</td><td>“어? 두 번째는 5분이네” — 이 순간이 진짜 시작</td></tr>
+    <tr><td><b>그 다음</b></td><td>매주 반복되는 일 하나를 골라 형식 고정</td><td>도구가 아니라 <b>습관</b>이 됨</td></tr>
+  </table>
+
+  <div class="warn"><b class="h">처음에 잘 넘어지는 곳 5가지</b>
+  <ol class="plain" style="margin-top:6px">
+    <li><b>한 번에 다 시키기</b> — “훈련 프로그램 전체 만들어줘”보다 “12주 커리큘럼만”이 훨씬 잘 나옵니다.</li>
+    <li><b>폴더를 안 정하고 쓰기</b> — 결과물이 어디 갔는지 모르게 됩니다. 항상 같은 폴더에서 시작하십시오.</li>
+    <li><b>결과물을 그대로 쓰기</b> — 초안일 뿐입니다. 반드시 목사님 눈으로 한 번 고치십시오. 특히 <b>성경 인용과 숫자는 직접 확인</b>하셔야 합니다.</li>
+    <li><b>맘에 안 들면 포기하기</b> — “이 부분 톤이 딱딱해, 좀 더 따뜻하게”라고 말하면 고쳐줍니다. 대화입니다.</li>
+    <li><b>완벽하게 배우고 시작하려 하기</b> — 배울 게 없습니다. 그냥 한국말로 시키시면 됩니다.</li>
+  </ol></div>
+</section>
+
+<section>
+  <h2><span class="n">5</span>먼저 해본 사람의 이야기</h2>
+  <div class="quote">
+    저도 올해 초에 시작했습니다. 업무량은 많은데 사람은 안 늘던 시기였습니다.
+    처음엔 저도 헤맸습니다. 그런데 <b>자동화 도구를 하나씩 만들어서 어느덧 열두 개가 넘었고</b>,
+    지금은 실행시켜 놓고 잠깐 물 마시고 오면 끝나 있습니다.<br><br>
+    중요한 건 도구 개수가 아니었습니다. <b>“내가 하던 일 중에 반복되는 게 뭐지?”를 계속 묻게 된 것</b>이 진짜 변화였습니다.
+    그게 목사님께도 똑같이 올 거라고 생각합니다.<br><br>
+    그리고 하나만 더 — 저는 이 도구를 <b>일을 더 많이 하려고</b> 쓰지 않으려 합니다.
+    <b>같은 시간에 덜 지치려고</b> 씁니다. 목회는 사람을 만나는 일이고, 그 시간은 줄이면 안 되니까요.
+    문서 만드는 시간을 줄여서, 사람 만나는 시간을 지키는 데 쓰시면 좋겠습니다.
+    <span class="who">— 아이엠조차장</span>
+  </div>
+
+  <div class="ok" style="margin-top:16px"><b class="h">막히시면</b>
+  혼자 붙들고 계시지 말고 연락 주십시오. 처음 한 번만 옆에서 같이 해보면 그 다음은 혼자 하실 수 있습니다.
+  제가 처음에 고생했던 지점들은 이미 다 지나와 봤습니다.</div>
+</section>
+
+<footer>
+  클로드 코드 입문 가이드 — 목회자를 위한 첫 2주 · 2026년 7월 30일<br>
+  이 문서는 인쇄해서 옆에 두고 보셔도 됩니다 (Ctrl+P)
+</footer>
+
+</div>
+</body>
+</html>

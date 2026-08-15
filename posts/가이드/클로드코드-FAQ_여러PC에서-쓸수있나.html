@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>클로드 코드, 여러 PC에서 쓸 수 있나요? — 계정·설치·파일 정리</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;margin:0;padding:26px 16px 70px;
+       background:#f4f1ea;color:#2c2a26;line-height:1.8}
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{background:linear-gradient(135deg,#4a3f35,#6b5b4a);color:#faf8f4;
+         border-radius:16px;padding:28px 30px;box-shadow:0 6px 20px rgba(74,63,53,.25)}
+  header .eyebrow{font-size:.8rem;color:#d9cfc0;letter-spacing:2px;margin-bottom:8px}
+  header h1{margin:0 0 12px;font-size:1.45rem;letter-spacing:-.5px;line-height:1.4}
+  .qbox{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+        border-radius:10px;padding:12px 15px;font-size:.92rem;color:#f0e9dd;font-style:italic}
+  .answer{margin-top:15px;background:#fff;color:#2c2a26;border-radius:10px;padding:15px 18px;font-size:1rem}
+  .answer b{color:#2f6b40}
+
+  section{background:#fff;border-radius:16px;padding:24px 28px;margin-top:18px;
+          box-shadow:0 3px 12px rgba(74,63,53,.10)}
+  h2{font-size:1.14rem;margin:0 0 15px;color:#4a3f35;padding-bottom:10px;
+     border-bottom:2px solid #e5ddd0;display:flex;align-items:center;gap:9px}
+  h2 .n{background:#6b5b4a;color:#fff;width:26px;height:26px;border-radius:50%;
+        display:inline-flex;align-items:center;justify-content:center;font-size:.83rem;flex:none}
+  h3{font-size:.99rem;margin:20px 0 9px;color:#6b5b4a}
+
+  table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+  th,td{border:1px solid #e5ddd0;padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:#f4f1ea;color:#4a3f35;white-space:nowrap}
+  td.y{color:#2f6b40;font-weight:700;white-space:nowrap}
+  td.n{color:#9c4f2a;font-weight:700;white-space:nowrap}
+
+  .lead{background:#f9f6f0;border-left:4px solid #a3855f;border-radius:0 10px 10px 0;
+        padding:14px 18px;margin:0 0 16px;font-size:.95rem}
+  .warn{border-left:4px solid #c0724a;background:#fdf3ee;border-radius:0 10px 10px 0;
+        padding:14px 18px;margin:12px 0;font-size:.92rem}
+  .warn b.h{display:block;color:#9c4f2a;margin-bottom:5px;font-size:.98rem}
+  .ok{border-left:4px solid #4f8a5f;background:#f0f7f2;border-radius:0 10px 10px 0;
+      padding:14px 18px;margin:12px 0;font-size:.92rem}
+  .ok b.h{display:block;color:#2f6b40;margin-bottom:5px;font-size:.98rem}
+  .tip{border-left:4px solid #a3855f;background:#faf7f1;border-radius:0 10px 10px 0;
+       padding:12px 16px;margin:12px 0;font-size:.89rem;color:#5c5245}
+
+  pre{background:#2f2a24;color:#f5efe6;border-radius:12px;padding:16px 18px;overflow-x:auto;
+      font-size:.9rem;line-height:1.9;font-family:"맑은 고딕",Consolas,monospace;margin:12px 0}
+  pre .bad{color:#e8a08a}
+  pre .good{color:#a8d5b5}
+  pre .cmt{color:#9a8f80}
+
+  ol.plain,ul.plain{padding-left:21px;font-size:.94rem;margin:0}
+  ol.plain li,ul.plain li{margin-bottom:8px}
+
+  .summary table th{background:#4a3f35;color:#fff}
+  .summary td:first-child{background:#faf8f4;font-weight:600;color:#4a3f35}
+
+  footer{text-align:center;color:#8a7a68;font-size:.83rem;margin-top:26px;line-height:1.7}
+  .scroll{overflow-x:auto}
+
+  @media (max-width:700px){ body{padding:16px 10px 50px} section{padding:20px 17px} header{padding:22px 20px} }
+  @media print{ body{background:#fff} section,header{box-shadow:none;break-inside:avoid} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">입문 가이드 부록 · FAQ</div>
+  <h1>클로드 코드, 여러 PC에서 쓸 수 있나요?</h1>
+  <div class="qbox">“이건 PC마다 필요한 거야, 아니면 계정 형태로 자주 쓰는 PC들에서 가능한 거야?”</div>
+  <div class="answer"><b>계정 형태입니다.</b> 구독은 사람(계정)에 붙지, 컴퓨터에 붙지 않습니다.
+  사무실 PC·집 노트북·강의용 노트북 전부 <b>같은 계정으로 로그인해서 쓰시면 됩니다.</b> 추가 비용 없습니다.</div>
+</header>
+
+<section>
+  <h2>한눈에 — 세 가지가 각각 따로 놉니다</h2>
+  <div class="lead">이 구분만 잡으면 끝납니다. 헷갈리는 이유는 <b>“구독·설치·파일”이 서로 다르게 움직이기</b> 때문입니다.</div>
+  <div class="scroll"><table>
+    <tr><th>구분</th><th>계정을 따라다니나?</th><th>설명</th></tr>
+    <tr><td><b>① 구독(요금제)</b></td><td class="y">✅ 따라다님</td><td>계정에 귀속. PC 수 제한 없이 로그인</td></tr>
+    <tr><td><b>② 프로그램 설치</b></td><td class="n">❌ PC마다 필요</td><td>카카오톡과 같습니다. 계정은 하나, 설치는 기기마다</td></tr>
+    <tr><td><b>③ 작업 파일·설정</b></td><td class="n">❌ 안 따라감</td><td>⚠️ <b>여기가 진짜 함정</b> — 3번 항목 참조</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="n">1</span>구독은 계정에 붙습니다 ✅</h2>
+  <ul class="plain">
+    <li>카카오톡·넷플릭스와 같은 방식입니다. <b>계정으로 로그인하면 그 PC에서 바로 쓸 수 있습니다.</b></li>
+    <li>PC 3대든 5대든 상관없습니다. 개인이 본인 기기에서 쓰는 범위라면 제한이 없습니다.</li>
+    <li>단, <b>한 사람용 구독</b>입니다. 여러 사람이 계정을 나눠 쓰는 건 안 됩니다
+        — 교회에서 여러 사역자가 쓰신다면 인원수만큼 필요합니다.</li>
+  </ul>
+  <div class="warn"><b class="h">사용량은 ‘계정 단위로 합산’됩니다</b>
+  이게 중요합니다. <b>PC마다 사용량이 새로 주어지는 게 아닙니다.</b>
+  사무실에서 많이 쓰면 집 노트북에서 쓸 몫이 줄어듭니다. <b>하나의 통을 여러 기기에서 나눠 쓴다</b>고 생각하시면 정확합니다.</div>
+</section>
+
+<section>
+  <h2><span class="n">2</span>프로그램은 PC마다 설치해야 합니다 ❌</h2>
+  <p style="margin-top:0;font-size:.95rem">새 PC에서 처음 쓰실 때 하실 일은 <b>딱 2분</b>입니다.</p>
+  <ol class="plain">
+    <li>Claude Code 설치 (사무실 PC에 했던 것과 동일)</li>
+    <li>같은 계정으로 로그인</li>
+    <li>끝</li>
+  </ol>
+  <div class="ok" style="margin-top:14px">로그인 상태는 유지되므로 <b>매번 다시 로그인하지 않으셔도 됩니다.</b></div>
+</section>
+
+<section>
+  <h2><span class="n">3</span>⚠️ 진짜 알아야 할 것 — 작업 파일은 따라오지 않습니다</h2>
+  <div class="warn"><b class="h">실제로 사람들이 당황하는 지점</b>
+  사무실 PC에서 만든 「12주 훈련 커리큘럼」 파일은 <b>사무실 PC 하드디스크에 저장</b>됩니다.
+  집 노트북에서 클로드 코드를 켜면 로그인은 되지만 <b>그 파일은 없습니다.</b> 클라우드에 자동으로 올라가지 않습니다.
+  <b>자기소개 파일(CLAUDE.md)도 마찬가지</b>라, 새 PC에서는 클로드가 목사님을 다시 모릅니다.</div>
+
+  <div class="tip"><b>왜 그런가</b> — 클로드 코드는 “내 컴퓨터의 폴더를 직접 만지는 도구”입니다.
+  그게 장점(파일을 진짜로 만들어줌)인 동시에, 그 폴더가 그 컴퓨터에 있다는 뜻이기도 합니다.</div>
+
+  <h3>해결책 — 작업 폴더를 클라우드 안에 두십시오 (권장)</h3>
+  <p style="font-size:.94rem;margin:0">가장 쉽고 확실한 방법입니다. 처음에 <b>한 번만</b> 해두시면 됩니다.</p>
+<pre><span class="bad">❌ 바탕화면\사역자료\</span>      <span class="cmt">← 그 PC에만 존재</span>
+<span class="good">✅ OneDrive\사역자료\</span>       <span class="cmt">← 모든 PC에서 자동 동기화</span>
+                          <span class="cmt">(구글드라이브·드롭박스 등 쓰시던 것 아무거나)</span></pre>
+
+  <div class="ok"><b class="h">이렇게 해두시면</b>
+  · 사무실에서 만든 커리큘럼이 <b>집 노트북에서 그대로 열립니다</b><br>
+  · 자기소개 파일도 따라옵니다 → <b>새 PC에서도 클로드가 목사님을 압니다</b><br>
+  · 컴퓨터가 고장 나도 자료가 남습니다 <i>(사실 이게 더 중요합니다)</i></div>
+
+  <p style="font-size:.94rem"><b>하실 일</b>: 새 PC에서 클로드 코드를 켠 뒤, 바탕화면 폴더가 아니라
+  <b>OneDrive 안의 「사역자료」 폴더를 작업 폴더로 지정</b>하시면 끝입니다.</p>
+
+  <div class="tip">💡 <b>주의 하나</b> — 양쪽 PC에서 <b>동시에</b> 같은 파일을 고치면 동기화가 꼬일 수 있습니다.
+  한 곳에서 작업을 마치고 옮기는 습관만 있으면 문제 없습니다.</div>
+</section>
+
+<section>
+  <h2><span class="n">4</span>설치 없이 쓰는 방법도 있습니다 (웹 버전)</h2>
+  <p style="margin-top:0;font-size:.95rem">브라우저에서 <b>claude.ai/code</b>로 들어가면 <b>설치 없이</b> 쓸 수 있습니다.</p>
+  <div class="scroll"><table>
+    <tr><th></th><th>설치형 (데스크톱 앱)</th><th>웹 버전</th></tr>
+    <tr><td>설치</td><td>필요</td><td>불필요</td></tr>
+    <tr><td><b>내 PC 파일 접근</b></td><td class="y">✅ 직접 만들고 고침</td><td class="n">❌ 안 됨 (클라우드에서 돌아감)</td></tr>
+    <tr><td>쓰기 좋은 상황</td><td>평소 주력</td><td>남의 PC, 급할 때, 잠깐 확인</td></tr>
+  </table></div>
+  <div class="ok"><b>목사님 용도</b>(훈련 자료·강의안·인사 문서를 <b>파일로 쌓아가는</b> 일)에는 <b>설치형</b>이 맞습니다.
+  웹 버전은 “출장지에서 급하게 뭐 하나 물어볼 때” 정도로 생각하시면 됩니다.</div>
+</section>
+
+<section>
+  <h2><span class="n">5</span>🔒 보안 — 한 가지만 지키십시오</h2>
+  <div class="warn"><b class="h">공용 PC에는 로그인하지 마십시오</b>
+  (교회 사무실 공용 PC, 대학 강의실 PC, PC방)<br><br>
+  ① 로그인이 유지되므로 <b>다음 사람이 그대로 씁니다</b> — 사용량이 아니라 <b>계정 자체가 열립니다</b><br>
+  ② 인사 자료·면담 기록이 <b>그 PC에 파일로 남습니다</b><br><br>
+  부득이하게 쓰셨다면 <b>반드시 로그아웃</b>하시고 만들어진 파일을 지우십시오.
+  목사님 업무에는 사람 이야기가 들어가니, 이건 편의보다 앞에 두셔야 할 부분입니다.</div>
+</section>
+
+<section class="summary">
+  <h2>한 장 요약</h2>
+  <div class="scroll"><table>
+    <tr><th>궁금한 것</th><th>답</th></tr>
+    <tr><td>PC마다 돈을 더 내야 하나?</td><td><b>아니요.</b> 계정 하나로 여러 PC</td></tr>
+    <tr><td>PC마다 설치는 해야 하나?</td><td><b>네.</b> 설치 후 같은 계정 로그인 (2분)</td></tr>
+    <tr><td>사용량은 PC마다 따로?</td><td><b>아니요.</b> 계정 단위로 합산</td></tr>
+    <tr><td>사무실 파일이 집에서 보이나?</td><td><b>기본은 안 보임</b> → 작업 폴더를 <b>OneDrive 안에</b> 두면 해결</td></tr>
+    <tr><td>설치 못 하는 PC에서는?</td><td>브라우저 <b>claude.ai/code</b> (단, 내 PC 파일은 못 만짐)</td></tr>
+    <tr><td>공용 PC에서 써도 되나?</td><td><b>권하지 않습니다.</b> 쓰셨다면 반드시 로그아웃</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>그래서 지금 하실 일</h2>
+  <ol class="plain">
+    <li><b>주력 PC 한 대</b>에 먼저 설치하고 익숙해지십시오 (2주 정도)</li>
+    <li>그 다음 노트북에 설치 — 이때 <b>작업 폴더를 OneDrive로 옮기시면</b> 두 대가 한 몸처럼 돕니다</li>
+    <li><b>순서를 바꾸지 마십시오.</b> 처음부터 여러 대를 신경 쓰면 시작이 늦어집니다</li>
+  </ol>
+</section>
+
+<footer>
+  클로드 코드 FAQ — 여러 PC에서 쓸 수 있나요 · 2026년 7월 30일<br>
+  「클로드코드-입문가이드_목회자용.html」과 함께 보시면 됩니다
+</footer>
+
+</div>
+</body>
+</html>

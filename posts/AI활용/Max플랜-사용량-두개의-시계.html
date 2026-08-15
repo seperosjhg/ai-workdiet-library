@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max 플랜 사용량 — 두 개의 시계</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;background:#f4f5f7;color:#222;
+       margin:0;padding:28px 16px 60px;line-height:1.8}
+  .wrap{max-width:840px;margin:0 auto}
+  header{background:#2f3e52;color:#fff;border-radius:10px;padding:22px 26px}
+  header h1{margin:0 0 6px;font-size:1.45rem}
+  header p{margin:4px 0;font-size:.9rem;color:#cfd8e3}
+  .card{background:#fff;border-radius:10px;padding:20px 26px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  h2{font-size:1.12rem;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e6e9ee}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;margin:10px 0}
+  th,td{border:1px solid #dde1e7;padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:#eef1f5}
+  .green{background:#eaf6ec;border-left:5px solid #3a9e56}
+  .amber{background:#fff8e6;border-left:5px solid #e0a800}
+  .clock{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
+  .clockbox{flex:1;min-width:240px;border:1px solid #dde1e7;border-radius:10px;padding:16px 18px}
+  .clockbox h3{margin:0 0 8px;font-size:1rem;color:#3d5c8a}
+  .big{font-size:1.5rem;font-weight:700}
+  code{background:#f2f3f5;border:1px solid #e0e3e8;border-radius:4px;padding:1px 6px;font-family:Consolas,monospace;font-size:.88em}
+  .cmd{background:#2f3e52;color:#e8eef5;border-radius:8px;padding:12px 16px;font-family:Consolas,monospace;font-size:.92rem;margin:10px 0}
+  small{color:#6b7683}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Max 플랜 사용량 — 두 개의 시계</h1>
+  <p>2026-08-14 · MAX 첫날 "세션 한도 임박" 알림 계기 · 🟢 실측 / 🟡 추정(정확 일시는 앱 표시 기준)</p>
+</header>
+
+<div class="card green">
+  <h2 style="border:0;margin:0 0 8px">결론</h2>
+  <p style="margin:0"><strong>오늘 알림은 주간 한도가 아니라 ① 5시간 세션 시계입니다.</strong>
+  "8월 15일(토) 오전 1:10 재설정" = 지금 세션 창이 그때 새로 열린다는 뜻 — 기다리면 자동으로 풀립니다.
+  <strong>주간 갱신일시는 터미널 <code>/usage</code>에서 확인</strong>합니다.</p>
+</div>
+
+<div class="card">
+  <h2>두 개의 시계</h2>
+  <div class="clock">
+    <div class="clockbox">
+      <h3>① 세션 한도</h3>
+      <div class="big">5시간</div>
+      <p style="margin:6px 0 0;font-size:.9rem">첫 메시지 시점부터 5시간 창.<br>
+      🟢 <strong>오늘 알림이 이것</strong> — 8/15 01:10 재설정.<br>자동 리셋, 기다리면 됨.</p>
+    </div>
+    <div class="clockbox">
+      <h3>② 주간 한도</h3>
+      <div class="big">7일</div>
+      <p style="margin:6px 0 0;font-size:.9rem"><strong>전체 모델용 + Opus급용 게이지가 별도.</strong><br>
+      🟡 MAX 시작(8/14) 기준이면 8/21경 갱신 추정 —<br>정확 일시는 /usage 표시가 기준.</p>
+    </div>
+  </div>
+  <p style="margin:6px 0 0"><small>오늘 해석: 저녁에 n8n·원고·대시보드를 몰아서 해 세션 창 하나를 꽉 채운 것. MAX 첫날 "최고 퍼포먼스가 궁금해서 더 많이 했다" 그대로입니다.</small></p>
+</div>
+
+<div class="card">
+  <h2>주간 갱신일자 확인 위치</h2>
+  <table>
+    <tr><th>위치</th><th>방법</th><th>보이는 것</th></tr>
+    <tr><td><strong>Claude Code 터미널</strong> 🟢</td><td>PowerShell에서 <code>claude</code> 실행 → <code>/usage</code> 입력</td><td>세션 게이지 + <strong>주간 게이지(전체/Opus급) + 각각의 재설정 일시</strong> ← 정답</td></tr>
+    <tr><td>claude.ai 웹</td><td>프로필 → 설정 → 사용량</td><td>플랜 사용량 현황</td></tr>
+    <tr><td>데스크톱 앱</td><td>사용량 알림 배너</td><td>세션 위주</td></tr>
+  </table>
+  <div class="cmd">claude<br>/usage</div>
+  <p style="margin:0"><small>/usage는 대화형 터미널 명령이라 이 데스크톱 대화 안에서는 실행되지 않습니다 — 별도 터미널에서 여십시오.</small></p>
+</div>
+
+<div class="card amber">
+  <h2 style="border:0">운영 팁 (덜 걸리게)</h2>
+  <ol style="margin:0 0 0 18px">
+    <li><strong>몰아쓰기 유지</strong> — 5시간 창 안에서 연속 작업하면 창 1개만 소모. 지금 저녁 패턴이 맞습니다</li>
+    <li><strong>Opus급(Fable 포함) 주간 게이지가 따로 있음</strong> — 조회·형식변환은 Sonnet으로, Fable은 설계·집필·고난도만(모델 라우팅 원칙 그대로)</li>
+    <li>한도 도달은 작업 유실이 아니라 <strong>재설정 시각까지 대기</strong> — 마감 작업은 재설정 직후로 배치</li>
+    <li>🟡 첫 주는 데이터 수집 기간 — 계속 빠듯하면 그때 플랜 재검토</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>실측 기록판</h2>
+  <table>
+    <tr><th>항목</th><th>값</th></tr>
+    <tr><td>세션 창 재설정 (8/14 알림)</td><td>🟢 8/15(토) 01:10</td></tr>
+    <tr><td>주간 갱신 일시 (전체)</td><td>⬜ /usage 확인 후 기입</td></tr>
+    <tr><td>주간 갱신 일시 (Opus급)</td><td>⬜ 상동</td></tr>
+  </table>
+</div>
+
+</div>
+</body>
+</html>
