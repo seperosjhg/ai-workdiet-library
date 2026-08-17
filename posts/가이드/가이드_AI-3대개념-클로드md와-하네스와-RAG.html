@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 3대 개념 — CLAUDE.md · 하네스 · RAG</title>
+<style>
+  :root{--bg:#f7f9fc;--card:#fff;--ink:#1e2733;--mut:#5e6b7b;--line:#e4e9f0;
+    --blue:#2563eb;--bluebg:#dbeafe;--green:#16a34a;--greenbg:#dcfce7;--purple:#7c3aed;--purplebg:#ede9fe;--gray:#64748b;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.7;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;}
+  .wrap{max-width:880px;margin:0 auto;padding:38px 22px 80px;}
+  .hero{text-align:center;margin-bottom:30px;}
+  h1{font-size:28px;margin:0 0 8px;letter-spacing:-.5px;}
+  .hero p{color:var(--mut);font-size:16px;margin:0;}
+  .hook{background:var(--ink);color:#fff;border-radius:16px;padding:22px 26px;text-align:center;
+    font-size:17px;line-height:1.6;margin:24px 0 34px;}
+  .hook b{color:#8fd3ff;}
+  h2{font-size:20px;margin:34px 0 14px;padding-left:11px;border-left:4px solid var(--blue);}
+  .defs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;}
+  .def{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px;border-top:4px solid;}
+  .def.b{border-top-color:var(--blue);} .def.g{border-top-color:var(--green);} .def.k{border-top-color:var(--gray);}
+  .def .ic{font-size:24px;} .def h3{margin:6px 0 3px;font-size:16px;}
+  .def .q{font-size:12.5px;font-weight:800;color:var(--mut);}
+  .def p{margin:7px 0 0;font-size:13.5px;color:var(--mut);}
+  .b h3{color:var(--blue);} .g h3{color:var(--green);} .k h3{color:#334155;}
+  .story{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
+  .story ul{margin:10px 0 0;padding-left:4px;list-style:none;}
+  .story li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:14.5px;}
+  .story li:last-child{border-bottom:0;}
+  .story .tag{display:inline-block;min-width:118px;font-weight:800;}
+  figure{margin:20px 0;text-align:center;}
+  .sumbox{background:var(--bluebg);border-radius:14px;padding:18px 20px;text-align:center;font-size:15.5px;margin:8px 0;}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  th,td{border-bottom:1px solid var(--line);padding:10px 13px;text-align:left;}
+  th{background:#eef3fb;color:var(--blue);font-size:12.5px;}
+  .tip{background:var(--greenbg);border-radius:14px;padding:18px 20px;font-size:14.5px;}
+  footer{margin-top:30px;color:var(--mut);font-size:12px;text-align:center;border-top:1px solid var(--line);padding-top:18px;}
+  @media(max-width:620px){.defs{grid-template-columns:1fr;}}
+  @media print{body{background:#fff;}.def,.story,table{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>AI를 ‘일’에 쓰는 3대 개념</h1>
+    <p>CLAUDE.md · 하네스(Harness) · RAG — 똑똑한 신입 비유로 한 번에</p>
+  </div>
+
+  <div class="hook">
+    💡 챗GPT·클로드를 <b>똑똑한 신입 직원</b>이라고 보면 —<br>
+    <b>CLAUDE.md</b>는 사규집, <b>RAG</b>는 자료실 사서, <b>하네스</b>는 그 신입이 일하는 <b>사무실 전체</b>입니다.
+  </div>
+
+  <h2>한 줄 정의</h2>
+  <div class="defs">
+    <div class="def b"><div class="ic">📋</div><div class="q">어떻게 일할지</div>
+      <h3>CLAUDE.md</h3><p>항상 펴두는 <b>고정 업무 지침서</b> (규칙·역할·SOP)</p></div>
+    <div class="def g"><div class="ic">🗄️</div><div class="q">무엇을 근거로</div>
+      <h3>RAG</h3><p>모르면 <b>자료실에서 근거를 찾아오게</b> 하는 검색 (출처·환각방지)</p></div>
+    <div class="def k"><div class="ic">🏗️</div><div class="q">그 전부를 담은 틀</div>
+      <h3>하네스</h3><p>둘을 포함해 AI를 일에 맞게 감싼 <b>작업 환경 전체</b></p></div>
+  </div>
+
+  <h2>핵심 비유 — “똑똑한 신입 직원”</h2>
+  <div class="story">
+    AI는 <b>명문대 수석으로 갓 입사한 신입</b>입니다. 머리는 비상한데, <b>우리 회사는 하나도 모릅니다.</b>
+    <ul>
+      <li><span class="tag">🧠 AI 모델</span> 똑똑한 신입 — 일반 지식은 많지만 ‘우리 사업’은 백지</li>
+      <li><span class="tag" style="color:var(--blue)">📋 CLAUDE.md</span> 책상에 붙인 업무수칙·역할기술서 → 매번 안 가르쳐도 같은 방식</li>
+      <li><span class="tag" style="color:var(--green)">🗄️ RAG</span> “지어내지 말고 캐비닛 보고 답해” 시키는 사서 → 출처 있는 답</li>
+      <li><span class="tag">🏗️ 하네스</span> 수칙+사서+결재선+체크리스트 = 신입을 <b>베테랑처럼</b> 만든 환경</li>
+    </ul>
+  </div>
+
+  <h2>관계 = 포함 구조</h2>
+  <figure>
+    <svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl dsc"
+         style="width:100%;height:auto;max-width:760px" font-family="'Pretendard','Malgun Gothic',sans-serif">
+    <title id="ttl">하네스·CLAUDE.md·RAG 개념 관계도</title>
+    <desc id="dsc">하네스라는 작업 환경 안에 AI 모델, CLAUDE.md, RAG, 검증 게이트, 단축명령이 포함된다</desc>
+    <rect x="18" y="54" width="724" height="392" rx="18" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="38" y="44" font-size="18" font-weight="800" fill="#334155">🏗️ 하네스 (Harness)</text>
+    <text x="225" y="44" font-size="13" fill="#64748b">— AI를 우리 일에 맞게 감싼 ‘작업 환경 전체’</text>
+    <rect x="42" y="78" width="676" height="70" rx="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="380" y="106" text-anchor="middle" font-size="16" font-weight="800" fill="#5b21b6">🧠 AI 모델 — 똑똑한 신입</text>
+    <text x="380" y="129" text-anchor="middle" font-size="12.5" fill="#7c3aed">머리는 비상한데, 우리 회사는 백지</text>
+    <rect x="42" y="172" width="160" height="156" rx="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="122" y="208" text-anchor="middle" font-size="22">📋</text>
+    <text x="122" y="236" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1e40af">CLAUDE.md</text>
+    <text x="122" y="259" text-anchor="middle" font-size="12" fill="#1d4ed8">책상에 붙인 지침서</text>
+    <text x="122" y="290" text-anchor="middle" font-size="11.5" fill="#475569">어떻게 일할지</text>
+    <text x="122" y="307" text-anchor="middle" font-size="11.5" fill="#475569">(규칙·역할·SOP)</text>
+    <rect x="214" y="172" width="160" height="156" rx="12" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="294" y="208" text-anchor="middle" font-size="22">🗄️</text>
+    <text x="294" y="236" text-anchor="middle" font-size="14.5" font-weight="800" fill="#15803d">RAG</text>
+    <text x="294" y="259" text-anchor="middle" font-size="12" fill="#16a34a">자료실 + 사서</text>
+    <text x="294" y="290" text-anchor="middle" font-size="11.5" fill="#475569">무엇을 근거로</text>
+    <text x="294" y="307" text-anchor="middle" font-size="11.5" fill="#475569">(출처·환각방지)</text>
+    <rect x="386" y="172" width="160" height="156" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <text x="466" y="208" text-anchor="middle" font-size="22">✅</text>
+    <text x="466" y="236" text-anchor="middle" font-size="14" font-weight="800" fill="#334155">검증 게이트</text>
+    <text x="466" y="259" text-anchor="middle" font-size="12" fill="#475569">결재선</text>
+    <text x="466" y="290" text-anchor="middle" font-size="11.5" fill="#475569">사람이 확인</text>
+    <text x="466" y="307" text-anchor="middle" font-size="11.5" fill="#475569">(HITL)</text>
+    <rect x="558" y="172" width="160" height="156" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <text x="638" y="208" text-anchor="middle" font-size="22">⚡</text>
+    <text x="638" y="236" text-anchor="middle" font-size="14" font-weight="800" fill="#334155">단축명령·도구</text>
+    <text x="638" y="259" text-anchor="middle" font-size="12" fill="#475569">버튼·체크리스트</text>
+    <text x="638" y="290" text-anchor="middle" font-size="11.5" fill="#475569">반복을 자산으로</text>
+    <text x="638" y="307" text-anchor="middle" font-size="11.5" fill="#475569">(명령어·SOP)</text>
+    <text x="380" y="368" text-anchor="middle" font-size="13" fill="#334155"><tspan font-weight="800" fill="#1e40af">CLAUDE.md=어떻게</tspan> · <tspan font-weight="800" fill="#15803d">RAG=무엇을 근거로</tspan> · <tspan font-weight="800" fill="#334155">하네스=그 전부를 담은 틀</tspan></text>
+    <text x="380" y="404" text-anchor="middle" font-size="12" fill="#64748b">신입을 ‘베테랑처럼’ 일하게 만드는 환경 = 사람이 바뀌어도 같은 품질</text>
+    <text x="380" y="424" text-anchor="middle" font-size="11.5" fill="#94a3b8">※ 하네스 ⊃ { CLAUDE.md, RAG, 검증게이트, 도구 … }</text>
+    </svg>
+  </figure>
+
+  <div class="sumbox">
+    셋은 같은 층위가 아닙니다. <b>하네스가 가장 큰 그릇</b>, 그 안에 CLAUDE.md·RAG가 부품으로 들어갑니다.
+  </div>
+
+  <h2>내 업무에 대입하면 (예: 공공 PM)</h2>
+  <table>
+    <tr><th>개념</th><th>실제로 만드는 것</th></tr>
+    <tr><td>📋 CLAUDE.md</td><td>SOP·역할·응답원칙·보안규칙 (시스템 프롬프트 그 파일)</td></tr>
+    <tr><td>🗄️ RAG</td><td>사업 산출물·법령 아카이브 → “계획서 p38 근거로” 답하게 하는 자료실</td></tr>
+    <tr><td>✅ 검증 게이트</td><td>출처 태그·중요 의사결정 확인·개인정보 차단(HITL)</td></tr>
+    <tr><td>⚡ 단축명령·도구</td><td>반복 작업을 한 단어로 — 학습·점검·보고 자동화</td></tr>
+    <tr><td><b>= 하네스</b></td><td><b>이 전부 = 나만의 ‘업무 × AI’ 작업 환경</b></td></tr>
+  </table>
+
+  <h2>강의에서 쓸 때</h2>
+  <div class="tip">
+    🎤 <b>비유 하나로 끝까지</b> 밀고 가세요. 청중이 “AI = 똑똑하지만 우리 회사 모르는 신입”에 한 번 공감하면,
+    그 뒤 세 개념은 <b>저절로</b> 이해됩니다.<br>
+    <b>한 줄 후킹</b>: “더 똑똑한 AI를 기다릴 필요 없습니다. 신입에게 <b>사규집(CLAUDE.md)</b>과 <b>자료실(RAG)</b>을 쥐여주는 순간, 그 신입은 베테랑이 됩니다.”
+  </div>
+
+  <footer>개념 정리 · 똑똑한 신입 비유 — 강의·온보딩 자료용</footer>
+</div>
+</body>
+</html>
