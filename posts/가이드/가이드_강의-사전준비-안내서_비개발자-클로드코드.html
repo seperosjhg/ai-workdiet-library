@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[사전 준비 안내서] 클로드코드 병아리반</title>
+<style>
+  :root{--bg:#f5f6f8;--card:#fff;--line:#e2e5ea;--tx:#1f2429;--mut:#6b7280;
+        --ac:#1f4e8c;--ok:#1e8e5a;--warn:#c9820a;--bad:#c0392b;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font-family:'Malgun Gothic','맑은 고딕','Pretendard',sans-serif;line-height:1.75;font-size:15px;}
+  .wrap{max-width:840px;margin:0 auto;padding:32px 20px 80px;}
+  header{background:var(--ac);color:#fff;border-radius:12px;padding:24px 26px;margin-bottom:22px;}
+  header h1{margin:0 0 8px;font-size:23px;}
+  header p{margin:2px 0;font-size:13.5px;opacity:.92;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+        padding:20px 24px;margin:16px 0;}
+  h2{font-size:18px;margin:4px 0 12px;color:var(--ac);border-bottom:2px solid var(--line);padding-bottom:8px;}
+  h3{font-size:14.5px;margin:16px 0 6px;}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px;}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+  th{background:#eef1f6;font-weight:600;}
+  td.c{text-align:center;width:60px;}
+  code,pre{font-family:Consolas,'D2Coding',monospace;}
+  code{background:#eef1f6;padding:1px 6px;border-radius:4px;font-size:13.5px;}
+  pre{background:#1f2429;color:#e6e9ef;padding:12px 14px;border-radius:8px;
+      overflow-x:auto;font-size:13.5px;line-height:1.6;}
+  pre code{background:none;color:inherit;padding:0;}
+  .tip{background:#eef5ff;border-left:4px solid var(--ac);padding:12px 14px;border-radius:0 8px 8px 0;margin:12px 0;}
+  .warn{background:#fff7e6;border-left:4px solid var(--warn);padding:12px 14px;border-radius:0 8px 8px 0;margin:12px 0;}
+  .quote{background:#f0f2f5;border-radius:8px;padding:10px 14px;color:#374151;margin:8px 0;}
+  ul,ol{padding-left:22px;} li{margin:5px 0;}
+  .mut{color:var(--mut);font-size:13px;}
+  footer{text-align:center;color:var(--mut);font-size:12.5px;margin-top:30px;}
+  @media print{body{background:#fff;} .card{break-inside:avoid;} header{background:#1f4e8c !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>[사전 준비 안내서] 클로드코드 병아리반</h1>
+  <p><b>오시기 전에 해두실 4가지</b> — 설치는 각자 미리, 강의는 실습만.</p>
+  <p>대상: 클로드코드를 처음 쓰시는 사업관리·어드민 담당자 · 소요 40~60분 · Windows 10/11 기준</p>
+</header>
+
+<div class="card">
+  <h2>0. 준비물 체크리스트 — 이것만 되면 준비 끝</h2>
+  <table>
+    <tr><th style="width:40px">#</th><th>항목</th><th>확인 방법</th><th class="c">완료</th></tr>
+    <tr><td>1</td><td>Claude 유료 결제(Pro 이상)</td><td>claude.ai 로그인 → 요금제가 Pro로 표시</td><td class="c">☐</td></tr>
+    <tr><td>2</td><td>Node.js 설치</td><td>명령어 창에 <code>node -v</code> → v18 이상 출력</td><td class="c">☐</td></tr>
+    <tr><td>3</td><td>Claude Code 설치·로그인</td><td>명령어 창에 <code>claude</code> → 실행됨</td><td class="c">☐</td></tr>
+    <tr><td>4</td><td>Git 설치</td><td>명령어 창에 <code>git --version</code> → 버전 출력</td><td class="c">☐</td></tr>
+    <tr><td>5</td><td>Playwright 설치</td><td>5번 절차 → 브라우저 창이 뜸</td><td class="c">☐</td></tr>
+    <tr><td>6</td><td>작업 폴더 1개 생성</td><td>예: <code>바탕화면\클로드실습</code></td><td class="c">☐</td></tr>
+  </table>
+  <div class="tip"><b>"명령어 창"이 뭔가요?</b> 시작 버튼 검색창에 <code>powershell</code> 이라고 치면 나오는 <b>검은(또는 파란) 창</b>입니다.<br>
+  <code>cmd</code>(명령 프롬프트)를 여셔도 <b>아무 상관 없습니다.</b> 아래 명령어는 둘 다에서 똑같이 동작하니 편한 쪽으로 여시고, 명령어를 붙여넣은 뒤 Enter를 치시면 됩니다.</div>
+</div>
+
+<div class="card">
+  <h2>1. Claude 유료 결제 (필수)</h2>
+  <ul>
+    <li><b>무료 플랜으로는 클로드코드를 쓸 수 없습니다.</b> 무료는 웹 채팅만 됩니다.</li>
+    <li>claude.ai 로그인 → 설정 → 요금제 → <b>Pro</b> 결제.</li>
+    <li>회사 카드로 결제하실 분은 <b>사전에 결재 라인을 잡아두세요.</b> 당일 결제 시도 → 승인 대기로 실습을 못 하실 수 있습니다.</li>
+    <li>처음엔 <b>Pro면 충분합니다.</b> 실습(자동화 도구 만들기)은 Pro 한도 안에서 됩니다. 상위 플랜은 필요해지면 그때 올리셔도 됩니다.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>2. Node.js 설치</h2>
+  <ol>
+    <li><a href="https://nodejs.org">https://nodejs.org</a> 접속 → <b>LTS 버전</b> 다운로드(Windows Installer)</li>
+    <li>다운로드된 파일 실행 → 계속 "다음"(기본값 그대로)</li>
+    <li>확인: 명령어 창을 <b>새로 열고</b></li>
+  </ol>
+<pre><code>node -v</code></pre>
+  <p class="mut">→ <code>v20.x.x</code> 처럼 숫자가 나오면 성공입니다. (v18 이상이면 OK)</p>
+</div>
+
+<div class="card">
+  <h2>3. Claude Code 설치 및 첫 로그인</h2>
+  <p>명령어 창에서 아래를 차례로 실행합니다.</p>
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+<pre><code>claude</code></pre>
+  <ul>
+    <li>브라우저가 열리며 로그인을 요청합니다 → <b>1번에서 결제한 계정</b>으로 로그인.</li>
+    <li>실행되면 성공입니다. 종료는 <code>/exit</code> 또는 창 닫기.</li>
+  </ul>
+  <div class="tip">
+    <b>첫 세팅(선택, 5분)</b> — 나를 어떻게 부를지, 내 업무가 무엇인지, 답변 스타일(결론 먼저 / 숫자 포함 / 아첨 금지)을 적어두는 개인화 설정입니다. 잘 모르겠으면 클로드에게 그대로 물어보세요.
+    <div class="quote">"나 하나도 몰라. 클로드 지침(개인화 설정)을 어디서 어떻게 넣는지 유치원생한테 알려주듯 단계별로 알려줘."</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>4. Git 설치</h2>
+  <ol>
+    <li><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a> 접속 → 다운로드 → 실행</li>
+    <li>옵션이 많이 나오는데 <b>전부 기본값으로 "Next"</b> 하시면 됩니다</li>
+    <li>확인: 명령어 창을 <b>새로 열고</b></li>
+  </ol>
+<pre><code>git --version</code></pre>
+  <p class="mut">→ <code>git version 2.x.x</code> 가 나오면 성공.</p>
+</div>
+
+<div class="card">
+  <h2>5. Playwright 설치 <span class="mut">(실습 핵심 도구)</span></h2>
+  <p>브라우저를 대신 클릭·입력해주는 자동화 도구입니다. <b>이번 실습의 핵심</b>이라 반드시 준비해주세요.</p>
+  <p>① 6번에서 만든 작업 폴더로 이동 (경로는 본인 것으로)</p>
+<pre><code>cd C:\Users\사용자명\Desktop\클로드실습</code></pre>
+  <p>② 설치</p>
+<pre><code>npm init -y
+npm install -D @playwright/test
+npx playwright install chromium</code></pre>
+  <p>③ 동작 확인 — 실행하면 <b>브라우저 창이 하나 열립니다.</b></p>
+<pre><code>npx playwright codegen https://www.naver.com</code></pre>
+  <p class="mut">창이 뜨고, 마우스로 클릭할 때마다 옆 창에 코드가 자동으로 쌓이면 준비 완료입니다. 이게 강의 때 쓸 기능입니다. 창은 그냥 닫으셔도 됩니다.</p>
+</div>
+
+<div class="card">
+  <h2>6. 작업 폴더 만들기</h2>
+  <ul>
+    <li>바탕화면에 <code>클로드실습</code> 같은 폴더를 <b>하나</b> 만들어 주세요.</li>
+    <li>강의 때 만드는 결과물은 전부 이 폴더에 쌓입니다. 미리 정해두지 않으면 매번 "어디에 저장할까요?"에서 멈춥니다.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>7. 강의 당일 가져오실 것</h2>
+  <ul>
+    <li>위 6가지가 완료된 <b>본인 노트북</b>(충전기 포함)</li>
+    <li><b>자동화하고 싶은 내 업무 1개</b>를 생각해 오세요. 반복 클릭이 많은 것일수록 좋습니다.
+      <div class="mut">예: 매달 같은 시스템에 같은 형식으로 등록하는 일 / 파일 여러 개를 PDF로 변환 / 표 옮겨 적기</div>
+      <div class="mut">그 업무의 <b>화면 URL과 클릭 순서</b>를 대략 적어오시면 당일에 바로 만들어볼 수 있습니다.</div>
+    </li>
+  </ul>
+  <div class="warn"><b>⚠️ 보안 주의</b> — 아이디·비밀번호는 <b>채팅창에 적지 마세요.</b> 당일에 다루는 방법을 따로 안내합니다. 사내 시스템 자동화는 <b>각자 권한 범위 안에서만</b> 진행합니다.</div>
+</div>
+
+<div class="card">
+  <h2>8. 자주 막히는 지점</h2>
+  <table>
+    <tr><th style="width:38%">증상</th><th>대처</th></tr>
+    <tr><td>설치 명령어에서 "권한이 없습니다"</td><td>명령어 창을 <b>관리자 권한으로 실행</b> 후 재시도</td></tr>
+    <tr><td><code>node</code>, <code>git</code>을 찾을 수 없다고 나옴</td><td>설치 후 명령어 창을 <b>새로 열어야</b> 인식됩니다</td></tr>
+    <tr><td>한글이 <code>???</code>, 깨짐으로 나옴</td><td>인코딩(UTF-8) 문제입니다. 당일에 함께 해결합니다</td></tr>
+    <tr><td>회사 보안 프로그램이 설치를 막음</td><td><b>강의 전 미리</b> 알려주세요. 개인 노트북 사용 등 대안을 잡습니다</td></tr>
+    <tr><td>뭔지 모르겠는 영어 화면이 뜸</td><td><b>캡처해서 클로드에게 그대로 붙여넣고</b> "이거 뭐야? 어떻게 해?"라고 물어보세요. 대부분 여기서 풀립니다</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>마지막으로</h2>
+  <p>설치가 매끄럽지 않은 게 정상입니다. 제가 처음 이걸 혼자 붙잡았을 때는 <b>일주일</b>이 걸렸습니다. 여러분은 그 구간을 건너뛰시라고 이 안내서를 드립니다.</p>
+  <p><b>막히면 캡처해서 보내주세요. 그게 가장 빠릅니다.</b></p>
+</div>
+
+<footer>클로드코드 병아리반 · 사전 준비 안내서 v1.0 · 2026-08-14</footer>
+</div>
+</body>
+</html>
