@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>모델 티어·토큰 전략 · 2026-08-10</title>
+<style>
+:root{--ink:#1b2433;--muted:#66748a;--line:#dde4ec;--navy:#16375e;--bg:#eef2f7;
+--hi:#6a4caf;--hi-bg:#f2ecfd;--mid:#1f5f96;--mid-bg:#eaf3fc;--low:#7a8698;--low-bg:#eef1f5;
+--ok:#1e7a4d;--ok-bg:#e9f7f0;--warn:#a8700d;--warn-bg:#fff6e4;--bad:#b3382f;--bad-bg:#fdeeec;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"맑은 고딕","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.62;word-break:keep-all}
+.page{max-width:1020px;margin:22px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 34px rgba(28,45,70,.10)}
+header{padding:32px 40px 26px;color:#fff;background:linear-gradient(135deg,#2b1f52,#4a3a86 60%,#6a4caf)}
+header .kick{display:inline-block;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:12px;font-weight:800}
+header h1{margin:13px 0 6px;font-size:25px;letter-spacing:-.03em}
+header p{margin:0;color:rgba(255,255,255,.9);font-size:13.5px}
+.concl{margin-top:16px;padding:15px 18px;border-radius:12px;background:rgba(255,255,255,.13);border-left:5px solid #cbb6f5;font-size:14px}
+main{padding:28px 40px 44px}
+section{margin-bottom:28px}
+h2{margin:0 0 6px;font-size:18px;color:var(--navy);border-left:5px solid var(--navy);padding-left:11px}
+.sub{margin:0 0 12px 16px;color:var(--muted);font-size:13px}
+h3{margin:16px 0 7px;font-size:14.5px;color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px}
+th,td{padding:9px 11px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}
+thead th{background:var(--navy);color:#fff}
+tbody th{background:#f4f7fa;color:var(--navy)}
+tbody tr:nth-child(even) td{background:#fafcfe}
+.c{text-align:center}
+.sig{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:800;white-space:nowrap}
+.s-ok{background:var(--ok-bg);color:var(--ok)}.s-warn{background:var(--warn-bg);color:var(--warn)}.s-bad{background:var(--bad-bg);color:var(--bad)}
+.box{padding:14px 17px;border-radius:12px;font-size:13.5px;margin:11px 0}
+.box.key{background:var(--hi-bg);border:1px solid #d8c9f2;color:#4a3378}
+.box.ok{background:var(--ok-bg);border:1px solid #bfe4cf;color:#1c5a3b}
+.box.warn{background:var(--warn-bg);border:1px solid #ecd39a;color:#6d5314}
+ul{margin:8px 0 0;padding-left:19px;font-size:13.5px}li+li{margin-top:5px}
+.tier{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.t{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.t.hi{border-top:4px solid var(--hi)}.t.hi b{color:var(--hi)}
+.t.mid{border-top:4px solid var(--mid)}.t.mid b{color:var(--mid)}
+.t.low{border-top:4px solid var(--low)}.t.low b{color:var(--low)}
+.t b{display:block;font-size:14px;margin-bottom:6px}
+.t p{margin:0;font-size:12.5px;color:var(--muted)}
+.tips{counter-reset:tp;display:grid;gap:10px}
+.tip{position:relative;border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 52px;background:#fff}
+.tip::before{counter-increment:tp;content:counter(tp);position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:8px;background:var(--hi);color:#fff;font-weight:800;display:grid;place-items:center;font-size:13px}
+.tip b{color:var(--navy)}
+.tip p{margin:3px 0 0;font-size:12.5px;color:#4b5768}
+.punch{margin-top:8px;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#26364e,#33496a);color:#fff;text-align:center;font-size:16px;font-weight:800;line-height:1.6}
+.punch span{color:#ffe6b8}
+footer{padding:16px 40px 26px;color:#8b97a8;font-size:11.5px;border-top:1px solid var(--line);background:#f8fafc}
+@media(max-width:820px){.tier{grid-template-columns:1fr}main{padding:22px 18px}header{padding:24px 20px}}
+</style>
+</head>
+<body><div class="page">
+<header>
+  <span class="kick">하네스 운영 전략 · 모델 티어</span>
+  <h1>리추얼에 높은 모델을 쓰는 게 맞을까?</h1>
+  <p>2026-08-10 · Opus5 소진 → MAX 전환을 앞두고 · SOP-34-C 라우팅 확장</p>
+  <div class="concl"><b>답:</b> 맞습니다. 단 이유가 통념과 다릅니다 — <b>리추얼은 토큰을 거의 안 먹습니다.</b> 여기서 아껴봐야 절감이 안 됩니다. 진짜 절감은 <b>대량 학습·파일 조작·정형 변환을 스크립트/하위 티어로 내리는 것</b>입니다.</div>
+</header>
+<main>
+
+<section>
+  <h2>1. 오해 교정 — 토큰은 리추얼이 먹지 않는다</h2>
+  <p class="sub">소비량 × 자산 축적을 함께 보면 판단이 뒤집힌다</p>
+  <div class="tw"><table>
+  <thead><tr><th>활동</th><th class="c">토큰 소비</th><th class="c">자산 축적</th><th>판정</th></tr></thead>
+  <tbody>
+  <tr><th>밤의 질문지·대화 리추얼</th><td class="c">매우 낮음</td><td class="c"><b>매우 높음</b></td><td><span class="sig s-ok">🟢 상위 모델 OK</span></td></tr>
+  <tr><th>선순환 회고</th><td class="c">낮음</td><td class="c">높음</td><td><span class="sig s-ok">🟢 상위</span></td></tr>
+  <tr><th>원고 기획·구조 설계</th><td class="c">중간</td><td class="c">매우 높음</td><td><span class="sig s-ok">🟢 상위</span></td></tr>
+  <tr><th>검증형 검토(법령·리스크)</th><td class="c">중간</td><td class="c">높음</td><td><span class="sig s-ok">🟢 상위</span></td></tr>
+  <tr><th>대량 PDF 학습</th><td class="c"><b>매우 높음</b></td><td class="c">중간</td><td><span class="sig s-bad">🔴 하위/스크립트</span></td></tr>
+  <tr><th>대량 파일 조작(평탄화)</th><td class="c"><b>높음</b></td><td class="c">낮음</td><td><span class="sig s-bad">🔴 스크립트</span></td></tr>
+  <tr><th>정형 변환(md→docx/hwpx)</th><td class="c">중간</td><td class="c">낮음</td><td><span class="sig s-bad">🔴 기존 변환기</span></td></tr>
+  <tr><th>html 보일러플레이트 반복</th><td class="c"><b>높음</b></td><td class="c">낮음</td><td><span class="sig s-warn">🟡 템플릿 재사용</span></td></tr>
+  </tbody></table></div>
+  <div class="box key">오늘 세션의 실제 소비처 = <b>PDF 4,274개 학습 · 8,361개 파일 평탄화 · html 다수 생성</b>. 리추얼은 그 전체의 극히 일부입니다. 즉 "리추얼에 상위 모델이 아까운가?"는 <b>절감 지점이 아닌 곳을 걱정하는 것</b>입니다.</div>
+</section>
+
+<section>
+  <h2>2. 리추얼에서 상위 모델이 값을 하는 것 / 못 하는 것</h2>
+  <h3>✅ 값을 한다 — 맥락 종합·판단</h3>
+  <ul>
+    <li><b>시간을 가로지르는 연결</b>: 7/28 "가족에게 따뜻한 말" 다짐 → 8/10 아내 위로로 <b>실현된 것을 알아챔</b>(메모리 47개 × 오늘 장면 교차 읽기)</li>
+    <li><b>전제·모순 감지</b>: 지난 일정 지적, 리뷰 본문 누락 감지</li>
+    <li><b>프레임 제시</b>: "무력감과 설렘은 같은 방향", "성격이 아니라 안전 문제" — 재료를 관점으로 전환</li>
+    <li><b>채널 넘는 요구 라우팅</b>(SOP-34-D): 리추얼 답변 속 업무 요구를 R#로 박제</li>
+    <li><b>자산화 판단</b>: 어떤 문장이 글 타이틀감인지 고르는 눈</li>
+  </ul>
+  <h3>❌ 값을 못 한다 — 기계적</h3>
+  <ul><li>질문 생성 자체(템플릿으로 충분) · md/html 변환 · 파일 저장 · 메모리 문구 갱신 · 날짜 계산</li></ul>
+  <div class="box ok"><b>핵심:</b> 리추얼의 가치는 "대화"가 아니라 <b>누적된 맥락과의 연결</b>에 있습니다. 연결이 필요 없는 단순 일기라면 하위 모델로 충분합니다.</div>
+</section>
+
+<section>
+  <h2>3. 작가 관점의 진짜 답 (글감 고도화)</h2>
+  <ul>
+    <li>하위 모델도 <b>개별 일기</b>는 씁니다. 못 하는 건 <b>회차 간 연결</b>입니다.</li>
+    <li>연재·서사의 상품성은 "오늘 이야기"가 아니라 <b>"6월의 그 말이 8월에 이렇게 됐다"</b>는 궤적에서 나옵니다.</li>
+  </ul>
+  <div class="box key">조차장님 질문의 정확한 답: <b>축적은 싸게, 고도화는 비싸게.</b> 글감 축적은 하위로 가능하지만, <b>연결·서사화는 상위가 유리</b>합니다.</div>
+</section>
+
+<section>
+  <h2>4. 실전 라우팅 규칙 (SOP-34-C 확장)</h2>
+  <div class="tier">
+    <div class="t hi"><b>상위 (Opus/Fable)</b><p>리추얼·선순환 · 원고 기획/구조 · 검증형 검토(법령·리스크·인사) · 역설계·난제 해독 · R&R 설계 · 메시지 자산화</p></div>
+    <div class="t mid"><b>중위 (Sonnet)</b><p>반복 구현(코드) · 정형 문서 채움 · 학습노트 1차 정리 · html 템플릿 적용</p></div>
+    <div class="t low"><b>스크립트 (모델 0)</b><p>PDF 추출 · 파일 이동/평탄화 · 포맷 변환 · 집계·해시 검증</p></div>
+  </div>
+  <div class="box ok">원칙: <b>"스크립트로 되는 걸 모델로 밀지 않는다"</b> — 이것이 단일 최대 절감입니다.</div>
+</section>
+
+<section>
+  <h2>5. 운영 팁 3가지 (즉시 효과)</h2>
+  <div class="tips">
+    <div class="tip"><b>리추얼은 새 세션에서 ★ 최대 효과</b><p>오늘처럼 대량 학습 → 평탄화 → … → 리추얼로 이어가면 <b>앞의 거대한 컨텍스트를 계속 끌고 갑니다.</b> 새 세션에서 시작하면 CLAUDE.md + MEMORY.md(66줄)만 로드 → <b>같은 품질에 훨씬 저렴</b>.</p></div>
+    <div class="tip"><b>md/html 쌍을 자동 반사로 만들지 않기</b><p>html이 필요한 경우 = 남에게 보여줄 것(교육·보고·공유·블로그). md만으로 충분한 경우 = 개인 리추얼·내부 메모·중간 산출.</p></div>
+    <div class="tip"><b>학습·정리 세션은 목표를 먼저 좁히기</b><p>"폴더 학습"은 전수가 아니라 <b>골격 N종</b>(SOP-49-G)으로 범위를 먼저 못박으면 소비가 크게 줄어듭니다.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>6. Opus5 소진 → MAX 전환 계획</h2>
+  <div class="tw"><table>
+  <thead><tr><th>지금(소진 구간)에 <b>써야 할 것</b></th><th>지금 <b>쓰지 말 것</b></th></tr></thead>
+  <tbody>
+  <tr><td>원고 기획·연재 구조 설계</td><td>대량 PDF 학습(언제든 가능)</td></tr>
+  <tr><td>미뤄둔 검증·역설계 난제</td><td>파일 정리·변환</td></tr>
+  <tr><td>R&R·보안건 등 판단이 필요한 설계</td><td>반복 html 생성</td></tr>
+  <tr><td>메모리·SOP 등 하네스 고도화</td><td>단순 조회·요약</td></tr>
+  </tbody></table></div>
+  <div class="box ok">요령: <b>"지금 아니면 못 하는 것"에 상위 모델을 태우고, "나중에 해도 같은 것"은 뒤로 민다.</b></div>
+  <div class="box warn">⚠️ <b>MAX 전환 후 경고(7/28 원칙 재확인):</b> MAX가 되면 "더 많이 할 수 있다"는 유혹이 옵니다. 그러나 우리가 합의한 원칙은 <b>"양을 늘리는 도구가 아니라, 부하를 덜어내는 도구로"</b>입니다. 10개 채널·전문가·정식팀장을 동시에 밀면 오늘 같은 지친 하루가 재생산됩니다. MAX의 값어치는 <b>같은 시간에 덜 지치는 것</b>에서 회수합니다.</div>
+</section>
+
+<div class="punch">리추얼에 상위 모델을 쓰는 건 사치가 아닙니다.<br>사치는 <span>스크립트로 될 일을 모델로 미는 것</span>입니다.</div>
+
+</main>
+<footer>2026-08-10 · SOP-34-C 라우팅 확장 · 다음 갱신: MAX 전환 후 실사용 패턴 반영</footer>
+</div></body></html>
