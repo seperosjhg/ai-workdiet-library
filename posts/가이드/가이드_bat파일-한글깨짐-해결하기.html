@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>.bat 한글 깨짐 — 학습규칙 반영 점검 (2026-07-23)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    background: #eef1f5; color: #222; margin: 0; padding: 28px 16px; line-height: 1.65;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header {
+    background: linear-gradient(135deg, #1f3a5f 0%, #2e5c8a 100%);
+    color: #fff; border-radius: 10px; padding: 26px 30px; margin-bottom: 22px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.14);
+  }
+  header h1 { margin: 0 0 8px; font-size: 23px; letter-spacing: -.4px; }
+  header .meta { font-size: 13px; opacity: .9; }
+  .verdict {
+    margin-top: 16px; background: rgba(255,255,255,.14); border-left: 5px solid #4ade80;
+    padding: 12px 16px; border-radius: 5px; font-size: 15px; font-weight: 700;
+  }
+  h2 {
+    font-size: 17px; margin: 30px 0 12px; padding-left: 11px;
+    border-left: 5px solid #2e5c8a; color: #1f3a5f;
+  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 13px; margin-bottom: 8px; }
+  .card {
+    background: #fff; border-radius: 9px; padding: 16px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.09); border-top: 4px solid #cbd5e1;
+  }
+  .card.g { border-top-color: #16a34a; }
+  .card.y { border-top-color: #eab308; }
+  .card.r { border-top-color: #dc2626; }
+  .card .label { font-size: 12.5px; color: #64748b; margin-bottom: 6px; }
+  .card .value { font-size: 15px; font-weight: 700; color: #1f3a5f; }
+  .card .note { font-size: 12.5px; color: #475569; margin-top: 6px; }
+  table {
+    width: 100%; border-collapse: collapse; background: #fff; font-size: 13.5px;
+    border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.09); margin-bottom: 8px;
+  }
+  th { background: #1f3a5f; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; white-space: nowrap; }
+  td { padding: 9px 12px; border-bottom: 1px solid #e6eaf0; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  code {
+    background: #eef2f7; padding: 1px 6px; border-radius: 4px;
+    font-family: Consolas, "D2Coding", monospace; font-size: 12.5px; color: #b91c1c;
+  }
+  pre {
+    background: #1e293b; color: #e2e8f0; padding: 15px 18px; border-radius: 8px;
+    font-family: Consolas, "D2Coding", monospace; font-size: 12.5px; line-height: 1.6;
+    overflow-x: auto; margin: 10px 0;
+  }
+  blockquote {
+    background: #fff8e1; border-left: 5px solid #eab308; margin: 12px 0;
+    padding: 13px 18px; border-radius: 0 6px 6px 0; font-size: 13.5px; color: #3f3009;
+  }
+  .box {
+    background: #fff; border-radius: 9px; padding: 17px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.09); font-size: 14px; margin-bottom: 8px;
+  }
+  .box.hl { border-left: 5px solid #dc2626; }
+  .box.ok { border-left: 5px solid #16a34a; }
+  .sig { font-weight: 700; }
+  footer { margin-top: 30px; font-size: 12px; color: #64748b; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>.bat 한글 깨짐 — 학습규칙 반영 점검</h1>
+    <div class="meta">점검일 2026-07-23 · 요청자 조차장 · 트리거: <code style="background:rgba(255,255,255,.2);color:#fff">비밀번호설정.bat</code> 한글 깨짐 재발</div>
+    <div class="verdict">🟢 규칙은 빠지지 않았습니다 — 4개 파일에 온전히 기록되어 있었고, Claude가 적용하지 않은 것이 원인입니다.</div>
+  </header>
+
+  <h2>1. 결론 요약</h2>
+  <div class="cards">
+    <div class="card g">
+      <div class="label">학습자료에 규칙이 있는가</div>
+      <div class="value">🟢 있음</div>
+      <div class="note">메모리 1건 + SOP 4개 위치</div>
+    </div>
+    <div class="card g">
+      <div class="label">규칙 내용이 정확한가</div>
+      <div class="value">🟢 정확</div>
+      <div class="note">이번 실패 원인을 정확히 예측·금지</div>
+    </div>
+    <div class="card r">
+      <div class="label">실제로 적용됐는가</div>
+      <div class="value">🔴 미적용</div>
+      <div class="note">금지된 ③번 방식으로 생성</div>
+    </div>
+    <div class="card y">
+      <div class="label">구조적 결함</div>
+      <div class="value">🟡 있음</div>
+      <div class="note">항상 로드 계층에 행동지시 부재</div>
+    </div>
+  </div>
+
+  <h2>2. 규칙 소재 실측 (md 파일 전수 점검)</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>파일</th><th>위치</th><th>규칙 수록</th><th>로딩 방식</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><code>~/.claude/CLAUDE.md</code></td><td>기본 행동 원칙</td><td class="sig">🔴 없었음 (PowerShell 규칙만)</td><td><b>항상 로드</b></td></tr>
+      <tr><td>2</td><td><code>memory/MEMORY.md</code></td><td>42행</td><td class="sig">🟡 주제어만 ("bat 한글 인코딩")</td><td><b>항상 로드</b></td></tr>
+      <tr><td>3</td><td><code>memory/automation-dev-rules.md</code></td><td>12–14행</td><td class="sig">🟢 완전 (①②③ 우선순위)</td><td>필요 시 recall</td></tr>
+      <tr><td>4</td><td><code>01-PM실행SOP.md</code></td><td>SOP-11-A (248–249행)</td><td class="sig">🟢 완전 (ASCII·CRLF·goto)</td><td>필요 시 Read</td></tr>
+      <tr><td>5</td><td>〃</td><td>164 / 518 / 610행</td><td class="sig">🟢 반복 명시 (3회 강조)</td><td>필요 시 Read</td></tr>
+      <tr><td>6</td><td><code>02-클로드활용가이드.md</code></td><td>—</td><td>⬜ 해당 없음(정상)</td><td>필요 시 Read</td></tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <b>기록되어 있던 원문 (memory 12–14행)</b><br>
+    bat를 UTF-8로 저장하면 한국어 Windows cmd가 cp949로 읽어 한글이 깨지고 명령 오류 발생. <b>「chcp 65001」로는 해결 안 됨.</b><br>
+    해결 우선순위: ① bat 내부 글자는 영어(ASCII)만 → ② 한글 필요시 bat를 ANSI(cp949)로 저장 → ③ 차선 UTF-8+BOM+chcp 65001.
+  </blockquote>
+
+  <div class="box hl">
+    <b>→ 이번에 만든 bat은 정확히 ③번(가장 나쁜 선택)이었고, 심지어 BOM도 없었습니다.</b>
+  </div>
+
+  <h2>3. 근본원인 — 2계층 하네스의 사각지대</h2>
+  <pre>[항상 로드]  CLAUDE.md  ────────── bat 규칙 없음 (PowerShell 규칙만)
+             MEMORY.md 색인 ────── "bat 한글 인코딩" 주제어만, 행동지시 없음
+                  │
+                  │  ← 여기서 "찾아봐야 한다"는 신호가 발생하지 않음
+                  ▼
+[온디맨드]   automation-dev-rules.md ── 완전한 규칙 (recall 필요)
+             01-PM실행SOP.md ────────── 완전한 규칙 (Read 필요)</pre>
+
+  <div class="box">
+    컨텍스트 슬림화(2026-07-01) 과정에서 상세 규칙이 온디맨드 계층으로 이전되었으나,
+    <b>"bat을 만들 때 이 파일을 열어야 한다"는 트리거가 항상 로드 계층에 남지 않았습니다.</b>
+    주제어만으로는 작업 중 자동 발화되지 않습니다. 이번 세션에서 bat 생성은 부수 작업(비밀번호 입력 도우미)이었고,
+    참고자료를 열지 않은 채 진행되어 규칙이 작동하지 않았습니다.
+  </div>
+
+  <h2>4. 조치 (완료)</h2>
+  <table>
+    <thead><tr><th>#</th><th>조치</th><th>대상</th><th>상태</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>CLAUDE.md 기본 행동 원칙에 행동지시 1줄 추가</b> — 주제어가 아닌 "ASCII 전용 + CRLF + goto + 실측검증" 명령문</td><td><code>~/.claude/CLAUDE.md</code></td><td>✅</td></tr>
+      <tr><td>2</td><td>bat을 ASCII 전용으로 재작성 (한글 제거, <code>( )</code> 블록 → <code>goto</code>)</td><td>비밀번호설정.bat</td><td>✅</td></tr>
+      <tr><td>3</td><td>bat이 호출하는 스크립트명 한글 제거 (비밀번호설정.js → <code>set_password.js</code>)</td><td>〃</td><td>✅</td></tr>
+      <tr><td>4</td><td>CRLF 강제 + 비ASCII 바이트 0 실측 검증</td><td>〃</td><td>✅</td></tr>
+      <tr><td>5</td><td>실제 cmd 실행으로 파싱오류 0건·한글출력 정상 확인</td><td>〃</td><td>✅</td></tr>
+    </tbody>
+  </table>
+
+  <pre>검증 실측치
+─────────────────────────────────────────
+비ASCII 바이트 : 0
+CRLF 줄수      : 19 / 총줄수 19  (100%)
+BOM            : 없음
+cp949 디코딩   : 정상
+cmd 실행       : 파싱오류 0건, 한글 안내문 정상 출력</pre>
+
+  <h2>5. 재발방지 원칙 (귀납)</h2>
+  <div class="box ok">
+    <b style="font-size:15px;">"반복 실패 규칙은 온디맨드 계층에 두지 않는다."</b>
+    <ul style="margin:11px 0 0; padding-left:20px;">
+      <li>컨텍스트 슬림화로 상세를 참고자료로 옮길 때, <b>항상 로드 계층에는 요약이 아니라 "행동지시 1줄"을 남긴다.</b> 주제어("~인코딩")는 트리거로 작동하지 않고, 명령문("ASCII 전용으로 만들 것")만 작동한다.</li>
+      <li>산출물이 <b>사용자 PC에서 직접 실행되는 파일</b>(bat/exe/스크립트)이면, 생성 직후 <b>실측 검증을 산출물의 일부로 취급</b>한다(바이트 검사 + 실제 실행). 이번 건은 실행 검증을 사용자가 대신하게 되어 왕복 1턴이 소모됐다.</li>
+    </ul>
+  </div>
+
+  <footer>본 점검은 md 파일 6종 전수 grep + 실측 실행 검증 기반으로 작성됨. 추정 없음.</footer>
+</div>
+</body>
+</html>
