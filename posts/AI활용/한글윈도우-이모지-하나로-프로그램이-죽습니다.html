@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한글 윈도우에서 이모지 하나로 프로그램이 죽습니다</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;background:#f4f5f7;color:#222;
+       margin:0;padding:28px 16px 60px;line-height:1.85}
+  .wrap{max-width:800px;margin:0 auto}
+  header{background:#1f2a3a;color:#fff;border-radius:10px;padding:24px 26px}
+  header h1{margin:0 0 8px;font-size:1.3rem;line-height:1.45}
+  header p{margin:4px 0;font-size:.9rem;color:#cfd8e3}
+  .card{background:#fff;border-radius:10px;padding:20px 26px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  h2{font-size:1.1rem;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e6e9ee}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;margin:10px 0}
+  th,td{border:1px solid #dde1e7;padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#eef1f5}
+  .red{background:#fdecea;border-left:5px solid #c0392b}
+  .green{background:#eaf6ec;border-left:5px solid #3a9e56}
+  .quote{background:#f7f3ea;border-left:4px solid #b8a26e;border-radius:6px;
+         padding:13px 18px;margin:10px 0;font-size:.95rem}
+  pre{background:#20293a;color:#dfe7f2;border-radius:8px;padding:15px 20px;
+      font-family:Consolas,monospace;font-size:.85rem;line-height:1.75;overflow-x:auto}
+  code{background:#eef1f5;padding:1px 6px;border-radius:4px;font-size:.9em}
+  .big{font-size:1.03rem;font-weight:700}
+  ul{margin:8px 0;padding-left:22px} li{margin:6px 0}
+  a{color:#2c5fa8} small{color:#6b7683}
+</style>
+</head>
+<body><div class="wrap">
+
+<header>
+  <h1>한글 윈도우에서 이모지 하나로 프로그램이 죽습니다</h1>
+  <p>AI에게 만들어 달라고 한 프로그램이 자꾸 멈춘다면 이걸 의심해 보세요</p>
+</header>
+
+<div class="card">
+  <h2>증상</h2>
+  <p>잘 돌아가던 프로그램이 특정 상황에서 갑자기 멈추고 이런 메시지를 뱉습니다.</p>
+  <pre>UnicodeEncodeError: 'cp949' codec can't encode character
+'\U0001f525' in position 17: illegal multibyte sequence</pre>
+  <p>저 <code>\U0001f525</code>가 🔥 이모지입니다. <b>이모지 하나 때문에 프로그램 전체가 죽은 겁니다.</b></p>
+</div>
+
+<div class="card red">
+  <h2>왜 이런 일이</h2>
+  <p>한글 윈도우의 명령 프롬프트(검은 창)는 기본 문자 규격이 <b>cp949</b>입니다.
+  한글은 표현할 수 있지만 <b>이모지는 이 규격에 아예 없습니다.</b></p>
+  <p>그래서 화면에 이모지를 찍으려는 순간 "이 글자를 어떻게 출력할지 모르겠다"며 멈춥니다.
+  경고가 아니라 <b>프로그램이 그 자리에서 끝납니다.</b></p>
+  <div class="quote">특히 잘 걸리는 경우 — 유튜브 제목, 상품명, 기사 제목처럼
+  <b>바깥에서 가져온 글자를 화면에 그대로 찍을 때</b>입니다.
+  제목에 🔥나 ✨가 붙어 있으면 그 순간 끝납니다.</div>
+</div>
+
+<div class="card green">
+  <h2>해결 — 두 겹으로 막습니다</h2>
+  <h3 style="font-size:1rem;margin:14px 0 6px">① 프로그램 맨 앞에서 출력 규격을 바꾼다</h3>
+  <pre>import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")</pre>
+  <p><code>errors="replace"</code>가 핵심입니다. 표현 못 하는 글자가 와도 <b>물음표로 바꿔서 찍고 계속 갑니다.</b>
+  멈추지 않는다는 게 중요합니다.</p>
+
+  <h3 style="font-size:1rem;margin:18px 0 6px">② 화면에는 아예 이모지를 쓰지 않는다</h3>
+  <p>①번으로 대부분 막히지만, 환경에 따라 여전히 깨져 보일 수 있습니다.
+  그래서 저는 <b>화면 출력에는 이모지를 안 씁니다.</b></p>
+  <table>
+    <tr><th style="width:34%">화면(검은 창)</th><th>파일(md·html)</th></tr>
+    <tr><td><code>[OK]</code> <code>[부분]</code> <code>[실패]</code></td><td>🟢 🟡 🔴 마음껏</td></tr>
+  </table>
+  <p>파일은 프로그램이 직접 UTF-8로 쓰기 때문에 이모지가 안전합니다.
+  <b>깨지는 건 검은 창뿐</b>입니다.</p>
+</div>
+
+<div class="card">
+  <h2>비슷한 지뢰 두 개 더</h2>
+  <table>
+    <tr><th style="width:26%">대상</th><th>규칙</th><th style="width:34%">안 지키면</th></tr>
+    <tr><td><b>.bat 파일</b></td>
+        <td>내용은 <b>영문만</b>. 줄바꿈은 <b>CRLF</b></td>
+        <td>한글 안내문을 넣으면 명령 프롬프트가 한글 바이트를 명령으로 착각해
+        <i>"…은(는) 내부 또는 외부 명령이 아닙니다"</i></td></tr>
+    <tr><td><b>.ps1 파일</b></td>
+        <td>저장할 때 <b>UTF-8 (BOM 포함)</b></td>
+        <td>BOM이 없으면 한글 문자열이 깨져서 출력</td></tr>
+  </table>
+  <p>그럼 배치 파일에서 한글 안내를 어떻게 보여주냐면 — <b>안내는 파이썬이 출력하게</b> 하면 됩니다.
+  배치 파일은 파이썬을 부르는 역할만 하고, 사람이 읽는 한글은 전부 파이썬 쪽에 둡니다.</p>
+</div>
+
+<div class="card">
+  <h2>만들고 나서 꼭 확인하세요</h2>
+  <p>"영문만 썼습니다"라는 말을 믿지 말고 <b>직접 세어 보는 게 확실합니다.</b></p>
+  <pre>python -c "b=open('파일명.bat','rb').read(); \
+print('한글 등 비영문:', len([x for x in b if x>127])); \
+print('CRLF:', b.count(b'\r\n'), '/ 단독 LF:', b.count(b'\n')-b.count(b'\r\n'))"</pre>
+  <p><b>비영문 0 / 단독 LF 0</b>이면 통과입니다.
+  AI에게 만들어 달라고 했을 때도 이 한 줄로 검증하면 나중에 헤맬 일이 줄어듭니다.</p>
+</div>
+
+<div class="card">
+  <h2>정리</h2>
+  <ul>
+    <li>한글 윈도우 검은 창은 <b>이모지를 출력하지 못하고 프로그램을 끝냅니다</b></li>
+    <li>프로그램 맨 앞에 <code>reconfigure(encoding="utf-8", errors="replace")</code></li>
+    <li><b>화면엔 <code>[OK]</code>, 파일엔 🟢</b> — 이렇게 나누면 안전합니다</li>
+    <li>.bat은 영문·CRLF, .ps1은 UTF-8 BOM</li>
+    <li>말로 믿지 말고 <b>바이트로 세어서 확인</b>하세요</li>
+  </ul>
+</div>
+
+<p style="text-align:center"><small>아이엠 조차장 · AI 도구로 업무 다이어트하는 법을 기록합니다</small></p>
+</div></body></html>
