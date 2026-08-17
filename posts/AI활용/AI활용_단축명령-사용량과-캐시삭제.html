@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>단축명령 신설 · 사용량 / 캐시삭제</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:"맑은 고딕","Malgun Gothic",sans-serif;background:#f4f5f7;color:#222;
+       margin:0;padding:28px 16px 60px;line-height:1.8}
+  .wrap{max-width:820px;margin:0 auto}
+  header{background:#2f3e52;color:#fff;border-radius:10px;padding:22px 26px}
+  header h1{margin:0 0 6px;font-size:1.42rem}
+  header p{margin:4px 0;font-size:.9rem;color:#cfd8e3}
+  .card{background:#fff;border-radius:10px;padding:20px 26px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  h2{font-size:1.12rem;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #e6e9ee}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;margin:10px 0}
+  th,td{border:1px solid #dde1e7;padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:#eef1f5;width:110px}
+  .red{background:#fdecea;border-left:5px solid #c0392b}
+  .green{background:#eaf6ec;border-left:5px solid #3a9e56}
+  .cmd{background:#2f3e52;color:#e8eef5;border-radius:8px;padding:12px 16px;
+       font-family:Consolas,monospace;font-size:.95rem;margin:10px 0;line-height:1.9}
+  code{background:#f2f3f5;border:1px solid #e0e3e8;border-radius:4px;padding:1px 6px;
+       font-family:Consolas,monospace;font-size:.88em}
+  small{color:#6b7683}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>단축명령 신설 — 사용량 / 캐시삭제</h1>
+  <p>2026-08-15 · commands 등록 + CLAUDE.md 등록 완료 · 치트시트 위젯 자동 반영</p>
+</header>
+
+<div class="card red">
+  <h2 style="border:0;margin:0 0 8px">🔴 먼저 정직하게 — 별칭이 아니라 "대응 구현"입니다</h2>
+  <p style="margin:0"><code>/usage</code>와 <code>/compact</code>는 하네스가 직접 처리하는 <strong>내장 명령</strong>이라
+  단축명령으로는 호출이 불가능합니다(단축명령 = 모델에게 가는 프롬프트).
+  그래서 각각 <strong>같은 목적을 실제로 달성하는 동작</strong>으로 만들었습니다.</p>
+</div>
+
+<div class="card">
+  <h2>① 사용량 — /usage 대응</h2>
+  <table>
+    <tr><th>하는 일</th><td>로컬 세션 기록을 스캔해 <strong>최근 5시간(세션 창 근사) / 7일(주간 창 근사)</strong> 토큰 사용량을 모델별 표로 출력</td></tr>
+    <tr><th>도구</th><td><code>_도구_사용량조회\usage_report.py</code> — 읽기 전용·오프라인</td></tr>
+    <tr><th>검증</th><td>🟢 8/15 실측 성공 (7일간 opus-5 응답 664건, fable-5 580건 등 실데이터)</td></tr>
+    <tr><th>한계</th><td><strong>근사치.</strong> 공식 게이지·재설정 일시는 별도 터미널 <code>claude</code> → <code>/usage</code></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>② 캐시삭제 — /compact 대응</h2>
+  <p>🔴 <strong>개념 교정 내장</strong>: /compact는 캐시 삭제가 아니라 <strong>대화 컨텍스트 압축(요약)</strong>입니다. 실행할 때마다 첫 줄에 고지합니다.</p>
+  <table>
+    <tr><th>하는 일</th><td>현재 세션의 <strong>인수인계 요약 md</strong> 생성 — 진행 상태·결정사항·미결·다음 액션·새 세션 첫 프롬프트 문안 → <code>_retrospective\인수인계_일시.md</code></td></tr>
+    <tr><th>쓰는 때</th><td>세션이 무거워졌을 때 → <code>캐시삭제</code> → <strong>새 대화를 열고 md 경로만 던지면 이어짐</strong></td></tr>
+    <tr><th>안전</th><td>파일 삭제 없음 · 요약은 사실만</td></tr>
+    <tr><th>참고</th><td>터미널 CLI에선 내장 <code>/compact</code> 직접 입력 가능 · 데스크톱 대화는 자동 압축</td></tr>
+  </table>
+</div>
+
+<div class="card green">
+  <h2 style="border:0">사용법</h2>
+  <div class="cmd">사용량&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← 토큰 사용량 리포트<br>캐시삭제&nbsp;&nbsp;&nbsp;← 인수인계 요약 생성 + 새 세션 안내</div>
+  <p style="margin:0"><small>둘 다 단독 입력일 때만 트리거. 문장 속 표현은 트리거 아님. 치트시트 위젯에 자동 표시.</small></p>
+</div>
+
+</div>
+</body>
+</html>
