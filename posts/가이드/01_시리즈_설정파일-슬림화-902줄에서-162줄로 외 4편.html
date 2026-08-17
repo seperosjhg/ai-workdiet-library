@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01_시리즈_설정파일-슬림화-902줄에서-162줄로 외 4편</title>
+<style>
+/* ── 통합본 껍데기 (원본과 충돌하지 않도록 .agg- 접두사) ── */
+html,body{margin:0;padding:0}
+body{background:#eceef2;font-family:"맑은 고딕","Malgun Gothic",sans-serif;color:#222}
+.agg-head{background:#26456b;color:#fff;padding:30px 26px 26px;text-align:center}
+.agg-head h1{margin:0 0 8px;font-size:1.5rem;letter-spacing:-.5px}
+.agg-head p{margin:0;font-size:.88rem;color:#c6d6ea}
+.agg-toc{max-width:820px;margin:22px auto;background:#fff;border-radius:12px;padding:18px 22px;
+  box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.agg-toc h2{margin:0 0 10px;font-size:.95rem;color:#26456b;padding-bottom:8px;
+  border-bottom:2px solid #e6e9ee}
+.agg-toc-item{display:block;padding:7px 4px;color:#2e6db4;text-decoration:none;font-size:.94rem;
+  border-bottom:1px solid #f0f2f5}
+.agg-toc-item:last-child{border-bottom:0}
+.agg-toc-item:hover{background:#f6f8fb}
+.agg-num{display:inline-block;min-width:26px;height:22px;line-height:22px;text-align:center;
+  background:#26456b;color:#fff;border-radius:5px;font-size:.76rem;font-weight:700;margin-right:9px}
+.agg-part{max-width:1000px;margin:26px auto}
+.agg-part-head{background:#3d5a80;color:#fff;padding:11px 20px;border-radius:10px 10px 0 0;
+  font-size:1rem;font-weight:700;display:flex;align-items:center}
+.agg-part-head .agg-num{background:rgba(255,255,255,.22)}
+.agg-top{margin-left:auto;font-size:.76rem;color:#cfdcec;text-decoration:none;font-weight:400}
+.agg-part section{border:1px solid #d7dde6;border-top:0;border-radius:0 0 10px 10px;
+  overflow:hidden}
+.agg-foot{text-align:center;color:#8a929e;font-size:.84rem;padding:26px 16px 40px}
+@media print{.agg-toc,.agg-top{display:none}}
+
+/* ── 파트별 원본 스타일 (각각 #part-N 안에 갇혀 서로 섞이지 않음) ── */
+#part-1, #part-1 *{ box-sizing: border-box; }
+#part-1{
+    font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+    background: #f4f5f7;
+    margin: 0;
+    padding: 24px;
+    color: #2a2a2a;
+    line-height: 1.7;
+  }
+#part-1 .page{
+    max-width: 820px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 48px 56px;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.12);
+  }
+#part-1 h1{ font-size: 21px; margin: 0 0 6px; color: #1a1a1a; }
+#part-1 .summary-box{
+    background: #EEF3FB; border-left: 4px solid #2E5FAC;
+    padding: 14px 18px; margin: 16px 0 28px; font-size: 15px;
+  }
+#part-1 .summary-box b{ color: #1F4E96; }
+#part-1 h2{
+    font-size: 17px; color: #1F4E96;
+    border-bottom: 2px solid #DCE6F4; padding-bottom: 6px;
+    margin: 32px 0 14px;
+  }
+#part-1 table{
+    width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0 14px;
+  }
+#part-1 th, #part-1 td{
+    border: 1px solid #CBD5E6; padding: 10px 12px; text-align: left; vertical-align: top;
+  }
+#part-1 th{ background: #8EAADB; color: #fff; }
+#part-1 td.num{ text-align: center; font-weight: bold; }
+#part-1 .before{ color: #C0392B; }
+#part-1 .after{ color: #1F7A3D; font-weight: bold; }
+#part-1 .card{
+    background: #FAFBFC; border: 1px solid #E3E7ED; border-radius: 6px;
+    padding: 16px 20px; margin: 12px 0 22px;
+  }
+#part-1 .card ul{ margin: 6px 0; padding-left: 20px; }
+#part-1 .card li{ margin: 4px 0; }
+#part-1 .closing{
+    margin-top: 32px; padding: 18px 20px;
+    background: #FFF7E8; border-left: 4px solid #C97A2E; font-size: 14.5px;
+  }
+#part-1 code{ background: #eee; padding: 1px 5px; border-radius: 3px; }
+#part-2, #part-2 *{ box-sizing:border-box; }
+#part-2{ font-family:"맑은 고딕","Malgun Gothic",sans-serif; line-height:1.7; color:#1f2933; background:#f4f6f9; margin:0; padding:32px 16px; }
+#part-2 .wrap{ max-width:860px; margin:0 auto; }
+#part-2 h1{ font-size:22px; margin:0 0 6px; color:#0f2b4c; }
+#part-2 .sub{ color:#5b6b7b; font-size:13px; margin-bottom:18px; }
+#part-2 .verdict{ background:linear-gradient(135deg,#eafaf0,#f0f5fb); border:1px solid #a6e0bd; border-radius:14px; padding:16px 20px; margin-bottom:18px; }
+#part-2 .verdict .big{ font-size:18px; font-weight:800; color:#1c7a3e; }
+#part-2 .warn{ background:#fff7e6; border:1px solid #f0d9a6; color:#8a6413; border-radius:10px; padding:9px 14px; font-size:12.6px; margin-bottom:16px; }
+#part-2 h2{ font-size:16.5px; margin:26px 0 10px; padding-left:10px; border-left:5px solid #2f6fb0; color:#0f2b4c; }
+#part-2 .card{ background:#fff; border-radius:12px; padding:18px 20px; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:14px; }
+#part-2 table{ width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+#part-2 th, #part-2 td{ border:1px solid #dfe6ee; padding:8px 10px; text-align:left; vertical-align:top; }
+#part-2 th{ background:#eef3f9; color:#33475b; font-weight:600; }
+#part-2 .g{ color:#1c7a3e; font-weight:700; }
+#part-2 .y{ color:#c9860a; font-weight:700; }
+#part-2 ul{ margin:8px 0; padding-left:20px; }
+#part-2 li{ margin:5px 0; font-size:13.5px; }
+#part-2 .item{ border-left:4px solid #e6a817; background:#fffdf5; border-radius:0 10px 10px 0; padding:11px 14px; margin:10px 0; }
+#part-2 .item .t{ font-weight:700; color:#8a6413; font-size:14px; }
+#part-2 .item .d{ font-size:13px; color:#4a5a68; margin-top:4px; }
+#part-2 .ok{ border-left-color:#2e9b52; background:#f4fbf6; }
+#part-2 .ok .t{ color:#1c7a3e; }
+#part-2 code{ background:#eef1f4; padding:1px 6px; border-radius:4px; font-size:12px; }
+#part-2 .next{ background:#f0f5fb; border-left:4px solid #2f6fb0; border-radius:0 8px 8px 0; padding:10px 14px; font-size:13px; color:#2b5378; }
+#part-3, #part-3 *{ box-sizing:border-box; }
+#part-3{ font-family:"맑은 고딕","Malgun Gothic",sans-serif; line-height:1.7; color:#1f2933; background:#f4f6f9; margin:0; padding:32px 16px; }
+#part-3 .wrap{ max-width:840px; margin:0 auto; }
+#part-3 h1{ font-size:22px; margin:0 0 6px; color:#0f2b4c; }
+#part-3 .sub{ color:#5b6b7b; font-size:13px; margin-bottom:18px; }
+#part-3 .done{ background:linear-gradient(135deg,#eafaf0,#f0f5fb); border:1px solid #a6e0bd; border-radius:14px; padding:14px 20px; margin-bottom:18px; font-size:15px; font-weight:700; color:#1c7a3e; }
+#part-3 h2{ font-size:16px; margin:24px 0 10px; padding-left:10px; border-left:5px solid #2f6fb0; color:#0f2b4c; }
+#part-3 .card{ background:#fff; border-radius:12px; padding:18px 20px; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:14px; }
+#part-3 table{ width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+#part-3 th, #part-3 td{ border:1px solid #dfe6ee; padding:8px 10px; text-align:left; vertical-align:top; }
+#part-3 th{ background:#eef3f9; color:#33475b; font-weight:600; }
+#part-3 .after{ color:#1c7a3e; font-weight:700; }
+#part-3 ul{ margin:8px 0; padding-left:20px; }
+#part-3 li{ margin:5px 0; font-size:13.5px; }
+#part-3 code{ background:#eef1f4; padding:1px 6px; border-radius:4px; font-size:12px; }
+#part-3 .next{ background:#f0f5fb; border-left:4px solid #2f6fb0; border-radius:0 8px 8px 0; padding:10px 14px; font-size:13px; color:#2b5378; }
+#part-3 .k{ color:#0f2b4c; font-weight:700; }
+#part-4{--ink:#1b2433;--muted:#66748a;--line:#dde4ec;--navy:#16375e;--bg:#eef2f7;--ok:#1e7a4d;--ok-bg:#e9f7f0;--warn:#a8700d;--warn-bg:#fff6e4;}
+#part-4, #part-4 *{box-sizing:border-box}
+#part-4{margin:0;background:var(--bg);color:var(--ink);font-family:"맑은 고딕","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.62;word-break:keep-all}
+#part-4 .page{max-width:960px;margin:22px auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 34px rgba(28,45,70,.10)}
+#part-4 header{padding:30px 40px 24px;color:#fff;background:linear-gradient(135deg,#12463a,#1e7a4d 70%,#2b9160)}
+#part-4 header .kick{display:inline-block;padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);font-size:12px;font-weight:800}
+#part-4 header h1{margin:12px 0 5px;font-size:23px;letter-spacing:-.03em}
+#part-4 header p{margin:0;color:rgba(255,255,255,.92);font-size:13.5px}
+#part-4 main{padding:28px 40px 42px}
+#part-4 section{margin-bottom:26px}
+#part-4 h2{margin:0 0 12px;font-size:18px;color:var(--navy);border-left:5px solid var(--navy);padding-left:11px}
+#part-4 table{width:100%;border-collapse:collapse;font-size:13px;background:#fff}
+#part-4 .tw{overflow-x:auto;border:1px solid var(--line);border-radius:11px}
+#part-4 th, #part-4 td{padding:9px 11px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+#part-4 th:last-child, #part-4 td:last-child{border-right:0}
+#part-4 tr:last-child td{border-bottom:0}
+#part-4 thead th{background:var(--navy);color:#fff}
+#part-4 tbody th{background:#f4f7fa;color:var(--navy)}
+#part-4 tbody tr:nth-child(even) td{background:#fafcfe}
+#part-4 .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:8px}
+#part-4 .k{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;background:#fff;border-top:4px solid var(--ok)}
+#part-4 .k .n{font-size:22px;font-weight:900;color:var(--ok)}
+#part-4 .k .l{font-size:11.5px;color:var(--muted);margin-top:3px}
+#part-4 .k .b{font-size:11px;color:#98a2b3;text-decoration:line-through}
+#part-4 .box{padding:13px 16px;border-radius:11px;font-size:13px;margin:10px 0}
+#part-4 .box.ok{background:var(--ok-bg);border:1px solid #bfe4cf;color:#1c5a3b}
+#part-4 .box.warn{background:var(--warn-bg);border:1px solid #ecd39a;color:#6d5314}
+#part-4 ul{margin:8px 0 0;padding-left:19px;font-size:13px}
+#part-4 li+li{margin-top:4px}
+#part-4 footer{padding:15px 40px 24px;color:#8b97a8;font-size:11px;border-top:1px solid var(--line);background:#f8fafc}
+@media(max-width:760px){#part-4 .kpi{grid-template-columns:1fr 1fr}
+#part-4 main{padding:22px 18px}
+#part-4 header{padding:22px 20px}}
+#part-5, #part-5 *{box-sizing:border-box}
+#part-5{font-family:"맑은 고딕","Malgun Gothic",sans-serif;background:#f4f5f7;color:#222;
+       margin:0;padding:28px 16px 60px;line-height:1.78}
+#part-5 .wrap{max-width:760px;margin:0 auto}
+#part-5 header{background:#2f3e52;color:#fff;border-radius:10px;padding:22px 26px}
+#part-5 header h1{margin:0 0 6px;font-size:1.32rem}
+#part-5 header p{margin:3px 0;font-size:.9rem;color:#cfd8e3}
+#part-5 .card{background:#fff;border-radius:10px;padding:20px 26px;margin:18px 0;
+        box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#part-5 h2{font-size:1.08rem;margin:0 0 13px;padding-bottom:8px;border-bottom:2px solid #e6e9ee}
+#part-5 table{border-collapse:collapse;width:100%;font-size:.9rem;margin:10px 0}
+#part-5 th, #part-5 td{border:1px solid #dde1e7;padding:8px 11px;text-align:left;vertical-align:top}
+#part-5 th{background:#eef1f5}
+#part-5 .blue{background:#eef4fb;border-left:5px solid #2e6db4}
+#part-5 .big{font-size:2rem;font-weight:800;color:#2e7d43;text-align:center;margin:6px 0}
+#part-5 .big small{display:block;font-size:.85rem;color:#6b7683;font-weight:400}
+#part-5 code{background:#f2f3f5;border:1px solid #e0e3e8;border-radius:4px;padding:1px 6px;
+       font-family:Consolas,monospace;font-size:.86em}
+#part-5 small{color:#6b7683}
+#part-5 ul{margin:8px 0;padding-left:22px}
+#part-5 li{margin:5px 0}
+</style>
+</head>
+<body>
+<div id="agg-top" class="agg-head">
+  <h1>01_시리즈_설정파일-슬림화-902줄에서-162줄로 외 4편</h1>
+  <p>총 5편을 하나로 묶은 통합본 · 2026-08-17</p>
+</div>
+<nav class="agg-toc"><h2>목차</h2><a class="agg-toc-item" href="#part-1"><span class="agg-num">1</span>CLAUDE.md 슬림화 결과 (2026-07-01)</a><a class="agg-toc-item" href="#part-2"><span class="agg-num">2</span>하네스 데이터 다이어트 진단</a><a class="agg-toc-item" href="#part-3"><span class="agg-num">3</span>하네스 다이어트 시행 결과</a><a class="agg-toc-item" href="#part-4"><span class="agg-num">4</span>MEMORY.md 섹션 통합 리포트 · 2026-08-10</a><a class="agg-toc-item" href="#part-5"><span class="agg-num">5</span>CLAUDE.md 다이어트 결과 20260815</a></nav>
+<div class="agg-part"><div class="agg-part-head"><span class="agg-num">1</span>CLAUDE.md 슬림화 결과 (2026-07-01)<a class="agg-top" href="#agg-top">▲ 목차</a></div><section id="part-1">
+<div class="page">
+
+  <h1>CLAUDE.md 슬림화 결과</h1>
+
+  <div class="summary-box">
+    <b>한 줄 요약</b> — <code>~/.claude/CLAUDE.md</code>를 <b>902줄(약 5.9만 자) → 162줄(약 1만 자)</b>로 줄였습니다(약 83% 감소). "항상 로드되는 핵심"과 "필요할 때만 여는 참고자료"를 분리했습니다.
+  </div>
+
+  <h2>Before / After</h2>
+  <table>
+    <tr><th>구분</th><th>Before</th><th>After</th></tr>
+    <tr><td>CLAUDE.md 줄수</td><td class="before">902줄</td><td class="after">162줄</td></tr>
+    <tr><td>CLAUDE.md 용량</td><td class="before">약 59KB</td><td class="after">약 10KB</td></tr>
+    <tr><td>매 세션 시작 시 항상 로드</td><td class="before">SOP-1~18, 프롬프트 템플릿, PMI 지식베이스 전부 포함</td><td class="after">단축명령어·프로필·응답원칙·PM비서 5단계 엔진만</td></tr>
+    <tr><td>상세 SOP·지식베이스</td><td class="before">CLAUDE.md 안에 그대로</td><td class="after">참고자료 3개 파일로 분리, 필요할 때 Read로 열람</td></tr>
+  </table>
+
+  <h2>새 구조</h2>
+
+  <div class="card">
+    <b>1) CLAUDE.md (핵심 — 항상 로드)</b>
+    <ul>
+      <li>🔧 기본 행동 원칙</li>
+      <li>⚡ 단축 명령어 (선순환·스타강사·요즘IT·업무학습·법령체크)</li>
+      <li>👤 사용자 프로필</li>
+      <li>📋 응답 스타일 원칙</li>
+      <li>🧠 PM 비서 5단계 고도화 엔진</li>
+      <li>📎 참고자료 안내표 (아래 3개 파일이 뭔지, 언제 열어야 하는지)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <b>2) 참고자료</b> (claude-sit\CLAUDE-참고자료\ — 필요할 때만 Read로 열람)
+    <table>
+      <tr><th>파일</th><th>내용</th><th>언제 여나</th></tr>
+      <tr><td>01-PM실행SOP.md</td><td>SOP-1~18 전체 + 고효율 프롬프트 템플릿</td><td>RFP·이해관계자·WBS·대시보드 등 PM 산출물 작업 시</td></tr>
+      <tr><td>02-클로드활용가이드.md</td><td>스킬·AX-RAG·도구스택·자동화패턴·체크리스트</td><td>스킬/도구 선택, 산출물 만들기 직전 체크 시</td></tr>
+      <tr><td>03-PMI-지식베이스.md</td><td>PMBOK7판·EVM공식·WBS규칙·리스크전략·PMO역할</td><td>EVM/WBS/리스크 수치·기준 인용 필요 시</td></tr>
+    </table>
+    <p><b>내용은 한 글자도 손실 없이 그대로 옮겼습니다</b> — 삭제가 아니라 "항상 켜둘 필요 없는 참고서적을 책상 밖 책장으로 옮긴 것"입니다. 필요할 때 직접 Read로 꺼내 봅니다.</p>
+  </div>
+
+  <h2>함께 고쳐둔 것</h2>
+  <p><code>선순환</code> 명령이 새 SOP를 귀납할 때 예전엔 "CLAUDE.md에 SOP-N 추가"였는데, 그대로 두면 다음 <code>선순환</code> 실행 때마다 CLAUDE.md가 다시 커집니다. 그래서 <b>"01-PM실행SOP.md에 추가"</b>하도록 명령 정의 자체를 함께 수정했습니다. 이제부터는 슬림화 상태가 계속 유지됩니다.</p>
+
+  <h2>기대 효과</h2>
+  <ul>
+    <li>새 대화를 시작할 때마다 화이트보드에 먼저 적히는 분량이 5.9만 자 → 1만 자로 줄어, <b>실제 대화에 쓸 수 있는 컨텍스트 공간이 늘어납니다.</b></li>
+    <li>참고자료가 필요 없는 일반 대화(단축명령 실행, 잡담, 짧은 질문 등)에서는 컨텍스트를 훨씬 아낄 수 있습니다.</li>
+    <li>PM 산출물처럼 SOP가 실제로 필요한 작업에서는, 해당 참고파일만 골라 읽어오므로 품질 저하는 없습니다.</li>
+  </ul>
+
+  <div class="closing">
+    <b>참고</b> — 메모리(memory 폴더)에 이번 작업 기록을 저장해두었습니다. 원본 CLAUDE.md는 별도 백업하지 않았지만, 이전 내용은 참고자료 3개 파일에 전부 그대로 보존되어 있으니 걱정 없으셔도 됩니다.
+  </div>
+
+</div>
+</section></div><div class="agg-part"><div class="agg-part-head"><span class="agg-num">2</span>하네스 데이터 다이어트 진단<a class="agg-top" href="#agg-top">▲ 목차</a></div><section id="part-2">
+<div class="wrap">
+  <h1>하네스 데이터 다이어트 진단</h1>
+  <div class="sub">2026-07-18 · 실측 기반 · "내가 클로드를 제대로 쓰고 있나?"에 대한 답</div>
+
+  <div class="verdict">
+    <div class="big">결론: 전반 🟢 — 제대로 쓰고 있습니다</div>
+    <div style="font-size:13.5px;margin-top:4px">블로그들이 권하는 것 대부분을 <b>이미 실천 중</b>(CLAUDE.md 슬림화·3층 구조·메모리 원자화·회고→SOP 코드화). 다이어트 필요한 곳은 <b>🟡 3곳</b>, 전부 가벼운 수술.</div>
+  </div>
+
+  <div class="warn">⚠️ 요청하신 블로그(4u_doumi)는 네이버 차단으로 열람 불가 — 날조 없이 <b>실측 진단으로 대체</b>했습니다. 그 글의 체크리스트와 대조하려면 스크린샷을 주세요. 진단 기준 = 통용 원칙 + 본인 교보재(md 다이어트 5단계: 분리·삭제·병합·색인·요약).</div>
+
+  <h2>1. 실측 결과</h2>
+  <div class="card">
+    <table>
+      <tr><th>항목</th><th>실측</th><th>판정</th><th>비고</th></tr>
+      <tr><td>전역 CLAUDE.md</td><td><b>188줄 / 13KB</b></td><td class="g">🟢</td><td>7/1 슬림화(902→162줄) 후 17일간 +26줄 — 건강</td></tr>
+      <tr><td>메모리 인덱스 MEMORY.md</td><td>81줄 / 8.6KB</td><td class="g">🟢~🟡</td><td>매 세션 로드. 100줄 넘으면 다이어트</td></tr>
+      <tr><td>메모리 파일</td><td>40개 / 236KB</td><td class="g">🟢</td><td>필요 시만 회상 — 총량 부담 없음. 스테일 2~3개</td></tr>
+      <tr><td>01-PM실행SOP.md</td><td><b>104KB (SOP-38)</b></td><td class="y">🟡</td><td>이틀 새 93→104KB 급증 · SOP-29 번호 중복</td></tr>
+      <tr><td>참고자료 02·03</td><td>3KB / 10KB</td><td class="g">🟢</td><td>적정</td></tr>
+      <tr><td>commands</td><td>9개</td><td class="g">🟢</td><td>치트시트 위젯 연동 유지</td></tr>
+    </table>
+  </div>
+
+  <h2>2. 이미 잘하고 있는 것 (블로그 권장사항 대비)</h2>
+  <div class="card">
+    <div class="item ok"><div class="t">✅ CLAUDE.md 슬림 유지 — 상위 5% 수준</div><div class="d">대부분 글이 "CLAUDE.md 비대화"를 최대 함정으로 꼽는데, 이미 902→162줄 대수술 완료(7/1), 현재도 188줄 관리 중.</div></div>
+    <div class="item ok"><div class="t">✅ 3층 구조 (분리+색인 완성형)</div><div class="d">①상시: CLAUDE.md(행동원칙만) ②온디맨드: CLAUDE-참고자료(작업 시만 Read) ③자동회상: memory 40파일+인덱스 — 블로그들이 "구축하라"는 목표 상태를 이미 운영 중.</div></div>
+    <div class="item ok"><div class="t">✅ 메모리 원자화 + 인덱스 1줄 규칙</div><div class="d">한 파일=한 사실, MEMORY.md엔 훅 1줄.</div></div>
+    <div class="item ok"><div class="t">✅ 회고 루틴의 코드화 (선순환→SOP)</div><div class="d">규칙이 대화에서 끝나지 않고 SOP로 귀납·축적 — 대부분 사용자에게 없는 단계.</div></div>
+  </div>
+
+  <h2>3. 다이어트 필요한 3곳 🟡</h2>
+  <div class="card">
+    <div class="item"><div class="t">🟡-1. 01-PM실행SOP.md 비대화 (104KB) — 가장 시급</div><div class="d">SOP-1~38 단일 파일, 이틀 새 +11KB 추세 + <b>SOP-29 번호 중복 2건</b>(병렬 세션 부작용). <b>처방</b>: ①맨 위 <b>SOP 색인부</b>(번호·제목·1줄) 신설 → 부분 Read 가능 ②중복 29 재번호 ③(선택) 30번대부터 2권 분권.</div></div>
+    <div class="item"><div class="t">🟡-2. 스테일 메모리 2~3개 — 삭제/병합</div><div class="d"><code>june-inspection-docs-prep</code>(6월 검수 종료됨→흡수 후 삭제) · <code>learning_session_20260625</code>(핵심 이미 반영→압축) · <code>claude-md-slimming-20260701</code>(이력만 남음→1줄 병합 검토).</div></div>
+    <div class="item"><div class="t">🟡-3. MEMORY.md 인덱스 (81줄) — 예방 관리</div><div class="d">아직 양호. 원칙 재확인: 훅 1줄만, 내용 서술 금지. 스테일 정리 시 자동 감소.</div></div>
+  </div>
+
+  <h2>4. 손대지 말 것 (오버다이어트 경고)</h2>
+  <div class="card">
+    <ul>
+      <li><b>메모리 총량(236KB)</b> — 필요할 때만 로드. 줄일 이유 없음, 자산임</li>
+      <li><b>CLAUDE.md 단축명령어 블록</b> — 매일 쓰는 트리거, 상시 로드가 맞음</li>
+      <li><b>참고자료 02·03</b> — 이미 적정</li>
+    </ul>
+  </div>
+
+  <div class="next"><b>실행 제안(승인 시)</b>: ① SOP 색인부+중복 재번호(10분) → ② 스테일 메모리 병합·삭제(5분, <b>삭제 전 목록 확인</b>) → ③(선택) SOP 2권 분권. — 진단만 요청하셔서 실행은 안 했습니다. "다이어트 진행해줘" 하시면 시작합니다.</div>
+</div>
+</section></div><div class="agg-part"><div class="agg-part-head"><span class="agg-num">3</span>하네스 다이어트 시행 결과<a class="agg-top" href="#agg-top">▲ 목차</a></div><section id="part-3">
+<div class="wrap">
+  <h1>하네스 데이터 다이어트 — 시행 결과</h1>
+  <div class="sub">2026-07-18 · 진단의 🟡 3건 시술 + 주기 검증 체계 탑재</div>
+
+  <div class="done">✅ 다이어트 완료 — 스테일 메모리 3건 정리 · SOP 중복 해소·색인화 · 주기 점검은 선순환에 탑재</div>
+
+  <h2>Before → After</h2>
+  <div class="card">
+    <table>
+      <tr><th>항목</th><th>Before</th><th>After</th><th>변화</th></tr>
+      <tr><td>전역 CLAUDE.md</td><td>188줄</td><td class="after">189줄</td><td>+1줄(주기점검 규칙 — 의도된 추가)</td></tr>
+      <tr><td>MEMORY.md 인덱스</td><td>81줄</td><td class="after">75줄</td><td>스테일 3줄+빈 섹션 2개 제거</td></tr>
+      <tr><td>메모리 파일</td><td>41개</td><td class="after">38개</td><td>3개 병합 후 삭제</td></tr>
+      <tr><td>01-PM실행SOP.md</td><td>104KB·중복번호</td><td class="after">112KB·색인 40개·중복 0</td><td>+8KB(색인·SOP-39)지만 <b>부분 열람 구조</b>로 전환</td></tr>
+    </table>
+  </div>
+
+  <h2>1. SOP 파일 수술</h2>
+  <div class="card">
+    <ul>
+      <li><b>중복 해소</b>: SOP-29 두 개 → <span class="k">SOP-29A</span>(IDE 온보딩) / <span class="k">SOP-29B</span>(요즘IT 원고). 참조 3곳(29-D→29B-D) 일괄 수정</li>
+      <li><b>색인부 신설</b>: 맨 위 SOP 1~39 색인 — 통째로 안 열고 <b>필요한 SOP만 부분 Read</b> 가능. 새 SOP 추가 시 색인에도 1줄</li>
+    </ul>
+  </div>
+
+  <h2>2. 스테일 메모리 3건 — 알맹이 흡수 후 삭제</h2>
+  <div class="card">
+    <table>
+      <tr><th>삭제된 메모리</th><th>흡수된 알맹이</th><th>흡수처</th></tr>
+      <tr><td><code>june-inspection-docs-prep</code></td><td>"RTM은 검수 방패 — 비고란 근거 명기"</td><td>inspection-package-system</td></tr>
+      <tr><td><code>learning_session_20260625</code></td><td>메타프롬프트 4단계·역순 PRD·참고링크</td><td>ai-pm-execution-training</td></tr>
+      <tr><td><code>claude-md-slimming-20260701</code></td><td>슬림화 이력·"SOP는 참고자료에만" 불변규칙</td><td>claude-md-harness-vision</td></tr>
+    </table>
+    <ul><li>MEMORY.md에서 해당 3줄 + 빈 섹션 헤더 2개 제거</li></ul>
+  </div>
+
+  <h2>3. 주기 검증 체계 ("일정 주기로 알려줘" 반영)</h2>
+  <div class="card">
+    <ul>
+      <li><b>주기 = <code>선순환</code> 실행 시마다</b> — 로컬 파일 실측이 필요해 스케줄러 대신 회고 루틴에 탑재(자연 주기)</li>
+      <li>CLAUDE.md 선순환 명령에 <b>4단계 신설</b>: 실측 → 임계 초과 시에만 다이어트 제안</li>
+      <li><b>임계값(SOP-39)</b>: CLAUDE.md 250줄 / MEMORY.md 100줄 / SOP파일 120KB 또는 신규 SOP 5개 / 60일 무갱신+완료 프로젝트 메모리</li>
+      <li><b>오버다이어트 금지</b> 명문화: 온디맨드 자산은 크기를 이유로 안 줄임</li>
+    </ul>
+  </div>
+
+  <div class="next"><b>다음 점검</b>: 다음 <code>선순환</code> 때 자동 실측 — 임계 초과 항목이 있을 때만 보고합니다(전부 정상이면 "다이어트 불필요" 1줄).</div>
+</div>
+</section></div><div class="agg-part"><div class="agg-part-head"><span class="agg-num">4</span>MEMORY.md 섹션 통합 리포트 · 2026-08-10<a class="agg-top" href="#agg-top">▲ 목차</a></div><section id="part-4"><div class="page">
+<header>
+  <span class="kick">하네스 유지보수 · 상시 로드 인덱스</span>
+  <h1>MEMORY.md 섹션 통합 리포트</h1>
+  <p>2026-08-10 · 포인터·해설 전부 보존(내용 손실 0) + 고아 파일 복구</p>
+</header>
+<main>
+
+<section>
+  <h2>1. 결과 요약</h2>
+  <div class="kpi">
+    <div class="k"><div class="n">67줄</div><div class="l">총 줄 수</div><div class="b">92줄</div></div>
+    <div class="k"><div class="n">9개</div><div class="l">섹션</div><div class="b">20개</div></div>
+    <div class="k"><div class="n">48개</div><div class="l">포인터</div><div class="b">47개(+1 복구)</div></div>
+    <div class="k"><div class="n">0개</div><div class="l">고아·깨진 링크</div><div class="b">고아 1개</div></div>
+  </div>
+  <div class="box ok">임계 100줄 대비 <b>67줄</b>로 넉넉한 여유. 다음 여러 세션 동안 재다이어트 불필요.</div>
+</section>
+
+<section>
+  <h2>2. 섹션 재편 (20 → 9)</h2>
+  <div class="tw"><table>
+  <thead><tr><th style="width:32%">새 섹션</th><th>흡수한 기존 섹션</th></tr></thead>
+  <tbody>
+  <tr><th>정체성·업무방침</th><td>정체성 + 작업 방침 + 하네스 비전 + 리추얼</td></tr>
+  <tr><th>현안·기한 ⚡</th><td>현안·기한</td></tr>
+  <tr><th>가족·개인·차량</th><td>개인·차량 + 가족(따뜻한 말·열경기·사모님)</td></tr>
+  <tr><th>진로·작가·강사</th><td>작가 도전 + 진로·목표</td></tr>
+  <tr><th>사업·프로젝트</th><td>신규 사업 + 기반환경 진단 + 입찰 아카이브 + 코워크 이관(프로젝트)</td></tr>
+  <tr><th>검수·정기보고</th><td>검수 체계 + 정기 보고 + 주간회의록</td></tr>
+  <tr><th>자동화 도구·앱</th><td>자동화 도구 + 개인 앱 + 작가활동 도구</td></tr>
+  <tr><th>학습·역량·자격</th><td>외부 학습 + 도구·환경(학습) + 자격·KPI + 프롬프트 역량</td></tr>
+  <tr><th>개발·도구환경 규칙</th><td>개발 프로세스 + 자동화 규칙 + 치트시트 위젯</td></tr>
+  </tbody></table></div>
+</section>
+
+<section>
+  <h2>3. 감축 원리 (오버다이어트 금지 · SOP-39-D)</h2>
+  <ul>
+    <li>줄어든 25줄 = <b>전부 섹션 헤더(20→9)와 앞 빈 줄</b>. 포인터·해설은 한 글자도 삭제 안 함.</li>
+    <li>섹션 헤더의 날짜만 제거(개별 메모리 파일에 날짜 존재 → 중복).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>4. 부수 정정 (통합 중 발견)</h2>
+  <div class="box ok"><b>고아 파일 복구:</b> <code>spouse-warm-words.md</code>(부부 관계 다짐·ISTJ 와이프 공감 먼저)가 원래 색인에서 <b>누락</b>돼 있던 것을 발견 → 가족 섹션 편입. 검증: 48 포인터 ↔ 48 파일 1:1, 깨진 링크·고아 0.</div>
+</section>
+
+<section>
+  <h2>5. 🟡 다음 정리 후보 (권고 · 지금 미실행)</h2>
+  <div class="box warn"><b>내용 중복:</b> <code>warm-words-family-reminder</code> ↔ <code>spouse-warm-words</code> — 둘 다 "가족·부부에게 따뜻한 말" [user] 메모리로 주제가 겹침. 향후 <b>한 파일로 병합</b> 여지(승인 시 진행 — 파일 삭제는 확인 원칙). 병합 시 색인 1줄·파일 1개 추가 절감.</div>
+</section>
+
+</main>
+<footer>2026-08-10 · 내용 손실 0 · 92→67줄 · 상시 로드 인덱스 슬림화 · 하네스 다이어트 리포트와 한 세트</footer>
+</div></section></div><div class="agg-part"><div class="agg-part-head"><span class="agg-num">5</span>CLAUDE.md 다이어트 결과 20260815<a class="agg-top" href="#agg-top">▲ 목차</a></div><section id="part-5">
+<div class="wrap">
+
+<header>
+  <h1>CLAUDE.md 다이어트 결과</h1>
+  <p>2026-08-15 · 계기: 선순환 점검 249/250줄(99.6%) 임박 · 절차: SOP-58-F(백업→압축→실측 보고)</p>
+</header>
+
+<div class="card blue">
+  <p class="big">249줄 → 166줄 <small>-83줄(33% 감량) · 임계 250줄 대비 66% · 여유 84줄 확보</small></p>
+  <p style="margin:0">방법: 단축명령 14개 상세 블록(약 105줄) → <strong>한 줄 표 14행(약 27줄)</strong>. 상세 원본은 각 <code>~/.claude/commands/&lt;명령&gt;.md</code>가 담당(치트시트 위젯도 그쪽을 스캔 — 기능 손실 0). <strong>diff 전수 검증</strong>: 그 외 변경은 의도된 2건뿐(3권 설명 SOP-59 반영·말미 문구).</p>
+</div>
+
+<div class="card">
+  <h2>실측표</h2>
+  <table>
+    <tr><th>항목</th><th>Before</th><th>After</th><th>판정</th></tr>
+    <tr><td>CLAUDE.md</td><td>249줄 (99.6%)</td><td><strong>166줄 (66%)</strong></td><td>🟢</td></tr>
+    <tr><td>단축명령 섹션</td><td>~105줄 (블록 11개)</td><td>~27줄 (표 14행)</td><td>상세는 commands로</td></tr>
+    <tr><td>백업</td><td colspan="2"><code>~/.claude/CLAUDE.md.bak-20260815</code></td><td>복구 가능</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>함께 처리한 것</h2>
+  <ul>
+    <li><strong>선순환.md 현행화</strong> — 이관 검수 중 구식 규칙 발견·교정: "SOP를 CLAUDE.md에 반영"(구) → <strong>"3권 끝+1권 색인, 번호는 grep 실측"</strong>(현행) + 하네스 점검 4단계 추가. 잠복 버그를 다이어트가 잡아냄</li>
+    <li><strong>강사일지 표 등재</strong> — commands에만 있고 표에 누락됐던 것 1행 추가(14개 완비)</li>
+    <li><strong>새 안전핀 규칙</strong> — "명령 실행 시 반드시 해당 commands 파일을 열어 따를 것" 명문화</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>남긴 것 (매 세션 적용 원칙 — 다이어트 대상 아님)</h2>
+  <p style="margin:0">기본 행동 원칙 · 7단계 프로세스 · 단축명령 표 · 사용자 프로필 · 응답 스타일 · PM 비서 5단계 엔진 · 참고자료 색인표</p>
+</div>
+
+</div>
+</section></div>
+<div class="agg-foot">이 문서는 5편의 글을 하나로 묶은 통합본입니다 · 아이엠조차장</div>
+</body>
+</html>
