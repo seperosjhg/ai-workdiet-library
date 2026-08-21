@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>수집 워크플로 v2 · 발신자 명단</title><style>
+:root{--navy:#1b2a4a;--navy2:#3a4e78;--blue:#2e6be6;--bluebg:#e8f0ff;
+--orange:#e8763a;--orgbg:#fff0e7;--gray:#8c94a2;--lgray:#dee2e9;--bg:#f7f8fa;--red:#d04444}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#1f2937;
+font-family:"Malgun Gothic","맑은 고딕",-apple-system,Segoe UI,sans-serif;
+line-height:1.85;font-size:16.5px;-webkit-text-size-adjust:100%}
+.wrap{max-width:920px;margin:0 auto;padding:44px 22px 90px}
+.card{background:#fff;border:1px solid var(--lgray);border-radius:16px;padding:34px 38px;margin-bottom:22px}
+h1{font-size:29px;color:var(--navy);margin:0 0 8px;line-height:1.4;letter-spacing:-.4px}
+h2{font-size:23px;color:var(--navy);margin:44px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--navy);letter-spacing:-.3px}
+h3{font-size:20px;color:var(--navy);margin:34px 0 12px;padding-left:12px;border-left:5px solid var(--blue);letter-spacing:-.3px}
+h4{font-size:17.5px;color:var(--navy2);margin:26px 0 10px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:24px}
+li{margin:5px 0}
+hr{border:0;border-top:1px dashed var(--lgray);margin:30px 0}
+code{background:#eef1f6;border-radius:5px;padding:2px 6px;font-size:14px;
+font-family:Consolas,"D2Coding",monospace;color:#b03a5b}
+pre{background:#1b2233;color:#e6edf7;border-radius:11px;padding:17px 19px;overflow-x:auto;margin:0 0 17px}
+pre code{background:none;color:inherit;padding:0;font-size:13.6px;line-height:1.7}
+blockquote{margin:0 0 16px;padding:12px 18px;background:var(--bluebg);
+border-left:4px solid var(--blue);border-radius:0 8px 8px 0;color:var(--navy2);font-size:15.4px}
+table{border-collapse:collapse;width:100%;margin:0 0 18px;font-size:15px}
+th{background:var(--navy);color:#fff;padding:11px 12px;text-align:left;font-weight:700}
+td{border-bottom:1px solid var(--lgray);padding:10px 12px;vertical-align:top}
+tr:nth-child(even) td{background:#fafbfd}
+.tblwrap{overflow-x:auto;margin-bottom:18px}
+strong{color:var(--navy)}
+.meta{color:var(--gray);font-size:14.5px;margin-bottom:26px}
+.slot{margin:24px 0;border-radius:13px;overflow:hidden}
+.slot img{width:100%;display:block;border:1px solid var(--lgray);border-radius:13px}
+.slot .cap{font-size:13.6px;color:var(--gray);text-align:center;padding:9px 6px 0}
+.ph{border:2px dashed var(--gray);border-radius:13px;background:#fff;
+padding:34px 20px;text-align:center;color:var(--navy2)}
+.ph .tag{display:inline-block;background:var(--navy2);color:#fff;font-size:12.5px;
+border-radius:20px;padding:3px 13px;margin-bottom:10px;letter-spacing:.5px}
+.ph.err{border-color:var(--red);background:#fdeeee}
+.ph.err .tag{background:var(--red)}
+.ph .t{font-size:16px;font-weight:700}
+.ph .s{font-size:13.6px;color:var(--gray);margin-top:5px}
+.done{display:inline-block;background:var(--blue);color:#fff;font-size:12.5px;
+border-radius:20px;padding:3px 13px;margin-bottom:9px;letter-spacing:.5px}
+@media(max-width:640px){.wrap{padding:24px 12px 60px}.card{padding:22px 18px;border-radius:12px}
+h1{font-size:23px}h2{font-size:20px}h3{font-size:18px}body{font-size:16px}}
+</style></head><body><div class='wrap'><div class='card'><div class='meta'>2026-08-21 · Code 노드 1개만 교체 · 9가지 상황 실행 검증 완료</div><h1>📮 수집 워크플로 v2 · 지정한 곳에서 온 메일만 받기</h1>
+<blockquote>2026-08-21 · 대상: n8n 워크플로 <strong><code>작가메일-수집</code></strong> 의 <code>Code in JavaScript</code> 노드 하나<br>원본 백업: <code>_백업_수집워크플로_Code노드_20260821.js</code> (문제 생기면 그대로 되붙이면 원상복구)</blockquote>
+<hr>
+<h2>1. 결론 · 고칠 곳은 딱 한 군데입니다</h2>
+<p><strong>Code 노드의 코드만 통째로 갈아 끼우면 끝납니다.</strong> 노드를 추가하거나 선을 다시 잇지 않아도 됩니다.</p>
+<p>이유가 있습니다. n8n Code 노드에서 <strong><code>return null;</code>을 쓰면 그 메일은 조용히 버려지고 워크플로는 정상 종료</strong>합니다. 실제로 격리 환경에서 돌려 확인했습니다.</p>
+<div class='tblwrap'><table><thead><tr><th>시도</th><th>결과</th></tr></thead><tbody><tr><td><code>return [];</code></td><td>❌ 오류 (<code>every key named &#x27;json&#x27; must point to an object</code>)</td></tr><tr><td><strong><code>return null;</code></strong></td><td>✅ <strong>정상 종료 · 다음 노드로 아무것도 안 넘어감</strong></td></tr></tbody></table></div>
+<p>즉 <strong>명단에 없으면 파일 자체가 안 만들어집니다.</strong> 광고가 수신함에 쌓이는 일이 사라집니다.</p>
+<blockquote>기존 <code>If</code> 노드(facebookmail·github·googleplay 3건 차단)는 <strong>그대로 두셔도 됩니다.</strong> 새 코드가 막는 범위 안에 들어가서 부딪히지 않습니다. 나중에 정리하고 싶으시면 그때 지우면 됩니다.</blockquote>
+<hr>
+<h2>2. 설계 · 3단 판정</h2>
+<div class='tblwrap'><table><thead><tr><th>등급</th><th>판정</th><th>저장</th><th>현황판</th></tr></thead><tbody><tr><td>🔴 <strong>되돌이</strong></td><td>제목이 <code>[작가활동]</code>으로 시작</td><td>❌ 안 함</td><td>-</td></tr><tr><td>🟢 <strong>명단</strong></td><td>발신자가 <code>ALLOW</code>에 있음</td><td>✅ 함</td><td>✅ 뜸 (<code>needs_reply: true</code>)</td></tr><tr><td>⚪ <strong>모르는 곳</strong></td><td>그 외 전부</td><td>❌ 안 함 (기본값)</td><td>-</td></tr></tbody></table></div>
+<p><strong>🔴가 🟢보다 먼저입니다.</strong> 자기 알림 되돌이는 무조건 차단합니다.<br><strong>🟢가 이깁니다.</strong> 명단에 있으면 발신 주소가 <code>noreply</code>여도 받습니다. 매체 시스템 메일이 noreply로 오는 경우가 있어서, 등록한 곳은 무슨 일이 있어도 놓치지 않게 했습니다.</p>
+<h3>⚠️ 화이트리스트의 유일한 약점과, 그게 괜찮은 이유</h3>
+<p>명단에 없는 새 매체가 처음 연락하면 <strong>수신함에는 안 들어옵니다.</strong></p>
+<p>그래도 괜찮습니다. <strong>지메일은 그대로 살아 있기 때문입니다.</strong> 이 도구는 메일함을 대체하는 게 아니라 마감을 추적하는 현황판입니다. 새 제안은 평소처럼 지메일에서 보시고, 계약이 되면 명단에 한 줄 추가하면 그때부터 자동 추적됩니다.</p>
+<p>그래도 불안하시면 코드의 <code>KEEP_UNKNOWN</code>을 <code>true</code>로 바꾸세요. 모르는 곳 메일도 <code>새얼굴</code> 채널로 저장하되 현황판에는 안 띄웁니다.</p>
+<hr>
+<h2>3. 명단 · 실제 데이터로 뽑았습니다</h2>
+<p>수신함 62건의 발신 도메인을 전수 집계해서 만들었습니다. 추측이 아닙니다.</p>
+<div class='tblwrap'><table><thead><tr><th>도메인</th><th>채널</th><th>실측 건수</th></tr></thead><tbody><tr><td><code>wishket.com</code></td><td>요즘IT</td><td><strong>19건</strong></td></tr><tr><td><code>newneek.co</code></td><td>퍼블리</td><td><strong>2건</strong></td></tr><tr><td><code>publy.co</code></td><td>퍼블리</td><td>0건(예비)</td></tr><tr><td><code>outstanding.kr</code></td><td>아웃스탠딩</td><td>0건(예비)</td></tr><tr><td><code>kmong.com</code></td><td>크몽</td><td>1건</td></tr><tr><td><code>brunch.co.kr</code></td><td>브런치</td><td>0건(예비)</td></tr><tr><td><code>folin.co</code> · <code>ohmynews.com</code></td><td>폴인 · 오마이뉴스</td><td>0건(예비)</td></tr></tbody></table></div>
+<p><strong>넣지 않은 것 두 가지</strong></p>
+<ul><li><code>naver.com</code> → 프리미엄콘텐츠 알림도 오지만 <strong>네이버 광고가 훨씬 많습니다.</strong> 9월 휴재 중이기도 해서 뺐습니다. 필요하면 주석을 푸세요.</li><li><code>sit21c.com</code> → 회사 도메인으로 보입니다(2건). <strong>작가활동 현황판에 회사 메일이 섞이면 안 됩니다.</strong> 의도적으로 제외했습니다.</li></ul>
+<hr>
+<h2>4. 수정 절차 (약 5분)</h2>
+<ol><li>브라우저에서 <strong><code>http://localhost:5678</code></strong> 접속</li><li>워크플로 목록에서 <strong><code>작가메일-수집</code></strong> 열기</li><li><strong><code>Code in JavaScript</code></strong> 노드 <strong>더블클릭</strong></li><li>코드 영역 안을 클릭하고 <strong><code>Ctrl+A</code></strong> → <strong><code>Delete</code></strong> (기존 코드 전부 삭제)</li><li>아래 §5 코드를 <strong>통째로 복사해서 붙여넣기</strong></li><li>창을 닫고 우측 상단 <strong><code>Save</code></strong> (또는 <code>Ctrl+S</code>)</li><li>워크플로가 <strong>Active</strong> 상태인지 확인 (꺼져 있으면 켜기)</li></ol>
+<blockquote>💡 4번에서 기존 코드가 사라지는 게 불안하시면, 붙여넣기 전에 백업 파일(<code>_백업_수집워크플로_Code노드_20260821.js</code>)이 이미 저장돼 있다는 것만 기억하세요.</blockquote>
+<hr>
+<h2>5. ⌨️ 붙여넣을 코드 (전문)</h2>
+<pre><code>// ═══════════════════════════════════════════════════════════════
+//  ① 여기만 고치면 됩니다
+// ═══════════════════════════════════════════════════════════════
+
+// 🟢 받을 곳 : 여기 적힌 곳에서 온 메일만 수신함에 저장됩니다.
+//    새 매체와 계약하면 아래에 한 줄 추가하세요. (끝의 쉼표를 꼭 붙이세요)
+const ALLOW = [
+  { match: &quot;wishket.com&quot;,    channel: &quot;요즘IT&quot; },
+  { match: &quot;newneek.co&quot;,     channel: &quot;퍼블리&quot; },
+  { match: &quot;publy.co&quot;,       channel: &quot;퍼블리&quot; },
+  { match: &quot;outstanding.kr&quot;, channel: &quot;아웃스탠딩&quot; },
+  { match: &quot;kmong.com&quot;,      channel: &quot;크몽&quot; },
+  { match: &quot;brunch.co.kr&quot;,   channel: &quot;브런치&quot; },
+  { match: &quot;folin.co&quot;,       channel: &quot;폴인&quot; },
+  { match: &quot;ohmynews.com&quot;,   channel: &quot;오마이뉴스&quot; },
+  // { match: &quot;naver.com&quot;,   channel: &quot;프리미엄콘텐츠&quot; },   // 광고가 많아 기본 해제
+  // { match: &quot;새매체.com&quot;,  channel: &quot;새매체이름&quot; },        // ← 이렇게 추가
+];
+
+// 🔴 제목이 이걸로 시작하면 무조건 버립니다 (내가 나에게 보낸 알림 되돌이 차단)
+const BLOCK_SUBJECT = [&quot;[작가활동]&quot;];
+
+// 🟡 명단에 없는 곳에서 온 메일을 어떻게 할까요?
+//    false = 아예 저장하지 않음 (권장)
+//    true  = &quot;새얼굴&quot; 채널로 저장하되 현황판에는 안 띄움
+const KEEP_UNKNOWN = false;
+
+// 🟡 KEEP_UNKNOWN 이 true 일 때만 쓰입니다
+const BLOCK_SENDER = [&quot;noreply&quot;, &quot;no-reply&quot;, &quot;donotreply&quot;, &quot;newsletter&quot;,
+                      &quot;notification&quot;, &quot;mailer-daemon&quot;, &quot;postmaster&quot;, &quot;facebookmail&quot;];
+
+// ═══════════════════════════════════════════════════════════════
+//  ② 아래는 건드리지 않으셔도 됩니다
+// ═══════════════════════════════════════════════════════════════
+
+const m = $input.item.json;
+
+const fromRaw = (m.from?.value?.[0]?.address) || m.from || &quot;&quot;;
+const senderEmail = (String(fromRaw).match(/[\w.+-]+@[\w.-]+\.\w+/) || [String(fromRaw)])[0];
+const f = (String(fromRaw) + &quot; &quot; + senderEmail).toLowerCase();
+const subjectRaw = (m.subject || &quot;제목없음&quot;).trim();
+
+// ── 1) 자기 알림 되돌이 차단
+if (BLOCK_SUBJECT.some(s =&gt; subjectRaw.startsWith(s))) return null;
+
+// ── 2) 명단 대조
+const hit = ALLOW.find(a =&gt; f.includes(a.match.toLowerCase()));
+
+let channel, needsReply, status;
+if (hit) {
+  channel = hit.channel;
+  needsReply = &quot;true&quot;;
+  status = &quot;회신필요&quot;;
+} else {
+  if (!KEEP_UNKNOWN) return null;
+  if (BLOCK_SENDER.some(s =&gt; f.includes(s))) return null;
+  channel = &quot;새얼굴&quot;;
+  needsReply = &quot;false&quot;;
+  status = &quot;확인대기&quot;;
+}
+
+// ── 3) 날짜
+const today = new Date().toISOString().slice(0, 10);
+const due = new Date(Date.now() + 2 * 86400000).toISOString().slice(0, 10);
+
+// ── 4) 제목 정리
+const safe = subjectRaw.replace(/[\\/:*?&quot;&lt;&gt;|]/g, &quot; &quot;).replace(/\s+/g, &quot; &quot;).trim().slice(0, 50);
+
+// ── 5) 본문 정제
+function cleanBody(src) {
+  let t = String(src || &quot;&quot;);
+  t = t.replace(/&lt;(script|style)[\s\S]*?&lt;\/\1&gt;/gi, &quot;&quot;);
+  t = t.replace(/&lt;br\s*\/?&gt;/gi, &quot;\n&quot;).replace(/&lt;\/(p|div|tr|li|h\d)&gt;/gi, &quot;\n&quot;);
+  t = t.replace(/&lt;[^&gt;]+&gt;/g, &quot;&quot;);
+  t = t.replace(/&amp;nbsp;/gi, &quot; &quot;).replace(/&amp;lt;/gi, &quot;&lt;&quot;).replace(/&amp;gt;/gi, &quot;&gt;&quot;)
+       .replace(/&amp;amp;/gi, &quot;&amp;&quot;).replace(/&amp;quot;/gi, &#x27;&quot;&#x27;).replace(/&amp;#39;/gi, &quot;&#x27;&quot;);
+  const cutMarks = [
+    /^-+\s*Original Message\s*-+/im,
+    /^-+\s*원본 메일\s*-+/im,
+    /^\d{4}년 \d{1,2}월 \d{1,2}일.*작성/im,
+    /^On .+wrote:/im,
+    /상기 메일은 지정된 수신인/,
+    /본 메일은 발신전용/,
+    /무단으로 제3자에게 공개/,
+    /The above message is intend/i,
+    /This (e-?mail|message) (is|and any)/i,
+  ];
+  for (const re of cutMarks) {
+    const idx = t.search(re);
+    if (idx &gt; 0) t = t.slice(0, idx);
+  }
+  t = t.replace(/\r/g, &quot;&quot;).replace(/[ \t]+\n/g, &quot;\n&quot;).replace(/\n{3,}/g, &quot;\n\n&quot;).trim();
+  return t;
+}
+
+let body = cleanBody(m.textPlain || m.textHtml || &quot;&quot;);
+if (!body) body = &quot;(본문 없음)&quot;;
+body = body.slice(0, 500);
+
+const md = `---
+type: mail
+channel: ${channel}
+direction: IN
+subject: ${safe}
+sender: ${senderEmail}
+account: gmail
+received: ${today}
+due: ${due}
+needs_reply: ${needsReply}
+status: ${status}
+---
+
+# ${safe}
+
+${body}
+
+관련: [[_허브_마스터보드]]
+`;
+
+return { json: { fileName: `${today}_${channel}_${safe}.md`, md } };</code></pre>
+<blockquote><strong>Mode 확인</strong>: 이 노드의 실행 방식은 <strong><code>Run Once for Each Item</code></strong> 이어야 합니다. 기존 설정 그대로이니 건드리지 마세요. (여기를 반대로 두면 오류 없이 조용히 틀린 결과가 나옵니다)</blockquote>
+<hr>
+<h2>5-1. ✅ 붙여넣기 전에 검증했습니다</h2>
+<p>위 코드를 그대로 꺼내 <strong>Node로 문법 검사 + 9가지 상황 실행</strong>을 마쳤습니다. 프로덕션에 넣기 전에 확인한 결과입니다.</p>
+<div class='tblwrap'><table><thead><tr><th>들어온 메일</th><th>판정</th><th>채널</th></tr></thead><tbody><tr><td>요즘IT 편집자 (<code>editor@wishket.com</code>)</td><td>✅ 저장 · 회신필요</td><td>요즘IT</td></tr><tr><td>퍼블리 매니저 (<code>@newneek.co</code>)</td><td>✅ 저장 · 회신필요</td><td>퍼블리</td></tr><tr><td><strong>퍼블리 시스템 메일 (<code>noreply@newneek.co</code>)</strong></td><td>✅ <strong>저장 · 회신필요</strong></td><td>퍼블리</td></tr><tr><td>자기 알림 (<code>[작가활동] 회신 마감 임박 12건</code>)</td><td>🚫 버림</td><td>-</td></tr><tr><td>알리익스프레스 광고</td><td>🚫 버림</td><td>-</td></tr><tr><td>깃허브 알림</td><td>🚫 버림</td><td>-</td></tr><tr><td><strong>회사 도메인 (<code>@sit21c.com</code>)</strong></td><td>🚫 <strong>버림</strong></td><td>-</td></tr><tr><td>처음 보는 매체 (<code>editor@newmedia.co.kr</code>)</td><td>🚫 버림</td><td>-</td></tr><tr><td>크몽</td><td>✅ 저장 · 회신필요</td><td>크몽</td></tr></tbody></table></div>
+<p><strong>세 번째 줄이 중요합니다.</strong> 발신 주소가 <code>noreply</code>여도 <strong>명단에 있으면 받습니다.</strong> 매체 시스템 메일을 놓치지 않기 위한 설계이고, 실제로 그렇게 동작합니다.</p>
+<blockquote>⚠️ <code>KEEP_UNKNOWN</code>을 <code>true</code>로 바꿔서도 돌려봤습니다. 그 경우 <strong>알리익스프레스 광고가 <code>새얼굴</code>로 저장됩니다.</strong> 발신 주소에 <code>noreply</code> 같은 단어가 없는 광고는 걸러지지 않기 때문입니다. <strong><code>false</code> 권장</strong>입니다.</blockquote>
+<hr>
+<h2>6. 🆕 새 매체와 계약했을 때 (30초)</h2>
+<ol><li>n8n → <code>작가메일-수집</code> → <code>Code in JavaScript</code> 더블클릭</li><li>맨 위 <code>ALLOW</code> 목록에서 아무 줄 끝에 커서를 놓고 <strong>Enter</strong></li><li>한 줄 추가</li></ol>
+<pre><code>  { match: &quot;새매체도메인.com&quot;, channel: &quot;새매체이름&quot; },</code></pre>
+<ol><li><code>Save</code></li></ol>
+<p><strong>도메인은 어디서 확인하나요?</strong> 그 매체에서 온 메일을 지메일에서 열고, 보낸사람 주소의 <code>@</code> 뒤를 그대로 쓰시면 됩니다. <code>editor@abc.co.kr</code>이면 <code>abc.co.kr</code>입니다.</p>
+<blockquote>채널 이름은 현황판 표의 &quot;채널&quot; 칸에 그대로 표시되고, 파일명에도 들어갑니다. 짧게 지으세요.</blockquote>
+<hr>
+<h2>7. 잘 적용됐는지 확인하는 법</h2>
+<div class='tblwrap'><table><thead><tr><th>확인</th><th>방법</th><th>기대 결과</th></tr></thead><tbody><tr><td>① 코드가 살아 있나</td><td>저장 후 오류 배지가 안 뜨는지</td><td>빨간 표시 없음</td></tr><tr><td>② 명단 메일이 들어오나</td><td>요즘IT·퍼블리 메일이 오면 수신함 확인</td><td>md 파일 생성됨</td></tr><tr><td>③ 광고가 막히나</td><td>광고 메일이 와도 수신함에 안 생기는지</td><td>파일 없음</td></tr><tr><td>④ 되돌이가 막히나</td><td><strong>내일 아침 알림 메일이 온 뒤</strong> 수신함 확인</td><td><code>[작가활동]</code> 파일 안 생김</td></tr></tbody></table></div>
+<p><strong>④가 가장 중요합니다.</strong> 이게 확인되면 22건이 계속 늘어나던 문제가 끝난 겁니다.</p>
+<hr>
+<h2>8. 과거분은 어떻게 하나요</h2>
+<p>이 수정은 <strong>앞으로 들어올 메일</strong>에만 적용됩니다. 이미 쌓인 39건의 미분류 파일은 그대로 남아 있습니다.</p>
+<ul><li>현황판에는 이미 <code>channel != &quot;미분류&quot;</code> 필터가 걸려 있어서 <strong>안 보입니다</strong></li><li>파일이 거슬리시면 탐색기에서 <code>_수신함</code> 폴더를 열고 <code>미분류</code>가 들어간 파일을 직접 정리하시면 됩니다</li><li>일괄 정리를 원하시면 말씀 주세요. 파일을 지우지 않고 <code>needs_reply</code>만 <code>false</code>로 바꾸는 스크립트를 준비해 뒀습니다 (대상 23건 · 퍼블리·요즘IT 5건은 보존)</li></ul></div></div></body></html>
