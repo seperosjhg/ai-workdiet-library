@@ -56,7 +56,7 @@
   <h2>② 캐시삭제 — /compact 대응</h2>
   <p>🔴 <strong>개념 교정 내장</strong>: /compact는 캐시 삭제가 아니라 <strong>대화 컨텍스트 압축(요약)</strong>입니다. 실행할 때마다 첫 줄에 고지합니다.</p>
   <table>
-    <tr><th>하는 일</th><td>현재 세션의 <strong>인수인계 요약 md</strong> 생성 — 진행 상태·결정사항·미결·다음 액션·새 세션 첫 프롬프트 문안 → <code>_retrospective\인수인계_일시.md</code></td></tr>
+    <tr><th>하는 일</th><td>현재 세션의 <strong>인수인계 요약 md</strong> 생성 — 진행 상태·결정사항·미결·다음 액션·새 세션 첫 프롬프트 문안 → <code>_보관\_retrospective\인수인계_일시.md</code></td></tr>
     <tr><th>쓰는 때</th><td>세션이 무거워졌을 때 → <code>캐시삭제</code> → <strong>새 대화를 열고 md 경로만 던지면 이어짐</strong></td></tr>
     <tr><th>안전</th><td>파일 삭제 없음 · 요약은 사실만</td></tr>
     <tr><th>참고</th><td>터미널 CLI에선 내장 <code>/compact</code> 직접 입력 가능 · 데스크톱 대화는 자동 압축</td></tr>
