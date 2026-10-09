@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>크리에이터 경제는 얼마나 클까 — 보고서마다 숫자가 몇 배씩 다른 이유</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.meta .k{font-weight:600;color:var(--fg)}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.86rem;line-height:1.55}
+th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;word-break:keep-all;overflow-wrap:normal}
+th{background:var(--card);white-space:nowrap}tbody tr:last-child td{border-bottom:0}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>크리에이터 경제는 얼마나 클까 — 보고서마다 숫자가 몇 배씩 다른 이유</h1>
+<div class="meta"><span class="k">트랙</span> money · <span class="k">날짜</span> 2026-10-10 · <span class="k">주제ID</span> M002 · <span class="k">모델</span> claude-opus-5-5<br>학습노트 · 클라우드학습 · 초안<br><span class="tag">money</span><span class="tag">크리에이터경제</span><span class="tag">시장규모</span><span class="tag">골드만삭스</span><span class="tag">어도비</span><span class="tag">국세청</span><span class="tag">실태조사</span><span class="tag">통계읽기</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>'전 세계 크리에이터 수'는 5,000만 명(골드만삭스)부터 3억 명대(어도비)까지 6배 넘게 차이 난다. 차이는 대부분 <strong>누구를 크리에이터로 세느냐(정의)</strong>와 <strong>무엇을 더했느냐(범위)</strong>에서 나온다.</li>
+<li><strong>시장 규모는 창작자 소득이 아니다.</strong> 연 10만 달러 이상 버는 크리에이터는 약 4%이고[1], 국내도 상위 1% 평균 약 13억 원, 하위 50% 평균 약 2,500만 원이다[8].</li>
+<li>숫자를 인용할 땐 <strong>발행 주체·정의·방법·기준연도</strong>를 함께 적고, 부수입 계획은 평균이 아니라 하위 50%를 기준으로 세운다.</li>
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<div class="tbl"><table><thead><tr><th>보고서(발행 주체)</th><th>기준</th><th>무엇을 셌나</th><th>핵심 숫자</th><th>확인</th></tr></thead><tbody>
+<tr><td>골드만삭스(투자은행)</td><td>2023</td><td>연 10만 달러 이상 = 프로(약 4%)</td><td>5,000만 명, 시장 2,500억→4,800억 달러(2027)</td><td>[1][2]</td></tr>
+<tr><td>링크트리(도구 기업)</td><td>2022</td><td>청중을 모아 수익화하는 사람[불확실]</td><td>약 2억 명[불확실], 전업 46%가 연 1,000달러 미만</td><td>[4]</td></tr>
+<tr><td>시그널파이어(벤처캐피털)</td><td>2020</td><td>플랫폼별 상향식 집계</td><td>약 5,000만(전업 약 200만)[불확실]</td><td>검색 요약</td></tr>
+<tr><td>어도비(SW 기업)</td><td>2022</td><td>월 1회 이상 창작·게시(설문)</td><td>3억 300만(보도에 따라 3억 3천만)</td><td>[4][5]</td></tr>
+<tr><td>Market.us(시장조사사)</td><td>2024</td><td>미확인</td><td>1,430억→1조 4,870억 달러(2034)</td><td>[3]</td></tr>
+<tr><td>국세청(국회의원 제출)</td><td>2024 귀속</td><td>1인 미디어 창작 주업종 신고 사업자</td><td>3만 4,806명, 총수입 2조 4,714억 원</td><td>[8][9]</td></tr>
+<tr><td>방미통위·한국전파진흥협회</td><td>2024</td><td>개인이 아닌 <strong>사업체</strong>(표본조사)</td><td>1만 1,089개, 매출 5조 5,503억 원</td><td>[12]</td></tr>
+</tbody></table></div>
+<p><strong>1) 정의가 숫자를 만든다</strong></p>
+<p>좁게 세면 5,000만, 월 1회 올리는 사람까지 세면 3억이 넘는다. 어도비 기준 한국에서만 2년 새 1,100만 명(국민 5명 중 1명꼴, 필자 계산)이 늘었다[5]. 직업이 아니라 활동의 숫자다. 골드만은 이후 2025년 6,700만, 2030년 1억 명으로 수치를 갱신했다[2].</p>
+<p><strong>2) '시장 규모'는 무엇을 더한 값인가</strong></p>
+<p>골드만의 2,500억 달러는 총유효시장(TAM) 추정이고(원문[14] 용어, 검색 요약 확인) 성장률이 디지털 광고 시장 전망과 거의 같다[1]. 성장 동력도 크리에이터 마케팅과 플랫폼 지급액이다[3]. 지출 쪽에서 본 잠재 시장이지 창작자 소득의 합이 아니다. Market.us는 이듬해를 1,430억 달러로 본다[3]. 범위가 다르다.</p>
+<p><strong>3) 발행 주체의 이해관계</strong></p>
+<p>골드만은 성장의 수혜자를 사용자·자본·추천 AI를 갖춘 대형 플랫폼으로 봤다[15]. 링크트리·어도비는 창작자에게 도구를 파는 회사라 정의를 넓힐수록 잠재 고객이 커 보인다(필자 해석). 국세청 수치는 과세 사각지대를 지적하는 의원실을 거쳐 나왔다[10][11]. 거짓이란 뜻이 아니다. <strong>왜 셌는지</strong>가 무엇을 셀지 정한다.</p>
+<p><strong>4) 평균이 아니라 꼬리를 보라</strong></p>
+<p>패트리온 창작자 10만 4,719명을 분석한 논문은 수입 분포의 파레토 지수가 α≈2로, 노동소득보다 <strong>자본소득처럼 집중</strong>됐다고 봤다[6]. 추천 알고리즘이 강한 유튜브(1.8)·인스타그램(1.84)이 더 불평등했고, 상위로 쏠린 몫은 중간층에서 나왔다. 단, 패트리온은 전체 수입의 일부이고 약 1/3은 결측을 추정해 채웠다[6].</p>
+<p><strong>5) 분모는 아무도 모른다</strong></p>
+<p>플랫폼은 전체 창작자 명단을 공개하지 않는다. 인터넷 아카이브로 복원한 유튜브 채널 ID가 1억 600만 개를 넘어도 전체 영상의 '최소 30~36%'만 확인된다[7]. 모든 '전 세계 크리에이터 수'는 추정치다.</p>
+<p><strong>6) 같은 국내 통계도 범위가 바뀌면 딴 숫자</strong></p>
+<p>2019년 1인 미디어 창작자 신고 인원은 자료에 따라 1,327명[10], 약 2,700명(상위 1%가 27명)[11], 4,875명[4]이다. 2021년 귀속분은 약 3만 4천 명·하위 50% 평균 40만 원인데[11], 주업종 신고자만 센 최근 자료는 같은 해를 1만 명대로 본다[9]. 집계 범위 차이로 보인다[불확실]. 금액은 경비 차감 전 <strong>수입금액</strong>이라 '소득'과 다르다[9]. 사업체 실태조사는 2023년 표본을 500→1,000개로 늘렸고[13], 2024년엔 분류를 바꿔 광고·마케팅·커머스 사업체가 197.7% 늘고 전체는 17.9% 줄었다[12].</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고 — '숫자 4칸 각주'</strong>: 외부 수치를 쓸 때 발행 주체·정의·방법(설문/세무/추정)·기준연도를 각주 한 줄로 단다. 공공 IT 사업의 '사용자 수'(가입자·활성·동시접속)도 같은 원리다.</li>
+<li><strong>부수입 계획 — 평균 말고 하위 50%로</strong>: 평균 7,100만 원이 아니라 하위 50% 평균 2,463만 원[8](그것도 주업종 신고자 기준)을 낙관적 상한으로 보고, 첫해 목표는 '월 30만 원×12개월'처럼 잡는다. 사업체 콘텐츠 중 자기계발·교육형은 9.2%로 정보 전달형(39.5%)보다 공급이 적다[12]. 공공 IT 실무 교육의 자리다.</li>
+<li><strong>후배 교육 → 강의 샘플</strong>: 「보고서 숫자 해부하기」 30분 세션을 연다. 이 노트의 표에 사회복지학의 실태조사 방법론(모집단·표본)을 곁들이면 전자책 한 챕터·강의 맛보기 영상이 된다.</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p><strong>10분 '숫자 해부 카드'</strong>: 최근 기사의 '시장 규모' 숫자 1개를 골라 ① 누가 냈나 ② 무엇을 셌나 ③ 어떻게 셌나 ④ 언제 기준인가 ⑤ 누구에게 유리한가, 다섯 칸을 채운다. 빈칸 1개당 신뢰도 −1점. 먼저 골드만 4,800억 달러로 해 본다.</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> 어도비(3억 명대)와 골드만(5,000만 명)의 차이를 가장 크게 만든 요인은?</p>
+<p>정답: 크리에이터의 <strong>정의</strong>. 해설: 어도비는 월 1회 이상 게시하는 사람까지 셌다[5].</p>
+<p><strong>Q2.</strong> "창작자 평균 수입이 2021년 2,500만 원[11]에서 2024년 7,100만 원[8]으로 3년 새 3배"라고 보고해도 될까?</p>
+<p>정답: 안 된다. 해설: 집계 범위가 다른 두 자료다. 같은 시리즈 안에서는 2020년 5,651만 원 → 2024년 약 7,100만 원(+25.6%)이다[8].</p>
+<p><strong>Q3.</strong> 2024년 기준 실태조사에서 사업체가 17.9% 줄었다. '산업 위축'이라 단정하기 전에 확인할 것은?</p>
+<p>정답: <strong>분류 체계 등 조사 설계 변경</strong>. 해설: 같은 조사에서 광고·마케팅·커머스 사업체는 197.7% 늘었고 매출은 4.4% 증가했다[12].</p>
+<h2>⑥ 더 공부할 거리</h2>
+<ul>
+<li>크리에이터 미디어 산업 실태조사 원문의 '조사 방법' 장: 모집단·분류가 해마다 어떻게 바뀌었는지 확인.</li>
+<li>셔윈 로젠(1981) '슈퍼스타의 경제학': 왜 소수가 시장을 독식하는지, [6] 논문이 기대는 이론.</li>
+</ul>
+<h2>⑦ 출처</h2>
+<ol>
+<li>✔ 주간경향 「크리에이터와 디지털 플랫폼」(2024-01-30) — <a href="https://weekly.khan.co.kr/article/202401300530021">https://weekly.khan.co.kr/article/202401300530021</a></li>
+<li>✔ 이코노미조선 「유튜브 20년이 만든 크리에이터 이코노미」(2025-06-27) — <a href="https://v.daum.net/v/20250627133640764">https://v.daum.net/v/20250627133640764</a></li>
+<li>✔ 이데일리 「2034년이면 2천조 시장」(2025-06-11) — <a href="https://www.edaily.co.kr/News/Read?newsId=01653126642200736&amp;mediaCodeNo=257">https://www.edaily.co.kr/News/Read?newsId=01653126642200736&amp;mediaCodeNo=257</a></li>
+<li>✔ 조선일보 「극과 극 132조원 시장」(2023-01-05) — <a href="https://v.daum.net/v/20230105220013736">https://v.daum.net/v/20230105220013736</a></li>
+<li>✔ 연합뉴스 「어도비 "2년간 국내 크리에이터 1천100만명↑"」(2022-08-26, 다음 게재) — <a href="https://v.daum.net/v/20220826112620767">https://v.daum.net/v/20220826112620767</a></li>
+<li>✔ Strauss 외 "Rich-Get-Richer?"(arXiv, 2025) — <a href="https://arxiv.org/abs/2509.26523">https://arxiv.org/abs/2509.26523</a></li>
+<li>✔ Eggleston 외 "TubeCensus"(arXiv, 2026) — <a href="https://arxiv.org/abs/2605.06999">https://arxiv.org/abs/2605.06999</a></li>
+<li>✔ 경향신문 「유튜버 1년 평균 수입 7000만원」(2026-02-16) — <a href="https://www.khan.co.kr/article/202602162019001/">https://www.khan.co.kr/article/202602162019001/</a></li>
+<li>✔ 한국경제 「"유튜브로 억대 번다" 현실로」(2026-02-16) — <a href="https://www.hankyung.com/article/2026021674607">https://www.hankyung.com/article/2026021674607</a></li>
+<li>✔ 한국경제 「'억대 수입' 유튜버, 15배 급증」(2025-09-04) — <a href="https://www.hankyung.com/article/2025090435351">https://www.hankyung.com/article/2025090435351</a></li>
+<li>✔ YTN 「'상위 1%' 유튜버 7억 원 벌 때」(2023-05-08) — <a href="https://www.ytn.co.kr/_ln/0103_202305080947101570">https://www.ytn.co.kr/_ln/0103_202305080947101570</a></li>
+<li>✔ 경향신문 「크리에이터 미디어 산업 연매출 5.5조원」(2025-11-28) — <a href="https://www.khan.co.kr/article/202511281104011">https://www.khan.co.kr/article/202511281104011</a></li>
+<li>✔ 경향신문 「디지털 크리에이터 산업 매출 5조원」(2024-12-26) — <a href="https://www.khan.co.kr/article/202412261430001">https://www.khan.co.kr/article/202412261430001</a></li>
+<li>Goldman Sachs Research 크리에이터 경제 전망(2023) — <a href="https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027">https://www.goldmansachs.com/insights/articles/the-creator-economy-could-approach-half-a-trillion-dollars-by-2027</a> (접속 불가, [1]~[3]으로 확인)</li>
+<li>✔ Wikipedia "Creator economy" — <a href="https://en.wikipedia.org/wiki/Creator_economy">https://en.wikipedia.org/wiki/Creator_economy</a></li>
+</ol>
+</main></body></html>
