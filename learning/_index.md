@@ -27,3 +27,4 @@
 - 2026-10-10 [speech] 댄 핑크 「동기의 수수께끼」 — 배심원 호칭·증거 배열·최종 변론의 법정 구조는 빌리고, 촛불 실험 '압승'·고액 보상 실험 같은 과장된 인용은 메타분석·재검증으로 걷어낸다 (learning/speech/20261010-0812_dan-pink-puzzle-of-motivation.md) #S009
 - 2026-10-10 [speech] 치마만다 응고지 아디치에 「단일한 이야기의 위험」 — 일화마다 한 문장 이름표를 달고 피해·가해 자리를 번갈아 서며 정의는 한가운데 두되, 한 사례가 전부가 되지 않게 숫자와 짝짓는다 (learning/speech/20261010-0808_adichie-danger-of-single-story.md) #S010
 - 2026-10-10 [money] 유료 뉴스레터 전환율의 현실 — 서브스택은 5~10%라 하지만 독립 집계 평균 약 3%, 비하이브 중앙값 0.62%이니 1% 안팎으로 계획하고 출시 주간·가격 3단으로 끌어올린다 (learning/money/20261010-0907_paid-newsletter-conversion-reality.md)
+- 2026-10-10 [psych] 실행 의도(if-then 계획) — 날짜만이 아니라 시각·신호까지 정해야 효과가 나고(백신 +4.2%p, 투표 +4.1%p), 효과는 d=0.65에서 642건 메타분석 d=.27~.66으로 낮춰 잡되 WOOP로 장애물부터 계획한다 (learning/psych/20261010-0906_implementation-intentions-if-then.md)
