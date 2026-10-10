@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>공개적으로 일하기(Build in Public) — 신뢰가 쌓이는 방식과 치르는 값</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>공개적으로 일하기(Build in Public) — 신뢰가 쌓이는 방식과 치르는 값</h1>
+<div class="meta"><span class="kv"><b>트랙</b> money</span><span class="kv"><b>날짜</b> 2026-10-10</span><span class="kv"><b>주제ID</b> M006</span><span class="kv"><b>모델</b> claude-opus-5-5</span><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">money</span><span class="tag">빌드인퍼블릭</span><span class="tag">공개작업</span><span class="tag">투명성</span><span class="tag">실패공개</span><span class="tag">자기홍보</span><span class="tag">겸직</span><span class="tag">외부강의신고</span><span class="tag">비밀유지</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol><li>공개 작업의 신뢰는 성과 숫자보다 <strong>과정·판단 근거·실패를 꾸준히 보여 줄 때</strong> 쌓인다. Buffer는 급여 공개 직후 한 달 지원자가 2배 넘게 늘었고[1], 실패를 함께 밝힌 성공자는 악성 질투를 덜 샀다[2].</li><li>값도 치른다. 공개한 숫자는 나쁜 소식까지 드러내고[1], 자랑하는 쪽은 듣는 쪽의 짜증을 과소평가하며[3], AI로 베끼기 쉬워졌다는 경고도 있다[4, 2차 확인].</li><li>공공 IT 사업관리자의 원칙은 <strong>'일하는 방식은 공개, 사업은 비공개'</strong>다. 기관·사업·시스템 정보는 빼고, 돈이 생기면 겸직 허가·외부강의 신고부터 확인한다[5][6][7].</li></ol>
+<h2>② 핵심 개념 7가지</h2>
+<p><strong>1) 뿌리 — 작품이 아니라 과정을 보여 주기</strong></p>
+<p>오스틴 클레온의 『Show Your Work!』(2014)는 과정 보여 주기, 매일 작게 공유하기, 인간 스팸 되지 않기 등 10장이다[8, 2차 확인]. 그는 글 한 편을 '내 사람을 찾는 검색어'에 빗대고, 약 30만 명이 읽는 뉴스레터를 책·강연·유료 구독으로 꾸린다[9][10].</p>
+<p><strong>2) 사례 ① Buffer — 급여를 통째로 공개</strong></p>
+<p>Buffer는 2013년 급여 공식과 당시 직원 13명의 급여를 공개했다[11]. 2020년엔 직원 86명의 이름·직무·도시·급여가 공개 표에 있었다. 공개 직후 한 달 지원자는 직전 30일 1,263명에서 2,886명으로 늘었고, 표를 근거로 인상을 요청한 직원도 있었다[1].</p>
+<p><strong>3) 사례 ② 기록이 곧 상품 — 아르비드 칸</strong></p>
+<p>칸은 FeedbackPanda를 2년이 안 돼 월 반복매출 5만 5천 달러로 키워 매각했고, 거의 모든 과정을 기록해 책으로 냈다[12]. 팔로워 11만 명 이상을 모은 뒤 공개 작업 노하우를 강좌로 판다[13]. 기록 → 청중 → 교육 상품 흐름이다(필자 해석).</p>
+<p><strong>4) 실패의 공개 — 위험이자 자산</strong></p>
+<p>Buffer의 성별 임금 격차는 2015년 3.45%에서 2020년 1월 12%로 3배 넘게 벌어졌다. 초기에 고임금 기술직을 남성 위주로 뽑은 탓이었다[1]. 한번 공개하면 나쁠 때 멈추기 어렵다(필자 해석). 반면 브룩스 등(2019)의 실험 4건(창업 경연 현장실험 포함)에서는 <strong>도중의 실패를 함께 말하면</strong> 악성 질투가 줄고 오만보다 '진정한 자부심'으로 읽혔다. 다만 사람들은 실패 공개를 꺼렸고 현장 결과는 '시사적' 수준이다[2].</p>
+<p><strong>5) 수치 과시 피로와 비교의 역효과</strong></p>
+<p>스코펠리티 등(2015)의 실험 3건에서 자기 홍보자는 상대의 기쁨은 과대평가, 짜증은 과소평가했고 과한 홍보는 호감을 깎았다[3]. 대규모 재현 연구는 못 찾았다. 아시아 은행 직원 2,060명 연구에선 상사 급여가 높다는 걸 알면 더 일했지만, 동료 급여가 높다는 걸 알면 성과·근무시간이 줄었다[1]. 매출·구독자 자랑은 동료에겐 비교로 읽힌다(필자 해석).</p>
+<p><strong>6) 모방과 생존자 편향</strong></p>
+<p>칸은 2026년 팟캐스트에서 AI 코딩 도구면 공개된 구조·매출·기능을 며칠 만에 베낀다며 '따라 보기 재미있나, 베끼기 쉬운가'로 거르라고 했다[4, 2차 확인]. 공개 대시보드는 잘될 때 남고 안될 때 사라지니, 보이는 사례는 생존자다(「오디언스 퍼스트 vs 프로덕트 퍼스트」 노트 참고).</p>
+<p><strong>7) 본업 겸직·비밀유지 — 규정이 먼저</strong></p>
+<p>공무원 개인방송도 품위유지·비밀누설 금지 의무를 지켜야 하고 광고·후원 수익은 불허된다. 유튜브 수익 요건(구독자 1,000명·연 재생 4,000시간)을 채운 뒤 계속하려면 1년 단위 겸직 허가를 받는다(표준지침안)[5]. 공직자등이 사례금을 받는 외부강의·기고는 마친 날부터 10일 안에 신고하고, 공무원·공직유관단체 임직원 상한은 시간당 40만 원(1회 60만 원)이다[6]. [불확실: 둘 다 2020년 발표 기준] 민간 회사는 법에 겸업 규정이 없어도 취업규칙으로 제한할 수 있다[7].</p>
+<p><strong>공개 경계표 (필자 정리)</strong> — 기술 정보는 계약서 보안 조항도 확인한다.</p>
+<div class="tbl"><table><thead><tr><th scope="col">구분</th><th scope="col">공개 OK</th><th scope="col">조건부(각색·승인 후)</th><th scope="col">공개 금지</th></tr></thead><tbody><tr><th scope="row">일하는 법</th><td>일정·위험관리 기법</td><td>끝난 사업 사례(각색)</td><td>진행 중 사업의 이슈·감사</td></tr><tr><th scope="row">숫자</th><td>내 부업 지표 추세</td><td>사업 규모 범주('중형')</td><td>예산·계약금액·평가 점수</td></tr><tr><th scope="row">기술</th><td>공개 표준·일반 원리</td><td>새로 그린 개념도</td><td>실제 구성도·IP·설정·취약점</td></tr><tr><th scope="row">사람</th><td>내 실패·배운 점</td><td>동료 이야기(동의·익명)</td><td>기관·고객·업체 실명</td></tr><tr><th scope="row">돈</th><td>강의·전자책 계획</td><td>사례금 강의·기고(신고 후)</td><td>직무 관련 업체 광고·후원</td></tr></tbody></table></div>
+<h2>③ 조차장 적용 3가지</h2>
+<p>조차장의 공개 자산은 사업이 아니라 15년간의 <strong>판단 방식</strong>이라 쉽게 복제되지 않는다(필자 해석).</p>
+<ol><li><strong>강사·전자책·기고 — 12주 '방법론 공개 일지'</strong>: 매주 사업관리 기법 하나를 '상황(각색)–판단–결과–다시 한다면' 4줄로 올린다. 지표는 구독자 수 대신 '받은 질문 수'만 적는다. 12주 뒤 질문이 몰린 주제 3개로 전자책 목차를 짠다. 첫 유료 강의·기고 전 신고·허가 대상인지 인사 부서에 서면으로 묻는다.</li><li><strong>사업관리 보고·회의 발표 — '막힌 지점 1개' 슬라이드</strong>: 성과 보고에 막혔던 지점과 대책 1장을 붙인다. 실패를 곁들이면 자신감으로 읽힌다[2]. 낮고 굵은 목소리로 '잘 안 된 것부터 말씀드리겠습니다'로 연다.</li><li><strong>사내 교육·후배 멘토링 — '공개 신호등' 15분</strong>: 경계표 한 장으로 후배들과 SNS·블로그 글 3개를 함께 분류한다. 사회복지 실천의 비밀보장처럼 '알아볼 수 있으면 공개 금지'를 기준으로 삼는다(필자 해석).</li></ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p><strong>신호등 분류 10분</strong>: 지난주 업무에서 보여 주고 싶은 장면 5개를 적는다(3분). 경계표로 초록·노랑·빨강을 표시한다(3분). 초록 하나를 '상황–판단–결과–배운 점' 4문장으로 쓴다(4분). 빨강이 섞인 문장은 지우고 게시는 내일 다시 읽고 한다.</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> Buffer 급여 공개가 보여 준 '양면'은?</p>
+<p>정답: 지원자 2배 이상(신뢰)과 성별 임금 격차 확대의 노출(대가). 해설: 투명성은 문제를 드러낼 뿐이니 대책을 함께 보여 줘야 신뢰가 된다.</p>
+<p><strong>Q2.</strong> 브룩스 등(2019)에서 성공담에 실패를 덧붙이면 관찰자 반응은?</p>
+<p>정답: 악성 질투가 줄고 오만보다 진정한 자부심으로 읽힌다. 해설: 단 현장실험 근거는 '시사적' 수준이다.</p>
+<p><strong>Q3.</strong> 공직유관단체 직원이 직무 관련 세미나에서 유료 강의를 했다. 할 일은?</p>
+<p>정답: 마친 날부터 10일 안에 소속기관장에게 신고하고 상한(시간당 40만 원, 1회 60만 원)을 지킨다. 해설: 기고도 '외부강의등'에 든다(2020년 기준).</p>
+<h2>⑥ 더 공부할 거리</h2>
+<ul><li>오스틴 클레온, 『Show Your Work!』(2014) — 과시 피로·비판 대응을 다룬 7·8장.</li><li>Cullen·Perez-Truglia의 급여 비교 연구 원문 — 상사와 동료 급여 정보가 반대로 작동한 이유 [불확실: 원문 미열람, 가디언 기사로만 확인].</li></ul>
+<h2>⑦ 출처</h2>
+<ol><li>✔ Stuber, Buffer 급여 공개 기사 (Guardian, 2020-02-05) — <a href="https://www.theguardian.com/us-news/2020/feb/05/buffer-company-published-every-employee-salary-online-pay-more-equal-gender-gap">https://www.theguardian.com/us-news/2020/feb/05/buffer-company-published-every-employee-salary-online-pay-more-equal-gender-gap</a></li><li>✔ Brooks 외, "Mitigating malicious envy" (2019, 초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/30829524/">https://pubmed.ncbi.nlm.nih.gov/30829524/</a></li><li>✔ Scopelliti 외, 자기 홍보 반응 예측 오류 연구 (2015, 초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/25953948/">https://pubmed.ncbi.nlm.nih.gov/25953948/</a></li><li>Kahl, 팟캐스트 439화 (2026-04) (검색 요약으로 확인) — <a href="https://www.castfox.net/podcast/the-bootstrapped-founder-1212107/episode/439-the-increasing-risk-of-building-in-public-212319">https://www.castfox.net/podcast/the-bootstrapped-founder-1212107/episode/439-the-increasing-risk-of-building-in-public-212319</a></li><li>✔ 인사혁신처, 개인방송 공무원 겸직허가 (정책브리핑, 2020-01-02) — <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148868001">https://www.korea.kr/news/policyNewsView.do?newsId=148868001</a></li><li>✔ 국민권익위원회, 외부강의 사례금 신고 개정 (정책브리핑, 2020-05) — <a href="https://m.korea.kr/briefing/pressReleaseView.do?newsId=156391298">https://m.korea.kr/briefing/pressReleaseView.do?newsId=156391298</a></li><li>✔ 고용노동부, 회사원 부업 유튜버 (정책브리핑, 2022-11-14) — <a href="https://www.korea.kr/multi/visualNewsView.do?newsId=148908192">https://www.korea.kr/multi/visualNewsView.do?newsId=148908192</a></li><li>『Show Your Work!』 서평·목차 (검색 요약으로 확인) — <a href="https://www.publishersweekly.com/9780761178972">https://www.publishersweekly.com/9780761178972</a></li><li>✔ Kleon, "How to find your people" (2023-02-24) — <a href="https://austinkleon.substack.com/p/how-to-find-your-people">https://austinkleon.substack.com/p/how-to-find-your-people</a></li><li>✔ Wikipedia, "Austin Kleon" — <a href="https://en.wikipedia.org/wiki/Austin_Kleon">https://en.wikipedia.org/wiki/Austin_Kleon</a></li><li>✔ Wikipedia, "Buffer (application)" — <a href="https://en.wikipedia.org/wiki/Buffer_(application)">https://en.wikipedia.org/wiki/Buffer_(application)</a></li><li>✔ Kahl, 『Zero to Sold』 소개 — <a href="https://bootstrappedfounder.gumroad.com/l/zerotosold">https://bootstrappedfounder.gumroad.com/l/zerotosold</a></li><li>✔ Kahl, "Find your Following" 소개 — <a href="https://bootstrappedfounder.gumroad.com/l/findyourfollowing">https://bootstrappedfounder.gumroad.com/l/findyourfollowing</a></li></ol>
+</main></body></html>
