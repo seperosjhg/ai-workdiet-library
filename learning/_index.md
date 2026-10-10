@@ -28,3 +28,4 @@
 - 2026-10-10 [speech] 치마만다 응고지 아디치에 「단일한 이야기의 위험」 — 일화마다 한 문장 이름표를 달고 피해·가해 자리를 번갈아 서며 정의는 한가운데 두되, 한 사례가 전부가 되지 않게 숫자와 짝짓는다 (learning/speech/20261010-0808_adichie-danger-of-single-story.md) #S010
 - 2026-10-10 [money] 유료 뉴스레터 전환율의 현실 — 서브스택은 5~10%라 하지만 독립 집계 평균 약 3%, 비하이브 중앙값 0.62%이니 1% 안팎으로 계획하고 출시 주간·가격 3단으로 끌어올린다 (learning/money/20261010-0907_paid-newsletter-conversion-reality.md)
 - 2026-10-10 [psych] 실행 의도(if-then 계획) — 날짜만이 아니라 시각·신호까지 정해야 효과가 나고(백신 +4.2%p, 투표 +4.1%p), 효과는 d=0.65에서 642건 메타분석 d=.27~.66으로 낮춰 잡되 WOOP로 장애물부터 계획한다 (learning/psych/20261010-0906_implementation-intentions-if-then.md)
+- 2026-10-10 [money] 부업은 본업을 갉아먹는가 — 부업의 주도감은 긍정 정서를 거쳐 본업 성과를 높이지만(AMJ 337명·80쌍 10일), 돈이 급하거나 회복 시간이 없으면 피로가 앞서니 전문성을 넓히는 부업과 경계 설계로 간다 (learning/money/20261010-1208_side-hustle-spillover-main-job.md)
