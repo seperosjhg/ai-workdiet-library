@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>인지적 오프로딩과 생성형 AI 학습 — AI는 연습 점수를 올려도 혼자 푸는 실력은 깎을 수 있다</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>인지적 오프로딩과 생성형 AI 학습 — AI는 연습 점수를 올려도 혼자 푸는 실력은 깎을 수 있다</h1>
+<div class="meta"><strong>트랙: psych · 날짜: 2026-10-11</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">인지적오프로딩</span><span class="tag">생성형AI</span><span class="tag">학습과학</span><span class="tag">메타인지</span><span class="tag">가드레일</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>튀르키예 고교생 약 1,000명 현장실험에서 GPT-4를 마음대로 쓴 반은 연습 점수가 <strong>48%</strong> 올랐다. 그러나 AI를 치운 시험에서는 통제반보다 <strong>약 17%</strong> 낮았다(Bastani 등 2025, PNAS).</li>
+<li>답 대신 힌트만 주도록 설계한 'GPT Tutor'는 연습 점수가 127% 올랐고, 시험 손실은 사라졌다(통제반과 차이 없음). 다만 시험 점수가 더 오르지도 않았다.</li>
+<li>외부 도구에 기억·계산을 넘기는 '인지적 오프로딩'은 빠르고 정확하게 해 준다. 하지만 넘긴 내용은 덜 기억한다. 배우는 단계라면 <strong>'답 대신 힌트' 규칙</strong>과 <strong>'나중에 혼자 해야 한다'는 목표 의식</strong>을 함께 세운다.</li>
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<p><strong>1) 인지적 오프로딩이란</strong> — Risko·Gilbert(2016)가 정리한 개념이다. 메모, 휴대폰 알림, 계산기처럼 몸이나 도구를 써서 머리로 할 일을 줄이는 행동을 말한다. 무엇이 오프로딩을 일으키는지(내 기억력에 대한 자신감 같은 메타인지 판단)와 그 결과가 무엇인지가 핵심 질문이다. [2][4]</p>
+<p><strong>2) 성과는 오르고 기억은 줄어든다</strong> — Grinschgl 등(2021)은 3개 실험, 총 516명에게 화면 속 도형 배치를 옮겨 그리게 했다. 원본을 쉽게 다시 볼 수 있던 집단은 더 자주 봤다(3.61회 대 2.31회). 작업도 더 빨랐다(49초 대 55초). 그러나 예고 없는 기억 시험에서는 덜 기억했다(12개 중 5.91개 대 7.07개). [2]</p>
+<p><strong>3) '외워야 한다'는 목표가 손실을 줄인다</strong> — 같은 연구에서 기억 시험을 미리 알린 사람은 오프로딩을 덜 하고 더 많이 기억했다. 강제로 최대한 넘기게 한 조건에서도 알린 집단은 4.18개, 모른 집단은 1.84개를 기억했다. 다만 기제는 아직 확정되지 않았다. [2]</p>
+<p><strong>4) AI 현장실험: 목발 효과</strong> — Bastani 등은 9~11학년 약 50개 반을 무작위로 나눴다. 90분 수업 4회에서 연습 시간만 조건을 달리했고, 시험은 책·노트북 없이 치렀다. 시험 점수는 GPT Base −0.054(약 −17%, p&lt;0.05), GPT Tutor −0.004(유의하지 않음)였다. 사전등록한 연구다. [1]</p>
+<p><strong>5) 왜 깎였나: 답을 베꼈다</strong> — GPT Base에 "답이 뭐야?"를 물으면 정답률이 51%에 그쳤다(논리 오류 42%, 계산 오류 8%). 그런데도 AI의 논리 오류는 시험 성적으로 옮겨 가지 않았다. 저자들은 학생이 AI에게 속았다기보다 답을 베꼈다고 해석한다. 첫 회차 GPT Base 대화의 67%는 문제를 그대로 붙이거나 답을 달라는 요청이었다(Tutor는 37%). [1]</p>
+<p><strong>6) 배웠다는 착각</strong> — GPT Base 학생들은 시험을 못 봤으면서도 덜 배웠다고 느끼지 않았다. Tutor 학생들은 실제보다 더 잘 봤다고 느꼈다. MIT 미디어랩의 에세이 쓰기 실험(54명, EEG)에서도 LLM 사용자는 뇌 연결성이 가장 약했다. 자기 글을 정확히 인용하지도 못했다. 다만 이 연구는 표본이 작고 동료 심사 여부를 확인하지 못했다[불확실]. [1][3]</p>
+<p><strong>한계</strong> — Bastani 연구는 한 학교, 한 과목(수학), 2023년 가을 모델, 단기 결과다. "AI를 쓰면 바보가 된다"가 아니다. 설계 없이 쓰면 학습을 대신해 버린다는 뜻이다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고·회의</strong>: AI가 쓴 보고서 초안은 그대로 올리지 않는다. 올리기 전에 화면을 덮고, 핵심 수치 3개와 결론 1문장을 말로 설명해 본다. 설명이 막히면 그 부분은 아직 내 지식이 아니다(개념 2·6). 회의 중 질문에 답하는 사람은 AI가 아니라 나다.</li>
+<li><strong>후배 멘토링·사내교육</strong>: 신입의 장애 대응 학습용 AI 지시문에 이렇게 적는다. "정답·명령어를 바로 주지 말고, 다음 단계 힌트 하나와 확인 질문 하나만 줄 것." 교육 끝에는 AI 없이 푸는 5분 점검을 미리 예고한다(개념 3: 예고된 시험이 오프로딩을 줄인다).</li>
+<li><strong>강사·온라인강좌</strong>: 「AI 시대 공공 IT 실무자의 학습법」 강의에서 Bastani의 48%·−17%·127%를 한 장짜리 표로 보여 준다. 수강생 실습에는 '힌트형 GPT 지시문' 템플릿을 배포한다. 만족도와 실제 실력은 다를 수 있으니(개념 6) 수료 평가는 AI 없이 치른다.</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p>오늘 AI에게 물어본 업무 질문 하나를 고른다. 같은 질문을 "답은 주지 말고 힌트 한 개씩만, 내가 답하면 맞는지 짚어 줘"라는 지시와 함께 다시 시작한다. 끝난 뒤 10분 쉬고, 화면 없이 해결 과정을 3줄로 적는다. 처음 답을 받았을 때와 얼마나 다르게 기억하는지 비교한다.</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> Bastani 연구에서 GPT Base 반의 연습 점수와 시험 점수는 통제반과 비교해 각각 어땠나?</p>
+<p>→ 연습은 <strong>+48%</strong>, AI 없이 본 시험은 <strong>약 −17%</strong>였다. 도구가 있을 때의 성과와 혼자 남는 실력은 다르다.</p>
+<p><strong>Q2.</strong> GPT Tutor는 어떻게 시험 손실을 막았나? 그 한계는?</p>
+<p>→ 교사가 넣은 풀이와 흔한 실수를 바탕으로 <strong>답 대신 힌트</strong>만 주게 했다. 손실은 사라졌지만 시험 점수가 통제반보다 높아지지는 않았다.</p>
+<p><strong>Q3.</strong> Grinschgl 실험에서 오프로딩으로 인한 기억 손실을 줄인 조건은?</p>
+<p>→ <strong>기억 시험을 미리 알린 것</strong>, 곧 '나중에 혼자 해야 한다'는 학습 목표다. 알린 집단은 오프로딩을 덜 했고, 강제로 넘긴 조건에서도 더 많이 기억했다(4.18 대 1.84).</p>
+<h2>⑥ 출처</h2>
+<ol>
+<li>✔ Bastani 등(2025), "Generative AI without guardrails can harm learning: Evidence from high school mathematics", PNAS 122(26)(PMC 전문, 2025년 8월 정정 공지 있음 — 정정 내용은 확인 못 함) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12232635/</a></li>
+<li>✔ Grinschgl, Papenmeier &amp; Meyerhoff(2021), "Consequences of cognitive offloading: Boosting performance but diminishing memory", Quarterly Journal of Experimental Psychology 74(9) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8358584/">https://pmc.ncbi.nlm.nih.gov/articles/PMC8358584/</a></li>
+<li>✔ Kosmyna 등(2025), "Your Brain on ChatGPT: Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task", arXiv 2506.08872 — <a href="https://arxiv.org/abs/2506.08872">https://arxiv.org/abs/2506.08872</a></li>
+<li>Risko &amp; Gilbert(2016), "Cognitive Offloading", Trends in Cognitive Sciences 20(9)(원문 접속 차단, 정의는 [2]의 인용으로 확인) — <a href="https://doi.org/10.1016/j.tics.2016.07.002">https://doi.org/10.1016/j.tics.2016.07.002</a></li>
+</ol>
+</main></body></html>
