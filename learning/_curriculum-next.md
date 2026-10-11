@@ -35,7 +35,7 @@
 - [ ] P070 | 소음 — 카너먼·시보니·선스타인 『Noise』(2021)의 판단 편차, 소음 감사, 판단 위생 | 제안서 평가·인사평가의 평가자 간 편차를 재고 독립 평가·항목 분해·평균으로 줄이는 실무 기법
 - [ ] P071 | 지적 겸손 — Leary 등 2017 PSPB 개념·측정, 지적으로 겸손해 보이는 과학자가 더 신뢰받은 Koetke 등 2024 Nature Human Behaviour, 교사의 지적 겸손과 학생 학습을 다룬 Porter·Leary·Cimpian 2026 Developmental Psychology | 강사·기고자가 모름과 한계를 인정해도 권위를 잃지 않고 신뢰를 쌓는 조건
 - [ ] P072 | 인지적 오프로딩과 생성형 AI 학습 — Risko·Gilbert 2016 개념, 무제한 GPT 사용 학생이 접근 차단 후 성적이 떨어지고 가드레일 튜터는 피해를 줄인 Bastani 등 2025 PNAS 현장실험 | AI가 연습 성적은 올려도 혼자 해내는 실력은 깎을 수 있음을 알고 자기 공부와 온라인 강좌에 '답 대신 힌트' 규칙 설계하기
-- [ ] P073 | 생성형 AI의 설득력 — AI와의 맞춤 대화 후 음모론 믿음이 약 20% 줄고 2개월 유지된 Costello·Pennycook·Rand 2024 Science, 상대 정보를 받은 GPT-4가 인간 토론자보다 설득적이었던 Salvi 등 2025 Nature Human Behaviour | 상대에게 맞춘 증거 제시가 신념을 바꾸는 원리를 보고·발표에 쓰되 개인정보 기반 AI 설득의 윤리 경계 함께 보기
+- [x] P073 | 생성형 AI의 설득력 — AI와의 맞춤 대화 후 음모론 믿음이 약 20% 줄고 2개월 유지된 Costello·Pennycook·Rand 2024 Science, 상대 정보를 받은 GPT-4가 인간 토론자보다 설득적이었던 Salvi 등 2025 Nature Human Behaviour | 상대에게 맞춘 증거 제시가 신념을 바꾸는 원리를 보고·발표에 쓰되 개인정보 기반 AI 설득의 윤리 경계 함께 보기
 - [x] P074 | 외로움과 사회적 연결 — Holt-Lunstad 등 2010 PLoS Medicine 메타분석, 미 공중보건위생국장 2023 권고, WHO 사회적 연결 위원회 2025 보고서 | 사회복지학 배경을 살려 외로움을 건강 위험요인으로 설명하고 중년 직장인의 연결 습관을 처방하는 강의 소재
 - [x] P075 | 잡 크래프팅과 일의 의미 — Wrzesniewski·Dutton 2001 Academy of Management Review, Rudolph 등 2017 Journal of Vocational Behavior 메타분석 | 15년차 사업관리 업무를 과업·관계·인지 세 축으로 다시 짜서 소진 대신 몰입과 경력 전환의 발판 만들기
 - [x] P076 | 호감 격차와 질문하기 — 대화 상대가 나를 실제보다 덜 좋아한다고 믿는 Boothby 등 2018 Psychological Science, 후속 질문이 호감을 높인다는 Huang 등 2017 JPSP | 첫 만남·네트워킹·강의 질의응답에서 과소평가된 내 인상을 바로잡고 후속 질문으로 관계를 여는 기술, 공저자 데이터 조작 사태 이후의 출처 점검 포함
