@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>한스 로슬링 「최고의 통계」(TED 2006)</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}
+.tbl{overflow-x:auto;margin:1em 0}table{width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.6}th,td{border:1px solid var(--line);padding:.45em .6em;text-align:left;vertical-align:top}th{background:var(--card)}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>한스 로슬링 「최고의 통계」(TED 2006) — 버블 차트를 '중계'하는 라이브 시각화와 그 한계</h1>
+<div class="meta">트랙 <strong>speech</strong> · 날짜 <strong>2026-10-12</strong> · 주제ID <strong>S012</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">speech</span><span class="tag">한스로슬링</span><span class="tag">데이터스토리텔링</span><span class="tag">버블차트</span><span class="tag">갭마인더</span><span class="tag">애니메이션차트</span><span class="tag">스몰멀티플</span><span class="tag">팩트풀니스</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>이 강연의 힘은 움직이는 차트보다 <strong>해설자에게서 나온다</strong>. 퀴즈로 오해를 드러내고, 축을 읽어 준 뒤 예측을 묻고, 재생 중에 가리키며 중계하고, 평균을 쪼갠다.</li>
+<li>실험 결과는 엇갈린다. Robertson 등(2008)에서 애니메이션은 발표 상황에서 가장 빠르고 재미있었지만 오답이 많았고, 분석 상황에서는 정적인 스몰 멀티플보다 느리고 덜 정확했다[2].</li>
+<li>낙관 편향 비판과 로슬링 자신의 자평까지 보면 원칙은 이렇다. <strong>분석은 정적 차트로, 발표는 해설을 붙인 전환 1~2개로, 나빠지는 지표도 한 장은 넣는다.</strong></li>
+</ol>
+<h2>② 핵심 개념·기법 7가지</h2>
+<p><strong>1) 강연 개요와 도구</strong></p>
+<p>2006년 2월 22일 TED2006에서 녹화한 19분 36초 강연으로, TED 페이지 기준 약 1,613만 회 재생됐다(2026-10-12 확인). TED 소개문도 스포츠 중계 같은 긴박감을 강조한다[1]. 로슬링은 카롤린스카 의대 국제보건학 교수였고 2017년 2월 7일 췌장암으로 68세에 별세했다[4][5]. 강연에 쓴 버블 차트 소프트웨어 Trendalyzer는 2007년 3월 구글에 인수됐다[4][6](갭마인더 재단 항목은 2006년으로 적어 출처 간 차이가 있다[8]).</p>
+<p><strong>2) 기법① '침팬지 퀴즈'로 오해부터 증명</strong></p>
+<p>국가 다섯 쌍 중 아동 사망률이 높은 쪽을 고르는 사전 시험에서 스웨덴 최상위권 학생들은 평균 1.8개를 맞혔다. 무작위로 찍는 침팬지의 기대치 2.5개보다 낮다. 로슬링은 원인을 무지가 아닌 선입견으로 진단한다[1]. 첫 3분 안에 웃음이 4번 나온다(자막 기준, 직접 집계).</p>
+<p><strong>3) 기법② 축을 먼저 읽어 주고 예측을 건 뒤 재생</strong></p>
+<p>첫 애니메이션은 3분 46초(전체의 19%)에야 시작한다. 그 전 1분 30초 동안 버블 하나가 한 나라, 크기는 인구, 두 축은 출산율과 기대수명이라고 읽어 주고, 학생들의 '우리와 그들' 세계관이 맞는지 묻는다. 약 50초 재생이 끝나자 첫 박수가 나온다[1].</p>
+<p><strong>4) 기법③ 가리키며 중계하기</strong></p>
+<p>재생 중에는 짧은 문장으로 중국, 중남미, 방글라데시를 하나씩 짚는다. 약 3,100단어 자막에 '여기(here)'만 44번 나온다(직접 집계)[1]. 1964년 미국과 베트남, 1960년 한국·브라질·우간다처럼 짝지어 비교하고 궤적 선을 켠다. Robertson 등은 로슬링이 결정적 장면 직전에 청중의 시선을 미리 그쪽으로 이끈다고 분석했다[2].</p>
+<p><strong>5) 기법④ 평균을 쪼개고, 데이터의 한계를 먼저 말하기</strong></p>
+<p>지역 버블을 국가로, 국가를 다시 소득 5분위로 쪼개 아프리카 안에도 세계 전체가 있으며 평균 데이터는 위험하다고 보여 준다. 데이터가 나쁘다는 반론에는 국가 간 차이가 오차보다 훨씬 크다고 답하고, 통계학자들의 반대를 인정하며 이 도구는 가설을 세우는 용도라고 선을 긋는다. 후반부(14분 42초 이후)의 중심은 공공 데이터를 무료로, 검색 가능하게 풀자는 요청이다[1].</p>
+<p><strong>6) 실험 근거: '재미'와 '정확'은 다르다</strong></p>
+<p>Robertson 등(2008, IEEE InfoVis)은 UN 데이터(1975~2000)로 세 방식을 비교했다. 참가자는 분석 조건 18명, 발표 조건 18명이었다[2].</p>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th>애니메이션</th><th>스몰 멀티플</th><th>궤적 겹침</th></tr></thead>
+<tbody>
+<tr><td>발표 조건 응답 시간</td><td>15.8초</td><td>25.3초</td><td>27.8초</td></tr>
+<tr><td>분석 조건 응답 시간</td><td>83.1초</td><td>45.7초</td><td>55.0초</td></tr>
+<tr><td>정확도</td><td>스몰 멀티플보다 유의하게 낮음</td><td>가장 높음</td><td>차이 불분명</td></tr>
+<tr><td>즐거움(0~6점)</td><td>4.8</td><td>3.7</td><td>3.4</td></tr>
+</tbody></table></div>
+<p>발표 조건에서 빨랐던 것은 다시 볼 수 없어 첫 재생 중에 판단하거나 찍어야 했기 때문이다. 움직이는 점을 놓쳤다는 응답도 4.8점이었다. 저자들은 점이 많거나 방향을 되돌리거나 따로 움직이면 해설이 있어도 헷갈린다며 <strong>분석은 스몰 멀티플로, 발표는 애니메이션으로</strong> 하라고 권했다. 점이 약 200개를 넘으면 세 방식 모두 한계에 부딪힌다[2]. 휴대폰 96명 대상 후속 연구에서도 스몰 멀티플이 9개 과제 중 7개에서 더 빨랐고, 자신감은 애니메이션 쪽이 조금 높았다[3].</p>
+<p><strong>7) 반론: 낙관 편향 논쟁과 로슬링의 자기평가</strong></p>
+<p>사후 출간된 『팩트풀니스』(2018)에 대해 베르그렌 교수는 좋은 지표가 늘고 나쁜 지표가 주는 그래프만 있고 늘어나는 나쁜 지표는 한 장도 없다며 변수 선택 편향을 지적했다. 인구 문제(에를리히 부부)와 불평등 누락(파울센) 비판도 있다[4][7]. 반면 맥스 로저는 로슬링이 안주하라고 말한 적이 없다고 반박했고, 로슬링도 자신을 '가능주의자'라 부르며 팬데믹·기후변화 등 5대 위험을 꼽았다[4]. 그는 2013년 인터뷰에서 스웨덴 사람들이 방글라데시 출산율을 여전히 4~5명으로 안다며 자신의 영향을 낮게 봤다.</p>
+<blockquote>"Fame is easy to acquire, impact is much more difficult."(The Guardian 2017[5])</blockquote>
+<h2>③ 조차장 적용 3가지</h2>
+<p><strong>[사업관리 보고·회의 발표] '정적 분석, 동적 발표' 2단 구성</strong></p>
+<p>시스템별 가동률과 장애 복구 시간을 두 축에 놓는다. 분석은 연도별 스몰 멀티플로 하고, 발표에서는 축을 고정한 시작·최근 연도 슬라이드 2장을 넘기며 해설한다. 점은 20개 이하, 순서는 축 읽기 30초 → 예측 질문 → 전환 → 예외 하나 쪼개기. 배포 자료에는 스몰 멀티플을 넣는다.</p>
+<p><strong>[사내 교육·후배 멘토링] 오프닝 퀴즈와 평균 쪼개기</strong></p>
+<p>교육 첫 3분에 사업 데이터로 만든 3지선다 3문항을 내고 무작위 정답률(33%)과 비교한다. 후배의 보고서를 볼 때는 평균 뒤에 숨은 하위 20%가 어디인지 묻는다. 사회복지학의 취약 집단 관점과 같은 질문이다.</p>
+<p><strong>[강사·전자책·기고] '좋은 추세 1개, 나쁜 추세 1개' 원칙</strong></p>
+<p>'숫자로 설득하는 공공사업 보고' 강좌나 전자책의 사례 장으로 쓰되, 베르그렌의 비판을 반영해 개선 지표 옆에 악화·정체 지표를 한 장 붙인다. 전환 중에는 낮고 굵은 목소리로 짧게 짚고, 멈춘 뒤 핵심 한 문장을 천천히 말한다.</p>
+<h2>④ 오늘 바로 해볼 연습 (10분)</h2>
+<ol>
+<li>업무 데이터에서 항목 10개 이하, 지표 2개, 연도 2개를 고른다(2분).</li>
+<li>엑셀로 두 연도의 산점도 2장을 만들고 축 범위를 같게 고정한다(3분).</li>
+<li>해설 4줄을 쓴다: 축 읽기, 예측 질문, '여기·이쪽'으로 짚는 해설, 예외 하나 쪼개기(3분).</li>
+<li>화면을 넘기며 녹음하고 60초 안에 끝나는지, 듣는 사람이 어디를 볼지 아는지 확인한다(2분).</li>
+</ol>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> 학생들의 점수(5개 중 1.8개)가 침팬지보다 낮은 원인을 로슬링은 무엇으로 진단했나?</p>
+<ul>
+<li>정답: 무지가 아닌 선입견('우리와 그들'로 나누는 낡은 틀).</li>
+<li>해설: 아예 모르면 찍어서 2.5개는 맞힌다. 그보다 낮다면 틀린 그림을 확신하고 있다는 뜻이다.</li>
+</ul>
+<p><strong>Q2.</strong> Robertson 등(2008)의 발표 조건에서 애니메이션이 가장 빨랐는데도 효과적이라 단정할 수 없는 이유는?</p>
+<ul>
+<li>정답: 다시 볼 수 없어 첫 재생 중에 판단하거나 찍어야 했고, 정확도는 스몰 멀티플이 더 높았다.</li>
+<li>해설: 빠르고 재미있다는 것과 정확히 이해했다는 것은 다르다.</li>
+</ul>
+<p><strong>Q3.</strong> 베르그렌의 『팩트풀니스』 비판의 핵심과 발표자의 대응은?</p>
+<ul>
+<li>정답: 좋은 추세만 고른 변수 선택 편향. 악화·정체 지표를 함께 보여 준다.</li>
+<li>해설: 균형 잡힌 지표 선택이 청중의 신뢰를 지킨다.</li>
+</ul>
+<h2>⑥ 더 공부할 거리</h2>
+<ol>
+<li>Tversky·Morrison·Bétrancourt(2002) 「Animation: Can It Facilitate?」 — 애니메이션이 정적 그림보다 낫다는 근거가 약하다고 본 검토 논문. Robertson 등이 핵심 선행 연구로 인용했다[2].</li>
+<li>Heer·Robertson(2007) 「Animated Transitions in Statistical Data Graphics」 — 추세 재생이 아닌 차트 사이 '전환'의 애니메이션을 다룬 연구(본문 미열람, [2]에서 인용 확인). 보고 슬라이드 전환 설계와 비교해 읽는다.</li>
+</ol>
+<h2>⑦ 출처 (✔ = 직접 열어 읽음)</h2>
+<ol>
+<li>✔ TED, Hans Rosling "The best stats you've ever seen"(강연 페이지·자막·메타데이터) — <a href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen">https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen</a></li>
+<li>✔ Robertson 등(2008), "Effectiveness of Animation in Trend Visualization", IEEE TVCG(저자 PDF) — <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tvcg2008-trendvis.pdf">https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tvcg2008-trendvis.pdf</a></li>
+<li>✔ Brehmer 등(2019), "A Comparative Evaluation of Animation and Small Multiples for Trend Visualization on Mobile Phones", IEEE TVCG(arXiv) — <a href="https://arxiv.org/abs/1907.03919">https://arxiv.org/abs/1907.03919</a></li>
+<li>✔ Wikipedia, Hans Rosling — <a href="https://en.wikipedia.org/wiki/Hans_Rosling">https://en.wikipedia.org/wiki/Hans_Rosling</a></li>
+<li>✔ The Guardian(2017), "Hans Rosling, statistician and development champion, dies aged 68" — <a href="https://www.theguardian.com/global-development/2017/feb/07/hans-rosling-obituary">https://www.theguardian.com/global-development/2017/feb/07/hans-rosling-obituary</a></li>
+<li>✔ Wikipedia, Trendalyzer — <a href="https://en.wikipedia.org/wiki/Trendalyzer">https://en.wikipedia.org/wiki/Trendalyzer</a></li>
+<li>✔ Wikipedia, Factfulness — <a href="https://en.wikipedia.org/wiki/Factfulness">https://en.wikipedia.org/wiki/Factfulness</a></li>
+<li>✔ Wikipedia, Gapminder Foundation — <a href="https://en.wikipedia.org/wiki/Gapminder_Foundation">https://en.wikipedia.org/wiki/Gapminder_Foundation</a></li>
+<li>미열람(접속 차단, [4][7]로 확인): Berggren(2018), "The One-Sided Worldview of Hans Rosling", Quillette — <a href="https://quillette.com/2018/11/16/the-one-sided-worldview-of-hans-rosling/">https://quillette.com/2018/11/16/the-one-sided-worldview-of-hans-rosling/</a></li>
+</ol>
+</main></body></html>
