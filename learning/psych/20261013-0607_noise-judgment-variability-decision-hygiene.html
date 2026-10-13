@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>소음(Noise)</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>소음(Noise) — 같은 사안에 대한 판단이 사람마다·그날마다 흩어지는 오류, 감사로 재고 '판단 위생'으로 줄인다</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-13</strong> · 주제ID <strong>P070</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">소음</span><span class="tag">판단편차</span><span class="tag">소음감사</span><span class="tag">판단위생</span><span class="tag">평가위원회</span><span class="tag">의사결정</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>카너먼·시보니·선스타인의 『Noise』(2021)는 판단 오류를 <strong>한쪽으로 쏠리는 편향(bias)</strong>과 <strong>사방으로 흩어지는 소음(noise)</strong>으로 나눈다. 둘 다 줄여야 하는데, 소음은 보이지 않아 방치된다.</li>
+<li>한 보험사 감사에서 같은 가상 고객 5명에 대한 보험료 산정치가 중앙값 기준 <strong>55%</strong> 차이 났다. 경영진이 예상한 차이의 약 5배였다.</li>
+<li>처방은 '더 똑똑한 사람'이 아니라 <strong>절차</strong>다: 독립적으로 먼저 판단하기, 항목으로 쪼개 평가하기(MAP), 여러 판단 평균하기, 상대 척도 쓰기.</li>
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<p><strong>1) 편향과 소음은 다른 오류다</strong></p>
+<p>과녁 비유로 보면 편향은 탄착군이 한쪽으로 밀린 것, 소음은 탄착군이 넓게 퍼진 것이다. 저자들은 수학적으로 소음을 일정량 줄이는 것이 편향을 같은 양 줄이는 것과 총오류 감소 효과가 같다고 설명한다. 그리고 실제 조직에서는 소음이 편향보다 큰 경우가 흔하다고 본다.</p>
+<p><strong>2) 소음 감사: 같은 사례를 여럿에게 독립적으로 맡긴다</strong></p>
+<p>HBR 2016년 글(카너먼 외)은 같은 고객 신청서를 두 지점에 냈더니 견적이 크게 달라 고객이 경쟁사로 떠난 사례로 시작한다. 결론은 "Organizations expect to see consistency in the decisions of their employees, but humans are unreliable."(HBR, 2016)이다. 보험사 감사에서는 산정치 차이가 55%로, 경영진 예상(10% 안팎)의 약 5배였다.</p>
+<p><strong>3) 소음의 세 갈래</strong></p>
+<ul>
+<li>수준 소음: 어떤 평가자는 늘 후하고 어떤 평가자는 늘 짜다.</li>
+<li>안정적 패턴 소음: 특정 유형의 사안에만 유독 다르게 반응한다(예: 특정 기술 스택에 대한 호불호).</li>
+<li>상황 소음: 그날의 기분·날씨·피로처럼 사안과 무관한 요인이다.</li>
+</ul>
+<p>저자들은 대체로 패턴 소음이 수준 소음보다, 안정적 패턴 소음이 상황 소음보다 크다고 본다.</p>
+<p><strong>4) 전문가 판단도 흩어진다 (책에 소개된 사례)</strong></p>
+<ul>
+<li>판사 208명이 가상 사건 16건을 판단했을 때 만장일치로 징역을 권고한 사건은 3건뿐이었다. 평균 1.1년인 사건에 15년을 권고한 판사도 있었다.</li>
+<li>정신과 의사 2명이 환자 426명을 진단해 병명이 일치한 것은 절반 정도였다.</li>
+<li>대학 입학사정 682건에서 흐린 날엔 학업 역량, 맑은 날엔 비학업 역량에 더 가중치를 줬다.</li>
+<li>같은 면접 패널의 두 면접관이 최고 후보를 다르게 고른 비율이 약 4분의 1이었다(메타분석).</li>
+</ul>
+<p><strong>5) 판단 위생과 매개 평가 프로토콜(MAP)</strong></p>
+<p>'위생'은 보이지 않는 세균을 일상 습관으로 막듯, 어디서 생길지 모르는 소음을 절차로 예방한다는 뜻이다. MAP(카너먼·시보니·로발로)는 ① 결정을 서로 독립적인 평가 항목으로 나누고 ② 가능하면 외부 기준(기저율)으로 점수를 매기고 ③ 항목별 판단을 서로 분리해 유지한 채 ④ 토론 전에 각자 점수를 먼저 내고 ⑤ 회의에서 항목별로 검토한 뒤 마지막에 종합한다. 단계 수는 출처마다 4~5개로 다르게 정리돼 있다 [불확실].</p>
+<p><strong>6) 평균의 힘 — 한 사람 안의 군중</strong></p>
+<p>여러 독립 판단을 평균하면 소음이 줄어든다. 한 사람이 두 번 추정해 평균해도 효과가 있다(Vul·Pashler 2008). 사전등록 재현(Steegen 등 2014, 즉시 조건 471명)에서도 평균값의 오차(MSE)가 첫 추정 589→541로 줄었다. 효과 크기는 첫 추정 대비 d≈0.34~0.40으로 작거나 중간 수준이다. 단, '3주 뒤 다시 추정하면 훨씬 낫다'는 원 연구의 주장은 재현에서 첫 추정 기준으로는 확인되지 않았다.</p>
+<p><strong>한계와 비판:</strong> 책 자체는 연구 요약서이고 논문이 아니다. 『이코노미스트』·『가디언』 등은 논지가 늘어지고 산만하다고 평했다. 블래스틀랜드는 소음을 줄이면 경직성이 커지고, 편향된 판단으로 일관되면 오히려 위험할 수 있다고 지적했다. 겔먼 등은 '소음'이 통계학의 오래된 개념이라고 했다. 저자들도 소음 0은 비용·유연성 면에서 바람직하지 않다고 인정한다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<p><strong>[사업관리 보고·회의] 제안서 기술평가의 소음 감사</strong></p>
+<p>다음 제안평가 전 평가위원(또는 내부 검토자) 3~5명에게 과거 제안서 1건을 각자 채점하게 한다. 항목별 최고·최저 점수 차를 표로 만든다. 차이가 큰 항목은 채점 기준표에 '3점이면 어떤 상태인가'라는 예시 문장을 붙인다. 회의 첫 발언 전에 각자 점수를 먼저 적어 내게 하는 규칙도 넣는다.</p>
+<p><strong>[사내 교육·후배 멘토링] 장애 등급·일정 추정 판단 맞추기</strong></p>
+<p>후배 3명에게 같은 장애 사례 5건의 등급과 복구 예상 시간을 각자 적게 한 뒤 비교한다. 누가 맞았는지가 아니라 '얼마나 흩어졌는지'를 보여 주고, 평균값이 개인 값보다 실제에 가까웠는지 사후 채점한다.</p>
+<p><strong>[강사·전자책] '편향 말고 소음' 강의 모듈</strong></p>
+<p>인지편향 강의는 많지만 소음은 덜 다뤄졌다. 공공 평가·인사평가 사례로 '같은 문서, 다른 점수' 실습 20분짜리 모듈을 만든다. 전자책 한 장 제목 후보: 「평가위원이 바뀌면 점수가 바뀐다」. 책 소개 사례는 출처와 '연구 요약서'라는 한계를 함께 적는다.</p>
+<h2>④ 오늘 바로 해볼 연습 (10분)</h2>
+<ol>
+<li>이번 주 내가 내릴 판단 하나(예: 업체 산출물 검토 점수, 일정 추정)를 고른다.</li>
+<li>지금 숫자로 1차 판단을 적고 봉투에 넣듯 가린다.</li>
+<li>평가 항목을 3~4개로 쪼개 항목별 점수를 따로 매긴 뒤 종합한다.</li>
+<li>내일 같은 시간에 가린 값을 보지 않고 다시 판단해 두 값의 차이와 평균을 기록한다.</li>
+</ol>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> 편향과 소음의 차이를 과녁 비유로 설명하면?</p>
+<ul>
+<li>정답: 편향은 탄착이 한쪽으로 몰린 것, 소음은 넓게 흩어진 것이다.</li>
+<li>해설: 평균이 정답에 가까워도 개별 판단이 흩어져 있으면 오류가 크다.</li>
+</ul>
+<p><strong>Q2.</strong> 보험사 소음 감사에서 산정치 차이(중앙값)는 몇 %였고, 경영진 예상과 비교하면?</p>
+<ul>
+<li>정답: 55%, 예상의 약 5배.</li>
+<li>해설: 소음은 재 보기 전까지 아무도 그 크기를 모른다는 것이 핵심이다.</li>
+</ul>
+<p><strong>Q3.</strong> 회의에서 판단 소음을 줄이는 MAP의 핵심 규칙 두 가지는?</p>
+<ul>
+<li>정답: 결정을 독립 항목으로 나눠 평가할 것, 토론 전에 각자 먼저 판단할 것.</li>
+<li>해설: 먼저 말한 사람의 의견에 끌려가는 것(정보 폭포)을 막고, 전체 인상이 항목 평가를 물들이지 않게 한다.</li>
+</ul>
+<h2>⑥ 출처</h2>
+<ul>
+<li>✔ Noise: A Flaw in Human Judgment — Wikipedia: <a href="https://en.wikipedia.org/wiki/Noise:_A_Flaw_in_Human_Judgment">https://en.wikipedia.org/wiki/Noise:_A_Flaw_in_Human_Judgment</a></li>
+<li>✔ Kahneman 외, "Noise: How to Overcome the High, Hidden Cost of Inconsistent Decision Making", HBR 2016년 10월 (서두만 열람): <a href="https://hbr.org/2016/10/noise">https://hbr.org/2016/10/noise</a></li>
+<li>✔ Steegen 외, "Measuring the crowd within again: a pre-registered replication study", Frontiers in Psychology 2014: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4112915">https://pmc.ncbi.nlm.nih.gov/articles/PMC4112915</a></li>
+<li>The Mediating Assessments Protocol — The Uncertainty Project (검색 요약만 확인): <a href="https://www.theuncertaintyproject.org/tools/the-mediating-assessments-protocol">https://www.theuncertaintyproject.org/tools/the-mediating-assessments-protocol</a></li>
+</ul>
+</main></body></html>
