@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>전자책 문제-해결형 목차 설계 (M014)</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>전자책 문제-해결형 목차 설계 (M014)</h1>
+<div class="meta"><span class="kv"><b>트랙</b> money</span><span class="kv"><b>날짜</b> 2026-10-13</span><span class="kv"><b>주제ID</b> M014</span><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">money</span><span class="tag">전자책기획</span><span class="tag">목차설계</span><span class="tag">문제해결구조</span><span class="tag">JTBD</span><span class="tag">텍스트구조</span><span class="tag">신호원리</span><span class="tag">크몽</span><br>출처: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6208587/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6208587/</a></div>
+<blockquote>목차 방식의 매출 효과를 검증한 연구는 찾지 못해 이해·기억 연구를 근거로 썼다. 아마존 KDP 도움말·APA 원문은 열리지 않았다.</blockquote>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>실용서 목차는 주제 목록이 아니라 <strong>독자가 처한 상황에서 이루려는 진전</strong>을 순서대로 펼친 지도다[1]. '문제 문장 → 장 제목 → 절 제목 → 체크리스트·템플릿'으로 내려가면 목차만 봐도 내 문제를 푸는 책인지 보인다(필자 정리).</li>
+<li>설명문의 최상위 구조 5가지 중 하나가 <strong>문제-해결</strong>이고, 구조를 파악한 독자가 더 잘 이해했다[2]. 제목·개요 같은 <strong>신호</strong>의 효과는 메타분석에서 d=.38(29개 연구, 2,726명)이고 조건을 탄다[6].</li>
+<li>크몽은 목차·미리보기를 <strong>구매 결정 자료</strong>로 보고, 본문과 다르면 환불·판매중단 사유로 둔다(2026년 1월 가이드)[7]. 매출 효과의 증거는 아니다.</li>
+</ol>
+<h2>② 핵심 개념 7가지</h2>
+<p><strong>1) 독자의 'Job' — 주제가 아니라 상황 속 진전</strong></p>
+<p>크리스텐슨 등(HBR, 2016)은 고객이 원하는 것은 특정 상황에서의 진전이며, 기능·사회·정서 차원이 있고 불안·관성이 발목을 잡는다고 했다. "Jobs are never simply about function"[1]. 성인 학습자용 SNHU는 재정지원 결정을 몇 주·몇 달에서 며칠로 줄였다[1]. 목차도 장마다 할 일(기능)과 두려움(정서)을 함께 다룬다(필자 해석). 성공 사례 위주라 생존자 편향은 감안한다.</p>
+<p><strong>2) 설명문의 5대 최상위 구조</strong></p>
+<p>마이어(1985)는 설명문의 최상위 구조를 문제-해결·인과·기술·비교·나열/순서로 정리했다. 마이어 등(1980)은 이 구조를 추론한 독자의 이해가 높았다고 했고, 구조 훈련이 회상·독해 점수를 올린다는 개입 연구가 이어졌다[2]. 문제-해결은 문제와 해결 두 덩어리이고, 요약 채점도 둘 다 있어야 만점이었다[2].</p>
+<p><strong>3) 구조는 연결어와 함께 일한다</strong></p>
+<p>8학년 151명 연구에서 구조 추론 능력과 독해의 상관은 .28~.60이었지만, 접속어·메타인지 지식을 통제하자 고유 예측력이 사라졌다[2]. '그래서, 이를 막으려면' 같은 관계 표지어가 함께 필요하다(필자 해석). 문제-해결의 대표 신호어는 '어려움, 예방법, 문제, 해결'이다[3]. 구조 지도 메타분석들도 긍정적이고[3], Hebert 등(2016)은 학습장애·위험군 효과 크기 0.96을 냈다[불확실·검색 요약][8]. 단, 독자에게 구조 읽기를 가르친 효과다.</p>
+<p><strong>4) 신호 — 내용을 더하지 않고 구조를 드러낸다</strong></p>
+<p>메이어(2021)의 언어 신호는 개요·제목·'첫째, 둘째' 같은 지시어, 시각 신호는 색·화살표·가리키기다[5]. 알피자르 등(2020)의 d=.38은 작은~큰 효과로 흩어졌고, 품질이 높고 사전지식을 통제한 연구에서 이로웠다[6]. 리히터 등(2016)은 작은~중간 효과를 냈고, <strong>사전지식이 낮은 학습자</strong>에게 더 효과적이었다[5]. 효과가 없었다는 연구도 있다[4][6].</p>
+<p><strong>5) 화면 읽기는 신호가 더 필요하다</strong></p>
+<p>대학생 75명 실험에서 신호가 없으면 종이가 화면보다 이해 점수가 높았지만, 신호를 넣자 차이가 사라졌다. 신호 형태의 주효과는 부분 η²=.47이었고, 화면에선 굵게·밑줄이 글 끝 조직도보다 나았다[4]. 단일 연구·짧은 글 3편의 한계가 있다. 전자책은 장 첫머리 요약 상자와 핵심 문장 굵게를 기본으로 둔다(필자 해석).</p>
+<p><strong>6) 제목은 빠짐없이, 같은 체계로</strong></p>
+<p>로치 등(1996)은 단순한 글에선 신호 효과가 없고, 일부만 신호하면 나머지 내용의 회상이 떨어졌다고 했다. 2011년 연구에선 위계형 제목이 개요 작성을, 순서형 제목이 검색을 도왔다[불확실·검색 요약][9]. 번호와 절 제목 문형을 끝까지 맞춘다(필자 해석).</p>
+<p><strong>7) 플랫폼은 목차를 증거로 본다</strong></p>
+<p>크몽 가이드(2026년 1월 게시, 10월 확인)는 목차에 대·소제목과 번호를, 미리보기는 목차 1장·본문 4장 등 5장 이상을 요구한다[7]. 판매자 글의 '미리보기 추가 후 전환율 2.1%→5.4%' 사례는 비교 조건이 없어 근거로 쓰지 않는다[10]. 직장인 저자 정경문도 실용서는 대·중·소제목이 맞아야 해 목차부터 잡았다고 했다[11].</p>
+<p><strong>실용서 목차 5단 흐름 (필자 정리, 순서 검증 연구 없음)</strong></p>
+<div class="tbl"><table><thead><tr><th>단계</th><th>절 제목 예</th><th>근거</th></tr></thead><tbody>
+<tr><th>증상</th><td>이런 일이 반복된다면</td><td>상황·불안[1]</td></tr>
+<tr><th>원인</th><td>왜 생기나</td><td>인과 연결어[2][3]</td></tr>
+<tr><th>해결</th><td>이렇게 바꾼다</td><td>문제-해결 구조[2]</td></tr>
+<tr><th>도구</th><td>체크리스트·템플릿</td><td>걸림돌 제거[1]</td></tr>
+<tr><th>점검</th><td>자가진단 5문항</td><td>요지 회상[2]</td></tr>
+</tbody></table></div>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>(전자책)</strong> 문제 문장 '운영사업 PM을 처음 맡았는데 착수 첫 달에 뭘 먼저 잡을지 모르겠다' → 1장 「착수 30일, 위험부터 보이게」 → 1-1 증상: 인계 문서 속 위험이 안 보인다 / 1-2 원인: 과업지시서·SLA·장애 이력이 따로 논다 / 1-3 해결: 과업-산출물-일정 대조표 / 1-4 도구: 착수 체크리스트 20항목 / 1-5 점검: 30일 차 자가진단. 2장 '월간 보고가 안 읽힐 때', 3장 '장애 첫 1시간', 4장 '팀이 지칠 때'(정서)로 잇는다. 미리보기에는 목차와 1장 체크리스트를 넣고[7], 기관·사업 실명은 지운다.</li>
+<li><strong>(사업관리 보고·회의 발표)</strong> 월간 보고서 목차를 '현황 → 원인 → 조치 → 결정 요청 → 다음 점검일'로 고정한다. 제목은 '장애 현황' 대신 '3월 장애 2건, 원인은 백업 일정 충돌'처럼 결론 문장으로 쓴다. 발표에선 '첫째, 둘째'를 낮은 목소리로 또박또박 넣어 구조를 귀로 들려준다[5].</li>
+<li><strong>(사내 교육·후배 멘토링)</strong> 신임 PM 교육 4회차에 문제 문장 이름을 붙인다(1회 '착수 첫 달이 막막할 때'). 회차는 사례 → 원인 토론 → 해결 시연 → 체크리스트 실습 → 점검으로 돈다. 신입반은 요약 상자·굵은 글씨를 촘촘히, 고참반은 신호를 줄이고 토론을 늘린다[5]. 사회복지학의 사정 → 개입 → 평가와 같은 뼈대다(필자 해석).</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p><strong>질문 5개로 장 하나 만들기(10분)</strong>: 최근 받은 질문 5개를 '○○할 때 △△가 막힌다' 문장으로 바꾼다(4분). 비슷한 둘을 묶어 장 제목을 만든다(2분). 증상·원인·해결·도구·점검 절 제목을 한 줄씩 쓰고(3분), 절 제목만 소리 내 읽어 해결 순서가 들리는지 확인한다(1분).</p>
+<h2>⑤ 퀴즈 3문</h2>
+<p><strong>Q1.</strong> 마이어의 5대 구조 중 실용서 목차의 뼈대와 그 두 부분은?</p>
+<p><strong>정답:</strong> 문제-해결, 문제와 해결 부분. <strong>해설:</strong> 구조를 파악한 독자가 더 잘 이해했고, 요약 채점도 두 부분을 다 요구했다[2].</p>
+<p><strong>Q2.</strong> 신호 메타분석(2020)의 효과 크기와 주의점은?</p>
+<p><strong>정답:</strong> d=.38(29개 연구, 2,726명). <strong>해설:</strong> 연구 품질·사전지식 통제에 따라 달라졌고[6], 학습 연구라 매출로 옮기면 안 된다.</p>
+<p><strong>Q3.</strong> 크몽 전자책 2장을 개정하고 목차 이미지를 그대로 두면?</p>
+<p><strong>정답:</strong> 환불·판매중단 사유가 될 수 있다. <strong>해설:</strong> 가이드는 내용이 바뀌면 목차·미리보기도 고치라고 한다[7].</p>
+<h2>⑥ 더 공부할 거리</h2>
+<ul>
+<li>Richard E. Mayer, 『Multimedia Learning』 3판(2021) 신호 원리 장 — 강의 슬라이드에 직결[5].</li>
+<li>Rob Fitzpatrick, 『Write Useful Books』(2021) — 독자 테스트로 실용서 구조를 다듬는 법(미열람).</li>
+</ul>
+<h2>⑦ 출처</h2>
+<ol>
+<li>✔ Christensen 외, 「Know Your Customers' Jobs to Be Done」, HBR, 2016 — <a href="https://hbr.org/2016/09/know-your-customers-jobs-to-be-done">https://hbr.org/2016/09/know-your-customers-jobs-to-be-done</a></li>
+<li>✔ Welie 외, 「The role text structure inference skill plays…」, 2017 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6208587/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6208587/</a></li>
+<li>✔ Kooiker-den Boer 외, 「Integrating Text Structure Instruction…」, 2024 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11755338/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11755338/</a></li>
+<li>✔ Shi 외, 「Construction of Cognitive Maps… by Text Signaling」, 2020 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7554618/">https://pmc.ncbi.nlm.nih.gov/articles/PMC7554618/</a></li>
+<li>✔ Cavanagh·Kiersch, 「Using commonly-available technologies…」, 2022 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9762622/">https://pmc.ncbi.nlm.nih.gov/articles/PMC9762622/</a></li>
+<li>✔(초록) Alpizar 외, 「A meta-analysis of signaling principle…」, 2020 — <a href="https://link.springer.com/article/10.1007/s11423-020-09748-7">https://link.springer.com/article/10.1007/s11423-020-09748-7</a></li>
+<li>✔ 크몽, 「노하우·콘텐츠 서비스 등록 가이드」, 2026-01-19 — <a href="https://kmong.com/support/expert-center/posts/755">https://kmong.com/support/expert-center/posts/755</a></li>
+<li>미열람(검색 요약만) Hebert 외(2016), J. Educ. Psychol. — <a href="https://doi.org/10.1037/edu0000082">https://doi.org/10.1037/edu0000082</a></li>
+<li>미열람(접속 불가·검색 요약) Lorch &amp; Lorch(1996) — <a href="https://doi.org/10.1037/0022-0663.88.1.38">https://doi.org/10.1037/0022-0663.88.1.38</a> · Lorch 외(2011)</li>
+<li>✔ 브런치 남현우, 「상세페이지 하나 바꿨더니…」, 2026-04-13 — <a href="https://brunch.co.kr/@mingzi93/156">https://brunch.co.kr/@mingzi93/156</a></li>
+<li>✔ 브런치 정경문, 「브런치스토리에서 출판까지의 과정」, 2023-04-15 — <a href="https://brunch.co.kr/@writerjeong/204">https://brunch.co.kr/@writerjeong/204</a></li>
+</ol>
+</main></body></html>

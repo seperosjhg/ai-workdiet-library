@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>플랫폼 리스크 (심화편) — 알고리즘·정책 변화 사례와 대응 (M011)</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>플랫폼 리스크 (심화편) — 알고리즘·정책 변화 사례와 대응 (M011)</h1>
+<div class="meta"><span class="kv"><b>트랙</b> money</span><span class="kv"><b>날짜</b> 2026-10-13</span><span class="kv"><b>주제ID</b> M011</span><br>학습노트 · 클라우드학습 · 초안 · 모델 claude-opus-5-5<br><span class="tag">money</span><span class="tag">플랫폼리스크</span><span class="tag">알고리즘변화</span><span class="tag">정책변화</span><span class="tag">유튜브YPP</span><span class="tag">구글HCU</span><span class="tag">메타뉴스차단</span><span class="tag">네이버AI브리핑</span><span class="tag">채널분산</span><br>출처: <a href="https://www.bbc.com/future/article/20240524-how-googles-new-algorithm-will-shape-your-internet">https://www.bbc.com/future/article/20240524-how-googles-new-algorithm-will-shape-your-internet</a></div>
+<blockquote>「Patreon과 애플 인앱결제」·「리드 마그넷과 이메일 리스트」의 심화편. 규칙이 바뀐 4건을 '변화 → 손실 → 대응' 순으로 본다. 유튜브·구글·메타 공식 블로그는 열리지 않아 언론 인용으로 확인했다.</blockquote>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>플랫폼은 광고주·법·경쟁 때문에 규칙을 바꾸고, 피해는 <strong>한 채널에만 기대던 작은 창작자</strong>에게 몰린다. 2018년 유튜브 수익화 탈락 채널의 99%는 연 수익 100달러 미만이었다[2].</li>
+<li>살아남은 쪽은 <strong>플랫폼 밖 수입과 관계</strong>(후원·구독·직접 방문)를 미리 가졌다. 인기 유튜브 채널의 외부 후원 링크 비율은 2008년 2.7%에서 2018년 약 20%로 늘었다[4].</li>
+<li>조차장의 원칙: 노출은 빌리되 <strong>명단과 결제는 내 손에</strong> 둔다. 한 채널 의존은 50% 이하, 정책 공지는 월 1회 점검한다(필자 정리).</li>
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<p><strong>1) 사례 ① 유튜브: 광고주 이탈 → 수익화 문턱 상향(2017~2018)</strong></p>
+<ul>
+<li>바뀐 것: 2017년 3월 극단주의 영상 옆 광고가 드러나 AT&amp;T·버라이즌 등이 광고를 뺐다[1]. 2018년 1월 유튜브는 수익화 기준을 '누적 조회 1만 회'에서 '구독 1,000명 + 최근 12개월 시청 4,000시간'으로 올렸다[2].</li>
+<li>잃은 쪽: 기존 채널도 30일 유예 뒤 2018년 2월 20일부터 적용됐다[3]. 유튜브 자체 집계로 대상의 99%는 지난 1년 수익 100달러 미만, 90%는 직전 달 2.5달러 미만이었다[2].</li>
+<li>살아남은 쪽: 후원·제휴·상품 판매로 수입원을 넓혔다. 위 20%는 구독 1만 명 이상 채널만 본 값이다[4].</li>
+</ul>
+<p><strong>2) 사례 ② 구글 '유용한 콘텐츠' 개편(2022~2024)</strong></p>
+<ul>
+<li>바뀐 것: 2022년 첫 개편 뒤 2023년 9월·2024년 3월 후속 개편. 구글은 저품질·비독창 콘텐츠가 45% 줄었다고 밝혔다[5].</li>
+<li>잃은 쪽: 직원 15명이던 리뷰 사이트 HouseFresh는 하루 방문자가 수천 명에서 수백 명으로 줄었다. 영화 뉴스 사이트 Ready Steady Cut은 트래픽이 반 토막 나 인력을 20명에서 4명으로 줄였다(둘 다 운영자 진술)[5]. 레딧의 구글 유입은 126% 늘었다(Semrush 외부 추정치)[5].</li>
+<li>교훈: Ready Steady Cut은 8개월간 구글 권고를 따랐지만 회복하지 못했다[5]. HouseFresh 운영자의 말 그대로 "Google controls the roads"다[5]. 검색 밖 유입이 있어야 버틴다(필자 해석).</li>
+</ul>
+<p><strong>3) 사례 ③ 메타의 캐나다 뉴스 차단(2023~)</strong></p>
+<ul>
+<li>바뀐 것: 플랫폼이 언론사에 대가를 내게 하는 법이 생기자, 메타는 2023년 8월부터 캐나다에서 페이스북·인스타그램 뉴스를 막았다. 메타는 뉴스 링크가 피드의 3% 미만이라고 했다[6].</li>
+<li>잃은 쪽: 2023년 12월까지 언론사 페이지 조회가 하루 약 500만 회 줄었고(맥길대 연구자 추산), 일부 소규모 매체는 독자 절반 이상을 잃었다[7]. 2024년 8월 미디어생태계관측소(맥길대·토론토대)는 언론사의 메타 내 참여 85% 감소, 지역 매체 212곳(약 30%) SNS 중단을 발표했다[8][불확실·검색 요약]. 메타 이용자 수는 9개월 뒤에도 그대로였다[7].</li>
+<li>살아남은 쪽: 구독·자체 앱을 가진 대형 매체 일부는 구독자가 늘었다고 밝혔다[9][불확실·검색 요약]. 플랫폼에게 나는 '3%'일 수 있다.</li>
+</ul>
+<p><strong>4) 사례 ④ 네이버: 성과 지표가 '클릭'에서 'AI 인용'으로(2025~, 진행 중)</strong></p>
+<ul>
+<li>바뀐 것: 2025년 3월 나온 AI 브리핑은 2025년 12월 11일 기준 통합검색 질의의 20%를 넘었다(네이버 발표)[10]. 2026년 6월 베타로 시작한 '네이버 메이트'는 AI 브리핑 인용수(2026년 1월부터 누적)로 창작자 약 3,000명을 골라 월 30만~최대 1,030만 원을 준다[11][12].</li>
+<li>잃은 쪽: 블로그 유입 감소 호소는 많지만 공식 측정치는 찾지 못했다[불확실].</li>
+<li>살아남는 쪽: 네이버 공식 기준은 직접 경험·한 주제 일관성·협찬 표시·원문 링크·최신화다[11].</li>
+</ul>
+<p><strong>5) 공통 패턴: 규칙은 플랫폼 사정으로 바뀐다</strong></p>
+<p>방아쇠는 광고주, 검색 품질, 법과 비용, AI 경쟁이었다[1][5][6][12]. 내 품질과 무관하므로 '좋은 글이면 안전'은 대응이 아니다(필자 해석).</p>
+<p><strong>6) 대응 원칙 4가지(필자 정리)</strong></p>
+<p>① 소유 채널: 이메일 명단·자체 결제 페이지. ② 분산: 한 채널 비중 50% 이하. ③ 모니터링: 공식 공지 구독·월 1회 점검. ④ 공지 기간 활용: 공지에서 시행까지(유튜브는 30일[3])가 대체 채널을 여는 시간이다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>강사·전자책: 채널 의존도 표.</strong> 강의 문의·전자책 매출을 블로그·유튜브·강의 플랫폼·소개·메일별 비율로 적는다. 한 칸이 50%를 넘으면 그 독자를 메일 명단으로 옮길 무료 체크리스트부터 붙인다.</li>
+<li><strong>사업관리 보고: 플랫폼 변경 대장.</strong> 벤더 정책 변경을 추적하듯 '날짜·출처·시행일·영향·대응' 대장을 만들고, 네이버 검색 공식 블로그와 판매 플랫폼 공지를 월 1회 훑는다.</li>
+<li><strong>사내 교육·후배 멘토링: 10분 사례 발표.</strong> HouseFresh를 SPOF(단일 장애점) 사례로 설명한다. 인프라 이중화와 같은 논리다. 마무리는 낮고 굵은 목소리로 '트래픽도 이중화해야 합니다'.</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p><strong>'내일 반 토막 난다면' 3줄 시나리오.</strong> 가장 기대는 채널 하나를 골라 적는다(10분). ① 유입이 절반이 되면 잃는 것(문의·매출) ② 그 독자에게 연락할 다른 길이 있는가 ③ 이번 주에 할 한 가지(예: 글 하단 메일 신청 링크).</p>
+<h2>⑤ 퀴즈 3문</h2>
+<p><strong>Q1.</strong> 2018년 유튜브의 새 수익화 기준과 이전 기준은?</p>
+<p>정답: 구독 1,000명 + 최근 12개월 시청 4,000시간. 이전은 누적 조회 1만 회[2]. 해설: 기존 채널은 30일 유예 뒤 적용돼 대체 수입을 찾을 시간이 있었다[3].</p>
+<p><strong>Q2.</strong> 레딧 구글 유입 126% 증가를 인용할 때 붙일 단서는?</p>
+<p>정답: Semrush 외부 추정치이고 구글 검색 유입만 잰 값이다. 해설: 내부 수치와 다를 수 있다고 BBC가 밝혔다[5]. 측정 주체를 적어야 통설 수치를 거른다.</p>
+<p><strong>Q3.</strong> Ready Steady Cut 사례의 교훈은?</p>
+<p>정답: 권고를 따르기만 해서는 회복이 보장되지 않는다. 해설: 8개월 노력에도 회복하지 못했다[5]. 다른 유입 경로를 미리 만들어야 한다.</p>
+<h2>⑥ 더 공부할 거리</h2>
+<ol>
+<li>Hua 외(2022)[4]: 외부 수익 도입 뒤 채널 생산성 변화.</li>
+<li>미디어생태계관측소 보고서[8]: 측정 방법과 한계 확인.</li>
+</ol>
+<h2>⑦ 출처</h2>
+<ol>
+<li>✔ The Guardian, 「Google's bad week…」(2017-03-25) — <a href="https://www.theguardian.com/technology/2017/mar/25/google-youtube-advertising-extremist-content-att-verizon">https://www.theguardian.com/technology/2017/mar/25/google-youtube-advertising-extremist-content-att-verizon</a></li>
+<li>✔ The Guardian, 「YouTube to manually review popular videos…」(2018-01-17) — <a href="https://www.theguardian.com/technology/2018/jan/17/youtube-google-manually-review-top-videos-before-placing-ads-scandal-logan-paul">https://www.theguardian.com/technology/2018/jan/17/youtube-google-manually-review-top-videos-before-placing-ads-scandal-logan-paul</a></li>
+<li>✔ Entrepreneur, 「Making Money on YouTube Just Got Much Harder」(2018-01) — <a href="https://www.entrepreneur.com/article/307615">https://www.entrepreneur.com/article/307615</a></li>
+<li>✔ Hua 외, 「Characterizing Alternative Monetization Strategies on YouTube」(CSCW 2022) — <a href="https://arxiv.org/abs/2203.10143">https://arxiv.org/abs/2203.10143</a></li>
+<li>✔ BBC, 「Google just updated its algorithm…」(2024-05-24) — <a href="https://www.bbc.com/future/article/20240524-how-googles-new-algorithm-will-shape-your-internet">https://www.bbc.com/future/article/20240524-how-googles-new-algorithm-will-shape-your-internet</a></li>
+<li>✔ The Guardian, 「Meta to end news access in Canada…」(2023-08-01) — <a href="https://www.theguardian.com/technology/2023/aug/01/meta-canada-news-facebook-instagram">https://www.theguardian.com/technology/2023/aug/01/meta-canada-news-facebook-instagram</a></li>
+<li>✔ Wikipedia, 「Online News Act」(2차 자료) — <a href="https://en.wikipedia.org/wiki/Online_News_Act">https://en.wikipedia.org/wiki/Online_News_Act</a></li>
+<li>Media Ecosystem Observatory, 「Old News, New Reality」(2024-08) — <a href="https://mediatechdemocracy.com/en/publications/meta-news-ban_2024/">https://mediatechdemocracy.com/en/publications/meta-news-ban_2024/</a> (접속 불가)</li>
+<li>The Fix, 메타 차단 2년 기사(2025-08-07) — <a href="https://thefix.media/2025/08/07/canadian-publishers-are-still-adapting-two-years-after-metas-news-ban">https://thefix.media/2025/08/07/canadian-publishers-are-still-adapting-two-years-after-metas-news-ban</a> (접속 불가)</li>
+<li>✔ 파이낸셜뉴스(다음 게재), AI 브리핑 20% 돌파(2025-12-15) — <a href="https://v.daum.net/v/20251215162516960">https://v.daum.net/v/20251215162516960</a></li>
+<li>✔ 네이버 검색 공식 블로그, 콘텐츠 가이드(2026-05-26)·메이트 안내(05-28) — <a href="https://blog.naver.com/naver_search/224296857688">https://blog.naver.com/naver_search/224296857688</a> · <a href="https://blog.naver.com/naver_search/224290490478">https://blog.naver.com/naver_search/224290490478</a></li>
+<li>✔ 매일경제(다음 게재), 네이버 메이트 발표(2026-05-29) — <a href="https://v.daum.net/v/20260529142403679">https://v.daum.net/v/20260529142403679</a></li>
+</ol>
+</main></body></html>
