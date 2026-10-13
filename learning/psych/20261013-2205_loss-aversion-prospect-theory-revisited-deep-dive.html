@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>손실 회피와 전망 이론</title><meta name="description" content="전망 이론의 네 기둥과 4중 패턴, λ=2.25의 출처, Gal·Rucker 반론과 조절 변인·최근 재검토를 정리한 심화 학습노트"><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}
+.ct{margin:1.6em 0 .3em;font-weight:600}.ct+p{margin-top:.2em}.ans{color:var(--muted);margin-top:-.4em}sup.ref{font-size:.72em;color:var(--muted);margin-left:1px}h2+p,h2+ol{margin-top:.8em}li a{word-break:break-all}table{min-width:0}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>손실 회피와 전망 이론 (심화편) — '손실은 2배'의 출처와 조건, 최근 재검토</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-13</strong> · 주제ID <strong>P015</strong><br>학습노트 · 클라우드학습 · 초안 · 작성 모델 claude-opus-5-5<br><span class="tag">psych</span><span class="tag">손실회피</span><span class="tag">전망이론</span><span class="tag">누적전망이론</span><span class="tag">4중패턴</span><span class="tag">보유효과</span><span class="tag">재현성</span><span class="tag">메타분석</span><br>원문: <a href="https://link.springer.com/article/10.1007/s11238-021-09839-8">https://link.springer.com/article/10.1007/s11238-021-09839-8</a></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>전망 이론은 손실 회피 하나가 아니다. <strong>기준점·손실 회피·민감도 체감·확률 가중</strong> 네 기둥이 함께 '4중 패턴'을 만든다. <sup class="ref">[1]</sup><sup class="ref">[2]</sup></li>
+<li>유명한 <strong>λ=2.25는 1992년 한 연구의 추정치</strong>다. 메타분석 평균은 약 1.96(재인용)이고, 660명 현장 실험의 중앙값은 측정법에 따라 1.33~1.73이었다. 다른 최근 메타분석들은 '2배'도 과대일 수 있다고 본다. <sup class="ref">[5]</sup><sup class="ref">[8]</sup><sup class="ref">[9]</sup><sup class="ref">[11]</sup></li>
+<li>핵심은 '있다/없다'보다 <strong>언제 커지나</strong>다. 판돈이 크고 나이가 많고 잘 모르는 속성일수록 커진다. 지식·교육이 많으면 줄지만 사라지진 않는다. <sup class="ref">[4]</sup><sup class="ref">[5]</sup><sup class="ref">[7]</sup></li>
+</ol>
+<h2>② 핵심 개념 7가지</h2>
+<p class="ct"><strong>1) 네 기둥 — 결과가 아니라 '변화'를 평가한다</strong></p>
+<p>1979년 원형은 결과를 기준점 대비 이득·손실로 편집한 뒤 평가한다. 가치함수는 이득에서 오목, 손실에서 볼록한 S자이고 손실 쪽이 더 가파르다. <sup class="ref">[2]</sup> 1992년 누적 전망 이론은 개별 확률 대신 누적확률에 가중치를 주고, 이득·손실에 다른 가중함수를 허용했다. 곡선 모양은 민감도 체감과 손실 회피 두 원리로 설명했다. <sup class="ref">[1]</sup> (위험 선택 프레이밍은 P009, 기준점과 닮은 앵커링은 P014 참고)</p>
+<p class="ct"><strong>2) 4중 패턴 — 위험 태도는 네 칸에서 뒤집힌다</strong></p>
+<div class="tbl"><table><thead><tr><th>확률</th><th>이득</th><th>손실</th></tr></thead><tbody>
+<tr><th>높음</th><td>위험 회피(확실한 쪽)</td><td>위험 추구(만회 도박)</td></tr>
+<tr><th>낮음</th><td>위험 추구(복권)</td><td>위험 회피(보험)</td></tr>
+</tbody></table></div>
+<p>1992년 논문은 기존 증거와 새 실험으로 이 패턴을 확인했다. <sup class="ref">[1]</sup> 예: 95% 확률로 1만 달러를 받는 도박(기댓값 9,500)보다 확실한 9,499달러를 고르고, 손실이면 반대로 도박을 고른다. <sup class="ref">[2]</sup></p>
+<p class="ct"><strong>3) λ=2.25의 계보</strong></p>
+<p>Tversky·Kahneman(1992)은 λ=2.25, 가치함수 곡률 α=0.88을 추정했다. <sup class="ref">[8]</sup><sup class="ref">[5]</sup> Brown 등의 메타분석은 1992~2017년 추정치 600여 개에서 평균 λ=1.955, 구간 1.820~2.102를 냈다(2024년 JEL 게재, 재인용). <sup class="ref">[3]</sup><sup class="ref">[9]</sup><sup class="ref">[10]</sup> 원 문항 재현 94%(Ruggeri 등 2020)는 P005 참고. <sup class="ref">[12]</sup></p>
+<p class="ct"><strong>4) 반론 — '2배'는 과대, 작은 손실엔 약하다</strong></p>
+<p>Gal·Rucker(2018)의 '심리적 관성' 반론은 P005 참고. 같은 호에는 Simonson·Kivetz, Higgins·Liberman 코멘터리에 대한 저자 재반론이 실렸다. <sup class="ref">[13]</sup> Yechiam(2019)은 초기 연구에서 아주 큰 손실만 과대 가중되고 작은 손실은 종종 그렇지 않았는데, 이를 손실 회피 증거로 과대 해석했다고 봤다. <sup class="ref">[6]</sup> 최근 두 메타분석(Walasek 등 2024, Yechiam·Zeif 2025)은 λ=2가 과대 추정이라고 시사한다(재인용). <sup class="ref">[11]</sup></p>
+<p class="ct"><strong>5) 조절 변인 — 모를수록, 나이 들수록 커진다</strong></p>
+<p>Mrkva 등(2020)은 5개 표본 17,720명에서 지식·경험·교육이 많을수록 손실 회피가 작았지만, 모든 수준에서 손실 회피가 나타났다고 보고했다. 연비를 잘 아는 차 구매자는 연비에만 덜 손실 회피적이었다. 선호를 즉석에서 '구성'할수록 커진다는 해석이다(시스템1·2는 P013). 나이가 많을수록 컸다. <sup class="ref">[4]</sup> 소득 효과는 연구마다 방향이 반대였다. <sup class="ref">[5]</sup></p>
+<p class="ct"><strong>6) 보유 효과와 같은 뿌리인가</strong></p>
+<p>Gächter 등(2022)은 자동차 구매 고객 660명에게 모형 자동차의 팔 값(WTA)과 살 값(WTP)을 물었다. WTA/WTP는 집단 간 2.00, 개인 내 1.70이었고 개인 λ 중앙값은 1.73, 82%가 손실 회피적이었다. 50:50 도박(이득 6유로, 손실 2~7유로)의 λ 중앙값은 1.33으로 낮았지만 두 측정은 강하게 상관했다(ρ=0.677). 저자들은 2.25가 너무 높을 것이라 봤다. <sup class="ref">[5]</sup></p>
+<p class="ct"><strong>7) 판돈은 λ를 키웠고, '책임'은 못 줄였다</strong></p>
+<p>Vieider(2009)는 결정 후 면담을 예고하면(책임) 손실 회피가 준다고 보고했다. Rollwage 등(2025)의 세 실험(핵심 비교 335명, 원 연구 102명)은 이를 재현하지 못했고, 원 연구를 포함한 메타분석 효과도 μ=.08이었다. 대신 판돈이 25유로에서 50·100·150유로로 커질수록 λ가 높았다. <sup class="ref">[7]</sup></p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고·회의 — 기준점을 먼저 쓰고 4중 패턴 칸을 짚는다.</strong> 같은 가용률도 계약 기준이면 이득, 지난달 대비면 손실로 읽힌다. 보고 첫 줄에 "기준: 계약 SLA"처럼 기준점을 밝힌다. 지연 안건에서 '만회용 일정 단축'이 나오면 "높은 확률 손실 칸이라 위험을 더 지려는 것 아닌가"를 묻고 성공·실패 확률×비용 표로 비교한다. 책임 추궁만으로는 편향이 줄지 않았다. <sup class="ref">[7]</sup></li>
+<li><strong>사내 교육·후배 멘토링 — 손실 회피 계수 직접 재기.</strong> 50:50 내기 6문항(이득 6만 원, 손실 2~7만 원)으로 각자 수락 경계를 적고 λ=이득÷수락한 최대 손실을 계산해 분포를 본다. <sup class="ref">[5]</sup> 이어 "속성을 잘 알수록 손실 회피가 작다"(Mrkva)로 도메인 학습의 가치를 이야기한다.</li>
+<li><strong>강사·전자책·기고 — '손실은 2배'에 조건을 붙인다.</strong> 슬라이드를 "평균 약 2배, 단 작은 손실·전문가에선 작고 큰 판돈·고령층에선 크다"로 고친다. 사회복지 관점에서 고령층 대상 손실 프레임 마케팅의 윤리를 기고 소재로 삼는다. 숫자는 낮은 목소리로 천천히, 단서는 이어서 한 번 더 말한다.</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습 (10분)</h2>
+<p><strong>판돈 바꿔 내 λ 재기.</strong> "50% 확률로 6천 원을 얻고 50% 확률로 X원을 잃는 내기"를 X=2천~7천 원 6줄로 적고 할지 말지 표시한다. 같은 표를 600만 원(손실 200만~700만 원)으로 반복한다. 두 λ를 비교하고, 최근 보고에서 '큰 판돈'처럼 다룬 손실 1건을 메모한다.</p>
+<h2>⑤ 퀴즈 3문</h2>
+<p><strong>Q1.</strong> 4중 패턴에서 '높은 확률의 손실' 앞의 위험 태도는?<br>→ <strong>정답:</strong> 위험 추구. <em>해설:</em> 확실한 손실보다 도박을 고른다. 낮은 확률 손실에선 보험을 산다(위험 회피). <sup class="ref">[1]</sup></p>
+<p><strong>Q2.</strong> Gächter 등(2022)에서 WTA/WTP로 잰 λ와 도박으로 잰 λ의 관계는?<br>→ <strong>정답:</strong> 도박 쪽이 낮지만(중앙값 WTA/WTP 1.73 대 도박 1.33) 개인 수준에서 강하게 상관(ρ=0.677). <em>해설:</em> 보유 효과에도 손실 회피가 깔려 있다는 근거다.</p>
+<p><strong>Q3.</strong> '결정에 책임을 지우면 손실 회피가 준다'는 결과는 재현됐나?<br>→ <strong>정답:</strong> 아니다. <em>해설:</em> 세 실험 모두 효과가 없었고, 오히려 판돈 크기가 λ를 바꿨다. <sup class="ref">[7]</sup></p>
+<h2>⑥ 더 공부할 거리</h2>
+<ol>
+<li>Brown 등(2024) 원문과 Yechiam·Zeif(2025) 재-메타분석 비교 — 측정법·판돈별 차이와 '2배' 과대 여부(둘 다 이번에 원문 미열람).</li>
+<li>Kahneman·Tversky(1979) 원문과 Gal·Rucker(2018) 및 같은 호 코멘터리 — 이번엔 접속 차단으로 못 읽었다.</li>
+</ol>
+<h2>⑦ 출처</h2>
+<ol>
+<li>✔ Tversky·Kahneman(1992), 누적 전망 이론, J Risk Uncertain 5(초록) — <a href="https://link.springer.com/article/10.1007/BF00122574">https://link.springer.com/article/10.1007/BF00122574</a></li>
+<li>✔ Prospect theory, Wikipedia — <a href="https://en.wikipedia.org/wiki/Prospect_theory">https://en.wikipedia.org/wiki/Prospect_theory</a></li>
+<li>Brown·Imai·Vieider·Camerer(2024), JEL 62(2) (접속 차단, 미열람) — <a href="https://doi.org/10.1257/jel.20221698">https://doi.org/10.1257/jel.20221698</a></li>
+<li>✔ Mrkva 등(2020), JCP 30(3)(초록) — <a href="https://www.semanticscholar.org/paper/da8af9c136b7922917cccd06f0464316208178de">https://www.semanticscholar.org/paper/da8af9c136b7922917cccd06f0464316208178de</a></li>
+<li>✔ Gächter·Johnson·Herrmann(2022), Theory Decis 92 — <a href="https://link.springer.com/article/10.1007/s11238-021-09839-8">https://link.springer.com/article/10.1007/s11238-021-09839-8</a></li>
+<li>✔ Yechiam(2019), Psychol Res 83(초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/29663131/">https://pubmed.ncbi.nlm.nih.gov/29663131/</a></li>
+<li>✔ Rollwage 등(2025), Q J Exp Psychol — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12982577/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12982577/</a></li>
+<li>✔ van Winssen 등(2015), Eur J Health Econ(λ=2.25 재인용) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5080306/">https://pmc.ncbi.nlm.nih.gov/articles/PMC5080306/</a></li>
+<li>✔ Kühberger(2023), EXCLI J(Brown 등 평균 재인용) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10620856/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10620856/</a></li>
+<li>✔ Arioli 등(2025), Hum Brain Mapp(Brown 등 구간 재인용) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12205370/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12205370/</a></li>
+<li>✔ Kuper-Smith·Korn(2025), Commun Psychol(최근 메타분석 재인용) — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12289979/">https://pmc.ncbi.nlm.nih.gov/articles/PMC12289979/</a></li>
+<li>✔ Ruggeri 등(2020), Nat Hum Behav(초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/32424259/">https://pubmed.ncbi.nlm.nih.gov/32424259/</a></li>
+<li>✔ Loss aversion, Wikipedia — <a href="https://en.wikipedia.org/wiki/Loss_aversion">https://en.wikipedia.org/wiki/Loss_aversion</a></li>
+<li>Gal·Rucker(2018), JCP 28(3) (접속 차단, 미열람) — <a href="https://doi.org/10.1002/jcpy.1047">https://doi.org/10.1002/jcpy.1047</a></li>
+</ol>
+</main></body></html>
