@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>넛지 효과 크기 재평가</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}.ans{color:var(--muted)}.note{font-size:.92rem;color:var(--muted)}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>넛지 효과 크기 재평가: 논문 속 넛지와 현장의 넛지는 다르다</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-14</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">넛지</span><span class="tag">선택설계</span><span class="tag">출판편향</span><span class="tag">메타분석</span><span class="tag">효과크기</span><span class="tag">기본값</span><span class="tag">공공사업</span><br>원문: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8740589">https://pmc.ncbi.nlm.nih.gov/articles/PMC8740589</a></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>넛지 연구 455개 효과를 모은 메타분석의 평균은 d=0.45였다. 하지만 같은 자료에서 출판 편향도 확인됐다[1].
+<li>출판 편향을 보정하자 평균 효과는 0에 가까워졌다(0.04). 다만 '기본값' 같은 구조형 넛지는 판정 보류였다[2].
+<li>실제 넛지 유닛의 무편집 실험 126건은 1.4%p(8.0%) 개선이었다. 학술지의 8.7%p와 비교하면 약 6분의 1이다[3]. 계획서에는 이 현장 숫자를 기준으로 기대치를 적는다.
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<p><strong>1) 낙관론: d=0.45, '작음~중간'</strong></p>
+<p>Mertens 등(2022 PNAS)은 논문 214편에서 효과 455개, 참가자 약 215만 명을 모았다. 평균 효과는 d=0.45(95% CI 0.39~0.52)였고, 이상치를 빼면 0.42였다[1]. 같은 논문은 중간 수준의 출판 편향도 보고했다. 편향을 중간 정도로 가정하면 효과는 0.31로 줄고, 심하게 가정하면 0 가까이로 떨어진다[1].</p>
+<p><strong>2) 평균보다 분산: 약 15%는 역효과</strong></p>
+<p>예측구간은 -0.48~1.39로 넓었다. 저자들은 개입의 약 15%가 오히려 역효과를 낼 수 있다고 추정했다[1]. 최근 연구일수록 효과가 작게 보고됐다[1]. 넛지는 효과가 일정한 처방이 아니라, 맥락에 따라 결과가 크게 달라지는 실험이다.</p>
+<p><strong>3) 유형별 차이: 구조 &gt; 정보 &gt; 보조</strong></p>
+<p>보정 전 수치로 보면 선택지를 바꾸는 '구조' 개입이 d=0.55로 가장 컸다. 정보 제공은 0.38, 알림·약속 같은 보조는 0.31이었다. 기법별로는 기본값(디폴트)이 0.62로 가장 컸고, 알림은 0.30이었다[1]. 영역별로는 음식이 0.72로 가장 컸고 금융이 0.25로 가장 작았다[1].</p>
+<p><strong>4) 반론: 보정하면 증거가 사라진다</strong></p>
+<p>Maier 등(2022 PNAS 서신)은 출판 편향을 보정하는 베이즈 메타분석(RoBMA)으로 같은 자료를 다시 분석했다. 평균 효과는 0.04(0.00~0.14)였다[2]. 정보·보조형은 '효과 없음' 쪽 증거가 우세했고, 금융 영역은 BF01=41로 효과 없음 쪽 증거가 가장 강했다. 구조형(0.12)과 음식 영역은 판정이 보류됐다[2]. 저자들도 평균 효과가 없어도 일부 넛지는 효과적일 수 있다고 단서를 달았다[2].</p>
+<p><strong>5) 현장 검증: 8.7%p 대 1.4%p</strong></p>
+<p>DellaVigna·Linos(2022 Econometrica)는 미국 넛지 유닛 두 곳이 수행한 실험 126건(약 2,300만 명)을 결과와 관계없이 모두 분석했다. 효과는 평균 1.4%p(통제군 대비 8.0%)였고, 학술지 넛지의 8.7%p(33.4%)보다 훨씬 작았다[3]. 이 격차의 약 70%는 검정력이 낮은 학술 연구의 선택적 출판으로 설명됐고, 나머지는 주로 넛지 설계의 차이였다[3]. 1.4%p도 수백만 명에게 거의 무비용으로 적용하면 의미 있는 성과다.</p>
+<p><strong>6) 실무 결론: '얼마나'보다 '어디서 먹히나'</strong></p>
+<p>Gelman 등은 평균 효과보다 어떤 조건에서 효과가 큰지를 물어야 한다고 지적했다. 기본값 등 일부를 빼면 크고 일관된 효과를 기대할 이유가 없다는 것이다[4][불확실: 원문 미열람]. 따라서 넛지는 소규모 A/B 실험으로 검증한 뒤 확대하는 방식이 맞다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고</strong>: 공공 서비스 이용률 개선안을 제안할 때 기대 효과를 논문 수치(30%대 개선)로 적지 않는다. 현장 기준인 '+1~2%p(상대 8% 안팎)'로 적고[3], 시범 2주 A/B 측정 계획을 함께 붙인다.
+<li><strong>사내 교육·멘토링</strong>: 후배에게 넛지를 가르칠 때 "기본값 &gt; 정보 제공 &gt; 알림" 순서 표[1]와 함께 '보정하면 0.04'라는 반론[2]을 한 장에 같이 보여 준다. 연구 인용 전에 출판 편향·현장 재현 여부를 확인하는 습관을 만든다.
+<li><strong>강사·전자책</strong>: '넛지로 전환율 3배' 같은 과장 대신 '논문 8.7%p, 현장 1.4%p'를 비교하는 강의 한 꼭지를 만든다. 정직한 숫자 자체가 차별점이 된다. 사회복지 분야(급여 신청 누락 줄이기) 사례로도 쓸 수 있다.
+</ol>
+<h2>④ 오늘 바로 해볼 연습 (10분)</h2>
+<p>지금 맡은 사업에서 '안내 강화'로 해결하려던 과제 하나를 고른다. ① 정보형(안내문), 구조형(기본값·선택지 순서), 보조형(알림) 개입을 하나씩 적는다. ② 각각의 기대 효과를 1.4%p 기준으로 적는다. ③ 그중 구조형 하나를 골라 측정 지표와 비교군 나누는 방법을 세 줄로 쓴다.</p>
+<h2>⑤ 퀴즈 3문</h2>
+<ol>
+<li>Mertens 등 메타분석에서 기법별로 효과가 가장 컸던 것은? (가) 알림 (나) 기본값 (다) 정보 번역
+<br><span class="ans"><strong>정답 (나)</strong>. 기본값의 효과는 d=0.62였고 알림은 0.30이었다[1].</span>
+<li>Maier 등이 출판 편향을 보정해 얻은 평균 효과는? (가) 0.45 (나) 0.31 (다) 0.04
+<br><span class="ans"><strong>정답 (다)</strong>. 0.04였다. 단 구조형과 음식 영역은 판정이 보류됐다[2].</span>
+<li>넛지 유닛 실험과 학술지 효과 차이의 주된 원인은? (가) 미국 밖 표본 (나) 선택적 출판과 낮은 검정력 (다) 학자의 참여 여부
+<br><span class="ans"><strong>정답 (나)</strong>. 격차의 약 70%가 선택적 출판으로 설명됐다[3].</span>
+</ol>
+<h2>⑥ 출처</h2>
+<ol>
+<li>✔ Mertens, Herberz, Hahnel, Brosch (2022). The effectiveness of nudging: A meta-analysis of choice architecture interventions across behavioral domains. <em>PNAS</em> 119(1). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8740589">https://pmc.ncbi.nlm.nih.gov/articles/PMC8740589</a>
+<li>✔ Maier, Bartoš, Stanley, Shanks, Harris, Wagenmakers (2022). No evidence for nudging after adjusting for publication bias. <em>PNAS</em> 119(31). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9351501">https://pmc.ncbi.nlm.nih.gov/articles/PMC9351501</a>
+<li>DellaVigna, Linos (2022). RCTs to Scale: Comprehensive Evidence from Two Nudge Units. <em>Econometrica</em> 90(1), 81–116. <a href="https://doi.org/10.3982/ECTA18709">https://doi.org/10.3982/ECTA18709</a> (원문 접속 불가, 초록 수치는 검색 결과로 확인)
+<li>Gelman 등 공저 (2022). 넛지 메타분석에 대한 PNAS 서신. <a href="https://sites.stat.columbia.edu/gelman/research/published/PNAS_letter_Nudge-meta-analysis.pdf">https://sites.stat.columbia.edu/gelman/research/published/PNAS_letter_Nudge-meta-analysis.pdf</a> (미열람)
+<li>✔ Wikipedia, Nudge theory (넛지 유닛 배경 확인). <a href="https://en.wikipedia.org/wiki/Nudge_theory">https://en.wikipedia.org/wiki/Nudge_theory</a>
+</ol>
+</main></body></html>
