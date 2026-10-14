@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>슈퍼예측가와 지혜의 군중</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}.ans{color:var(--muted)}.note{font-size:.92rem;color:var(--muted)}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>슈퍼예측가와 지혜의 군중: 확률로 적고, 채점하고, 평균하라</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-14</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">슈퍼예측가</span><span class="tag">지혜의군중</span><span class="tag">확률예측</span><span class="tag">브라이어점수</span><span class="tag">테틀록</span><span class="tag">LLM앙상블</span><span class="tag">리스크관리</span><br>원문 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11800985/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11800985/</a></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>예측을 잘하는 비결은 감이 아니라 습관이다. 확률로 적고, 결과로 채점하고(브라이어 점수), 여러 판단을 평균한다[2][3].
+</li>
+<li>1시간이 안 되는 확률 훈련으로 정확도가 6~11% 올랐다는 보고가 있다[4]. 다만 2025년 재분석은 팀·훈련 효과가 과대평가됐을 수 있다고 반박했다[5].
+</li>
+<li>LLM 12개의 평균 예측은 인간 925명 군중과 구별되지 않았다(브라이어 0.20 대 0.19). 사람과 AI를 단순 평균했을 때 가장 정확했다(0.12)[1].
+</li></ol>
+<h2>② 핵심 개념 6가지</h2>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">1) 전문가 예측은 생각보다 약하다</h3>
+<p>테틀록은 1984~2003년 전문가 284명의 예측 약 2만 8천 건을 분석했다. 결과는 우연보다 조금 나은 수준이었다. 3~5년 장기 예측에서는 단순 외삽 알고리즘에도 자주 뒤졌다. 언론 노출이 많은 사람일수록 덜 정확했다[3].</p>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">2) 브라이어 점수: 예측을 채점하는 도구</h3>
+<p>(예측 확률 − 실제 결과)²을 평균한 값이다. 실제 결과는 일어나면 1, 안 일어나면 0으로 놓는다. 0이 만점이고, 모든 질문에 50%라고 답하면 0.25가 나온다[1]. "아마 될 겁니다"는 채점할 수 없지만, "70%"는 채점할 수 있다.</p>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">3) 굿 저지먼트 프로젝트(GJP)의 성적</h3>
+<p>미국 정보기관 산하 연구조직 IARPA가 2011년부터 지정학 예측 대회를 열었다. 매년 질문 약 100~150개가 나왔다[2]. GJP는 두 시즌 연속 1위를 했고, 다른 연구팀보다 35~72% 정확했다[2]. 기밀 정보를 가진 분석관보다 약 30% 낫다는 보도도 있다[2][불확실: 원자료 미확인].</p>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">4) 정확도를 높인 세 가지: 훈련·팀·선발</h3>
+<p>Mellers 등(2014)이 꼽은 요인이다[6]. ① 확률 훈련: 편향을 교정하고, 기준율(비슷한 사례들의 평균)에서 출발하고, 여러 추정치를 평균하게 했다. ② 팀: 정보와 근거를 공유하게 했다. ③ 선발: 1년 차 상위 2%를 엘리트 팀으로 묶었다. 이들이 '슈퍼예측가'다. 1시간 미만의 훈련(CHAMPS KNOW)은 4년간 정확도를 6~11% 높였다[4][초록 기준].</p>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">5) 반론: 효과의 크기는 아직 논쟁 중</h3>
+<p>2025년 <em>Psychological Science</em>에 실린 재분석이 있다[5]. 어떤 질문을 골랐는지, 언제 답했는지를 통제하자 팀·훈련 효과가 크게 줄었다. 일부는 아예 뒤집혔다. 원저자들은 질문 선택과 제출 시점도 예측가의 실력이라고 반박하며 공동 검증을 제안했다[5][원문 미열람]. 확실한 결론은 '채점하는 습관이 핵심'이라는 데까지다.</p>
+<h3 style="font-size:1.02rem;margin:1.4em 0 .2em">6) 실리콘 군중: AI 예측도 평균하면 강해진다</h3>
+<p>Schoenegger 등(2024)은 LLM 12개에게 메타큘러스 대회의 이진 질문 31개를 예측하게 했다[1]. LLM 평균의 브라이어 점수는 0.20으로, 인간 군중(0.19)과 차이가 없었다(p=0.85). 다만 '그렇다' 쪽으로 쏠리는 편향이 있었다. LLM의 평균 예측은 57%였는데, 실제로 일어난 질문은 31개 중 14개였다. 인간 중앙값을 보여 주자 GPT-4의 점수는 0.17에서 0.14로 좋아졌다. 사람과 AI 예측을 단순 평균하면 0.12로 더 좋아졌다. 다만 질문 수가 적다는 한계가 있다[1].</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고·회의</strong>: 리스크 항목에 '상·중·하' 대신 확률을 적는다(예: "2차 검수 지연 30%"). 분기 말에 실제 결과로 채점한다. 일정 추정은 PL 3명에게 따로 받아 평균한다.
+</li>
+<li><strong>후배 멘토링</strong>: 신입 PM에게 기준율부터 묻게 한다. 먼저 "지난 사업 10건 중 몇 건이 제때 오픈했나?"를 확인한다. 그다음 이번 사업의 특수성을 반영해 조정한다.
+</li>
+<li><strong>강사·전자책</strong>: "공공 IT 사업, 확률로 관리하라"라는 강의 한 꼭지를 만든다. 테틀록 연구, 2025년 반론, LLM 실험을 함께 소개한다. AI는 판단을 대신하는 존재가 아니라 평균에 섞는 '한 표'로 쓴다는 점을 차별 포인트로 삼는다.
+</li></ol>
+<h2>④ 오늘 바로 해볼 연습 (10분)</h2>
+<p>이번 달 안에 결과가 나오는 업무 질문 5개를 적는다(예: "변경계약이 10월 말까지 승인될까?"). 질문마다 0~100% 확률과 근거 한 줄을 쓰고, 채점일을 달력에 표시한다. 결과가 나오면 (확률−결과)²의 평균을 낸다. 0.25보다 낮으면 동전 던지기보다 나은 것이다.</p>
+<h2>⑤ 퀴즈 3문</h2>
+<ol>
+<li>모든 질문에 50%로 답하면 브라이어 점수는? (가) 0 (나) 0.25 (다) 0.5
+<br><span class="ans"><strong>정답 (나)</strong>. 0.5²=0.25다. 점수는 낮을수록 좋다[1].</span>
+</li>
+<li>GJP의 '슈퍼예측가'는 어떻게 뽑혔나? (가) 학력순 (나) 1년 차 성적 상위 2% (다) 정보기관 경력자
+<br><span class="ans"><strong>정답 (나)</strong>. 1년 차 상위 2%를 엘리트 팀으로 묶었다[6].</span>
+</li>
+<li>Schoenegger 등 연구에서 가장 정확했던 것은? (가) GPT-4 단독 (나) 인간 중앙값을 본 LLM (다) 인간·AI 단순 평균
+<br><span class="ans"><strong>정답 (다)</strong>. 단순 평균이 0.12로 가장 좋았다(탐색적 분석)[1].</span>
+</li></ol>
+<h2>⑥ 출처</h2>
+<ol>
+<li>✔ Schoenegger, Tuminauskaite, Park, Bastos, Tetlock (2024). Wisdom of the silicon crowd: LLM ensemble prediction capabilities rival human crowd accuracy. <em>Science Advances</em>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11800985/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11800985/</a>
+</li>
+<li>✔ Wikipedia, The Good Judgment Project. <a href="https://en.wikipedia.org/wiki/The_Good_Judgment_Project">https://en.wikipedia.org/wiki/The_Good_Judgment_Project</a>
+</li>
+<li>✔ Wikipedia, Philip E. Tetlock. <a href="https://en.wikipedia.org/wiki/Philip_E._Tetlock">https://en.wikipedia.org/wiki/Philip_E._Tetlock</a>
+</li>
+<li>Chang, Chen, Mellers, Tetlock (2016). Developing expert political judgment. <em>Judgment and Decision Making</em> 11(5), 509–526. <a href="https://ideas.repec.org/a/cup/judgdm/v11y2016i5p509-526_8.html">https://ideas.repec.org/a/cup/judgdm/v11y2016i5p509-526_8.html</a> (원문 접속 불가, 초록 수치는 검색 결과로 확인)
+</li>
+<li>Rethinking the Role of Teams and Training in Geopolitical Forecasting (2025). <em>Psychological Science</em>. <a href="https://www.psychologicalscience.org/journals/psychological-science/09567976241266481/">https://www.psychologicalscience.org/journals/psychological-science/09567976241266481/</a> (접속 불가, 초록 요지와 원저자 반박은 검색 결과로 확인)
+</li>
+<li>Mellers 등 (2014). Psychological strategies for winning a geopolitical forecasting tournament. <em>Psychological Science</em> 25, 1106–1115. <a href="https://journals.sagepub.com/doi/10.1177/0956797614524255">https://journals.sagepub.com/doi/10.1177/0956797614524255</a> (접속 거부, 초록 요지는 검색 결과로 확인)
+</li></ol>
+</main></body></html>
