@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>콜 누스바우머 크나플릭 『Storytelling with Data』</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}.tbl{overflow-x:auto;margin:1em 0}table{width:100%;border-collapse:collapse;font-size:.9rem;line-height:1.6}th,td{border:1px solid var(--line);padding:.45em .6em;text-align:left;vertical-align:top}th{background:var(--card)}.quiz p{margin:.4em 0}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>콜 누스바우머 크나플릭 『Storytelling with Data』 — 결론이 보이는 차트 한 장</h1>
+<div class="meta">트랙 <strong>speech</strong> · 날짜 <strong>2026-10-15</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">speech</span><span class="tag">데이터스토리텔링</span><span class="tag">크나플릭</span><span class="tag">차트설계</span><span class="tag">군더더기제거</span><span class="tag">강조</span><span class="tag">결론형제목</span><span class="tag">빅아이디어</span><span class="tag">보고서</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>크나플릭의 6단계(맥락 파악→차트 선택→군더더기 제거→시선 집중→디자이너처럼 생각→이야기로 엮기) 중 가장 먼저 할 일은 그래프가 아니라 <strong>한 문장 결론(빅 아이디어)</strong>을 정하는 것이다.</li>
+<li>실증 연구에서 효과가 큰 쪽은 '지우기'보다 <strong>'강조하기'</strong>다. 군더더기 제거는 전문성 인상을 조금 올렸고, 제목·색 강조·주석은 무엇을 기억하는지를 바꿨다(Ajani 외 2021, 요약으로 확인).</li>
+<li>사람은 차트에서 <strong>제목을 가장 먼저, 가장 많이</strong> 보고 제목대로 기억한다. 그래서 결론형 제목은 강력하지만, 데이터와 어긋난 제목도 그대로 믿게 만드니 정직하게 써야 한다.</li>
+</ol>
+<h2>② 핵심 개념·기법 6가지</h2>
+<p><strong>1) 맥락: 빅 아이디어·3분 이야기·스토리보드</strong></p>
+<p>차트를 열기 전에 세 가지를 만든다. ⓐ 내 관점과 '그래서 무엇'을 담은 한 문장(빅 아이디어), ⓑ 3분만 주어지면 할 말(3분 이야기), ⓒ 포스트잇으로 짠 전체 흐름(스토리보드)이다[1]. 책은 Wiley에서 2015년에 나왔다. 저자는 구글 피플 애널리틱스 팀 관리자 출신이다[6]. 판매 50만 부 이상·20개 언어 번역은 판매처 소개 문구라 [불확실].</p>
+<p><strong>2) 차트 선택: 위치·길이로 비교시키기</strong></p>
+<p>클리블랜드·맥길(1984)의 지각 실험에서 판단 정확도는 공통 축 위의 위치 &gt; 길이 &gt; 각도·기울기 &gt; 면적 순이었다. 2010년 크라우드소싱 재현도 같은 순위를 확인했다[6]. 파이·3D·버블보다 막대·선을 먼저 고르라는 책의 권고도 같은 방향이다.</p>
+<p><strong>3) 군더더기 제거: 효과는 '작다'고 알고 쓴다</strong></p>
+<p>터프티(1983)는 데이터를 알려 주지 않는 장식을 '차트정크'라 불렀다[3]. 그러나 장식이 장기 기억을 오히려 돕는다는 연구(Bateman 외 2010, Borkin 외 2013)도 있다. 디자이너들 사이에서는 지나친 미니멀리즘을 바로잡자는 흐름도 보고됐다[3]. Ajani 외(2021, 저자 중 한 명이 크나플릭)는 같은 주제 6개를 '어수선/정리/정리+강조' 세 버전으로 대학생에게 보여 줬다. 그 결과 정리는 '전문적' 평가를 올렸지만 이득은 작았다[5]. 효과 크기 수치는 확인하지 못했다[불확실].</p>
+<p><strong>4) 시선 집중: 회색 바탕에 색 하나</strong></p>
+<p>색·크기·위치 같은 '전주의 속성'은 의식적으로 찾기 전에 눈을 끈다. 회색 사이 초록 표적은 빨강 사이보다 빨리 찾힌다[4]. 같은 연구[5]에서 제목+강조색+주석을 더하자 미적·명료성 평가가 오르고, 사람들이 기억하는 패턴이 강조한 쪽으로 강하게 움직였다.</p>
+<p><strong>5) 제목이 기억을 정한다</strong></p>
+<p>보르킨 외(2016)의 시선 추적 실험에서 참가자는 차트를 10초씩 봤다. 이때 시선이 가장 많이 머문 곳은 제목과 위쪽 텍스트였다. 나중에 설명할 때도 제목을 가장 많이 언급했다. 결론을 담은 제목은 핵심 메시지 기억을 도왔다[2]. 꺾은선 차트 50개를 쓴 최근 연구도 제목 단어 수와 의도한 메시지가 패턴 판단을 바꾼다고 보고했다[7].</p>
+<p><strong>6) 이야기로 엮기, 그리고 제목의 윤리</strong></p>
+<p>콩 외(2018)는 같은 차트에 정반대 제목을 붙였다. 사람들은 차트보다 <strong>제목에 맞춰</strong> 핵심 메시지를 기억했다. 사전 태도와 상관없이 대부분은 그 차트를 중립적이라고 여겼다[2]. 결론형 제목은 지름길인 만큼, 데이터가 실제로 보여 주는 것만 써야 한다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ul>
+<li><strong>사업관리 보고·회의 발표:</strong> 주간 보고 차트 제목을 "월별 장애 건수" 대신 "9월 장애 12→5건, 이중화 이후 절반 아래로"처럼 결론 문장으로 바꾼다. 나머지 막대는 회색, 바뀐 달만 진한 파랑으로 칠한다. 축 눈금선·범례·3D 효과는 지운다.</li>
+<li><strong>사내 교육·후배 멘토링:</strong> 후배가 만든 보고 장표로 '3분 이야기'를 시켜 본다. 말로 3분 안에 결론이 안 나오면 차트가 아니라 생각이 덜 된 것이다. 그다음 "차트를 덮고 제목만 읽어도 결론이 나오는가?"를 점검한다.</li>
+<li><strong>강사·전자책:</strong> 공공 IT 사업관리 강의에 '보고서 차트 비포·애프터' 차시를 만든다. 실제 고객사 데이터는 쓰지 않고 수치를 바꾼 가상 데이터로 시연한다. 연구 근거를 넣을 때는 "정리는 효과 작음, 강조·제목은 효과 큼"처럼 근거 수준을 함께 말한다.</li>
+</ul>
+<h2>④ 오늘 바로 해볼 연습 (15분)</h2>
+<p>최근 보고서의 차트 하나를 골라 네 가지를 한다. ① 결론 한 문장을 25자 이내로 적어 제목으로 바꾼다. ② 강조할 막대·선 하나만 색을 남기고 나머지는 회색으로 칠한다. ③ 눈금선·테두리·불필요한 범례를 지운다. ④ 동료에게 5초만 보여 주고 "무슨 말 같아요?"라고 묻는다. 답이 내 제목과 같으면 성공이다.</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> 크나플릭이 차트 작업 전 맥락 단계에서 만들라고 한 세 가지는?</p>
+<p>정답: 빅 아이디어(한 문장), 3분 이야기, 스토리보드. 해설: 그래프보다 '무엇을 말할지'를 먼저 정해야 차트 선택과 강조 대상이 정해진다.</p>
+<p><strong>Q2.</strong> Ajani 외(2021)에서 '군더더기 제거'와 '강조' 중 기억하는 패턴을 더 크게 바꾼 것은?</p>
+<p>정답: 강조(제목·색·주석). 해설: 군더더기 제거는 전문성 인상을 조금 올렸고, 강조는 기억 내용 자체를 움직였다.</p>
+<p><strong>Q3.</strong> 같은 차트에 정반대 제목을 붙이면 사람들은 대체로 무엇을 따라 기억하나(콩 외 2018)?</p>
+<p>정답: 제목. 해설: 그래서 결론형 제목은 데이터가 지지하는 범위 안에서만 써야 한다.</p>
+<h2>⑥ 출처 (✔ = 직접 열어 읽음)</h2>
+<ol>
+<li>✔ Making Data Work, "Stories Help Convert Data To Knowledge"(Knaflic 6단계·빅 아이디어 요약) — <a href="https://makingdatawork.substack.com/p/stories-help-convert-data-to-knowledge">https://makingdatawork.substack.com/p/stories-help-convert-data-to-knowledge</a></li>
+<li>✔ Filwd, "Titles in Data Visualization: Empirical Evidence"(Borkin 외 2016, Kong 외 2018 정리) — <a href="https://filwd.substack.com/p/titles-in-data-visualization-empirical">https://filwd.substack.com/p/titles-in-data-visualization-empirical</a></li>
+<li>✔ Wikipedia, "Chartjunk" — <a href="https://en.wikipedia.org/wiki/Chartjunk">https://en.wikipedia.org/wiki/Chartjunk</a></li>
+<li>✔ Wikipedia, "Pre-attentive processing" — <a href="https://en.wikipedia.org/wiki/Pre-attentive_processing">https://en.wikipedia.org/wiki/Pre-attentive_processing</a></li>
+<li>미열람(원문 차단, 초록 검색 요약으로 확인): Ajani, K. 외(2021), "Declutter and Focus: Empirically Evaluating Design Guidelines for Effective Data Communication", IEEE TVCG — <a href="https://ieeexplore.ieee.org/abstract/document/9385921">https://ieeexplore.ieee.org/abstract/document/9385921</a></li>
+<li>미열람(검색 요약으로 확인): Knaflic, C.N.(2015), 『Storytelling with Data』, Wiley(목차·저자 소개) — <a href="https://www.oreilly.com/library/view/storytelling-with-data/9781119002253/">https://www.oreilly.com/library/view/storytelling-with-data/9781119002253/</a> / Heer &amp; Bostock(2010), "Crowdsourcing Graphical Perception", CHI — <a href="https://idl.uw.edu/papers/crowdsourcing-graphical-perception">https://idl.uw.edu/papers/crowdsourcing-graphical-perception</a></li>
+<li>✔ "How Does Title Framing Influence Pattern Identification in Line Charts?"(arXiv, 2026) — <a href="https://arxiv.org/abs/2609.17455">https://arxiv.org/abs/2609.17455</a></li>
+</ol>
+</main></body></html>
