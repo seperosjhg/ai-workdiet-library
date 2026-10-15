@@ -101,3 +101,4 @@
 - 2026-10-15 [psych] 지식의 저주와 전문가 맹점 — 한번 알면 모르던 감각으로 못 돌아가 두드리기 실험에서 예상 50%가 실제 2.5%였고, 다짐으로는 안 고쳐지니(원인은 상대 앎의 단서 부족) 초보자에게 먼저 묻고 시켜 보며 구체 사례로 말한다 (learning/psych/20261015-0906_curse-of-knowledge-expert-blind-spot.md)
 - 2026-10-15 [speech] 리타 피어슨 「Every kid needs a champion」(2013) — 7분 34초에 웃음 14번, 농담+자격 오프닝·대사로 닫는 짧은 일화 5개·현실 인정→챔피언 정의→정체성 마무리로 "관계가 배움의 조건"을 증명한다 (learning/speech/20261015-1206_rita-pierson-every-kid-needs-a-champion.md)
 - 2026-10-15 [psych] 재현성 위기와 개혁의 계보 — 유명 연구 100편 재현 36%·효과 절반, Many Labs 2 28개 중 54%, 등록보고서 가설 지지 44%(일반 96%)에 개혁 지지 논문(Protzko 2023)마저 2024년 철회됐으니, 인용 연구는 재현·사전등록·철회 3칸으로 거른다 (learning/psych/20261015-1506_replication-crisis-evidence-checklist.md)
+- 2026-10-15 [speech] 질 볼트 테일러 「My stroke of insight」(TED2008) — 오빠 이야기로 동기를 밝히고 실제 사람 뇌로 해부학을 먼저 가르친 뒤 그 틀로 자기 뇌졸중 4시간을 1인칭 중계하고 선택 질문으로 닫는 구조는 빌리되, 좌뇌형·우뇌형은 1,011명 분석(2013)에서 근거가 없어 비유로만 쓴다 (learning/speech/20261015-1807_jill-bolte-taylor-stroke-of-insight.md)
