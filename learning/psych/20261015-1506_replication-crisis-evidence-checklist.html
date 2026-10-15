@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>재현성 위기와 근거 점검</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}.ans{color:var(--muted)}.note{font-size:.92rem;color:var(--muted)}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>재현성 위기와 개혁의 계보: 강의에 인용할 연구는 '재현됐는가'부터 묻는다</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-15</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">재현성위기</span><span class="tag">사전등록</span><span class="tag">등록보고서</span><span class="tag">메니랩스</span><span class="tag">연구신뢰도</span><span class="tag">강의근거</span></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>심리학 유명 연구 100편을 다시 해 보니 유의한 결과가 다시 나온 것은 약 36%였고, 효과 크기는 평균 절반으로 줄었다(오픈사이언스협업, 2015).</li>
+<li>대규모 다기관 재현(Many Labs 2, 2018)에서도 28개 중 절반 정도만 살아남았다. 등록보고서처럼 결과를 보기 전에 심사하면 '가설 지지' 비율이 96%에서 44%로 떨어진다(Scheel 등, 2021).</li>
+<li>그런데 개혁을 지지한 논문(Protzko 등 2023)조차 사전등록 문제로 2024년에 철회됐다. 그러니 강의·기고에 쓰는 연구는 '재현·사전등록·철회 여부' 세 칸으로 걸러야 한다.</li>
+</ol>
+<h2>② 핵심 개념·기법 6가지</h2>
+<ol>
+<li><strong>재현성 프로젝트(2015): 36%와 '절반'.</strong> 원래 유의했던 97편 가운데 재현에서도 p&lt;.05가 나온 것은 36%였다. 효과 크기는 평균 원래의 절반 수준이었다. 재현 실패 중 25%는 원래 결론과 정면으로 어긋났고, 49%는 판단이 어려웠다(위키백과 정리).</li>
+<li><strong>Many Labs 2(2018): 표본 탓이 아니다.</strong> 36개 나라·지역, 125개 표본, 1만 5,305명이 같은 절차로 28개 효과를 다시 검증했다. p&lt;.05 기준 15개(54%), 엄격한 p&lt;.0001 기준 14개(50%)만 재현됐다. 21개(75%)는 효과가 원래보다 작았다. 효과 크기 차이는 '어느 나라, 어떤 표본이냐'보다 '어떤 효과냐'에 달려 있었다. "재현 실패는 표본이 달라서"라는 흔한 변명이 약해진 셈이다. [수치는 초록 요약 검색 결과로 확인, 원문 미열람]</li>
+<li><strong>원인: 유연한 분석과 출판 편향.</strong> 2012년 심리학자 설문에서 56%가 '결과를 보며 데이터 수집을 일찍 멈춘 적이 있다', 46%가 '잘 나온 분석만 보고했다'고 답했다. 분석을 유연하게 고르면 거짓 양성률이 60%를 넘을 수 있다. 검정을 20번 하면 우연히 하나라도 유의하게 나올 확률이 0.64다.</li>
+<li><strong>처방 ① 사전등록.</strong> 가설·측정·분석 방법을 데이터 수집 전에 공개 저장소에 박아 둔다. 나중에 '잘 나온 분석'을 고르는 여지가 줄어든다.</li>
+<li><strong>처방 ② 등록보고서(Registered Report).</strong> 결과가 나오기 전에 연구 설계만 보고 게재를 결정한다. Scheel·Schijen·Lakens(2021)가 심리학 일반 논문 152편과 등록보고서 71편의 첫 가설을 비교했다. 지지 비율은 96% 대 44%였다. 단, 저자들도 이것이 편향 감소를 직접 증명하지는 않는다고 밝혔다. [원문 미열람, 초록 요약 확인] 결과를 보지 않는 심사를 도입한 학술지는 140곳이 넘는다.</li>
+<li><strong>개혁 진영의 철회(2024).</strong> Protzko 등(2023, <em>Nature Human Behaviour</em>)은 엄격한 절차를 따르면 새 발견의 재현율을 높일 수 있다고 보고했다. 그러나 2024년 9월 24일 철회됐다. 핵심 주장에 쓰인 측정·분석이 논문 설명과 달리 사전등록되지 않았고, 데이터를 본 뒤 결과 지표를 골랐으며, 보고가 불완전했다는 이유다. 편집진은 "no longer have confidence in the reliability of the findings"라고 밝혔다(철회 공지). 저자들은 사전등록 진술 오류에만 동의하고 나머지 지적에는 반대했다.</li>
+</ol>
+<h2>③ 조차장 적용 3가지</h2>
+<ul>
+<li><strong>강사·전자책·기고:</strong> 인용할 연구마다 '근거 신뢰도 3칸'을 붙인다. ① 대규모 재현이나 메타분석에서 살아남았나 ② 사전등록이나 등록보고서인가 ③ 철회·정정 공지가 있나(Retraction Watch, 학술지 공지 확인). 3칸 중 빈칸이 있으면 본문에 "초기 연구"라고 쓴다. 이 습관 자체가 전자책의 차별점이 된다. 이미 정리한 파워 포즈·넛지 노트가 좋은 예시다.</li>
+<li><strong>사업관리 보고·회의:</strong> 성과 지표를 사업 시작 전에 정한다. 착수보고서에 '측정 지표·기준값·판정 기준'을 미리 적어 두는 것이 사업판 사전등록이다. 종료 후 좋아 보이는 지표만 골라 보고하는 것이 조직판 p-해킹이다.</li>
+<li><strong>사내 교육·후배 멘토링:</strong> 벤더의 "도입 고객 생산성 40% 향상" 같은 주장을 받으면, 후배와 함께 "다른 고객에서도 재현됐나, 기준을 미리 정했나, 안 좋은 사례는 빠졌나" 세 질문으로 검토하는 연습을 한다.</li>
+</ul>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p>지금까지 강의 소재로 메모해 둔 심리학 연구 5개를 고른다. 각각 옆에 '재현/사전등록/철회' 3칸 표를 그리고 15분 안에 검색으로 채운다. 빈칸이 2개 이상인 연구는 강의 슬라이드에서 '확정된 사실' 표현을 '초기 연구에서는'으로 바꾼다.</p>
+<h2>⑤ 퀴즈 3문</h2>
+<ol>
+<li>2015년 재현성 프로젝트에서 원래 유의했던 연구 중 재현에서도 유의했던 비율은?<br><span class="ans">정답: 약 36%. 해설: 효과 크기도 평균 절반으로 줄었다. '연구가 틀렸다'보다 '원래 효과가 부풀려졌다'는 신호다.</span></li>
+<li>Many Labs 2가 약하게 만든 재현 실패의 흔한 설명은?<br><span class="ans">정답: "표본·나라가 달라서 실패했다." 해설: 36개 나라 125개 표본에서 효과 차이는 표본보다 효과 자체에 달려 있었다.</span></li>
+<li>등록보고서의 첫 가설 지지율이 일반 논문(96%)보다 크게 낮은 44%인 이유로 가장 그럴듯한 것은?<br><span class="ans">정답: 결과를 보기 전에 게재가 결정돼 출판 편향과 선택적 보고가 줄기 때문(으로 해석된다). 해설: 저자들은 인과를 직접 증명하지는 않았다고 단서를 달았다.</span></li>
+</ol>
+<h2>⑥ 출처 목록</h2>
+<ul>
+<li>✔ Replication crisis — Wikipedia: <a href="https://en.wikipedia.org/wiki/Replication_crisis">https://en.wikipedia.org/wiki/Replication_crisis</a></li>
+<li>✔ Retraction Note: High replicability of newly discovered social-behavioural findings is achievable (Nature Human Behaviour, 2024) — PMC: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11493675/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11493675/</a></li>
+<li>Klein et al. (2018), Many Labs 2: Investigating Variation in Replicability Across Samples and Settings, AMPPS 1(4) — <a href="https://doi.org/10.1177/2515245918810225">https://doi.org/10.1177/2515245918810225</a> (검색 요약으로 확인)</li>
+<li>Scheel, Schijen &amp; Lakens (2021), An Excess of Positive Results: Comparing the Standard Psychology Literature With Registered Reports, AMPPS 4(2) — <a href="https://doi.org/10.1177/25152459211007467">https://doi.org/10.1177/25152459211007467</a> (검색 요약으로 확인)</li>
+</ul>
+</main></body></html>
