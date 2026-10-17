@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>고객사 정보를 상품화할 때의 비밀유지 — 공공 사업의 누출금지정보와 영업비밀 5배 배상</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>고객사 정보를 상품화할 때의 비밀유지 — 공공 사업의 누출금지정보와 영업비밀 5배 배상</h1>
+<div class="meta"><span class="kv"><b>트랙</b> money</span><span class="kv"><b>날짜</b> 2026-10-17</span><span class="kv"><b>상태</b> 초안</span><br><span class="tag">money</span><span class="tag">비밀유지</span><span class="tag">영업비밀</span><span class="tag">부정경쟁방지법</span><span class="tag">징벌적손해배상</span><span class="tag">누출금지정보</span><span class="tag">국가정보보안기본지침</span><span class="tag">공공SI</span><span class="tag">지식상품</span><span class="tag">익명화</span><br><span class="kv"><b>출처</b> <a href="https://m.korea.kr/briefing/pressReleaseView.do?newsId=156615286">https://m.korea.kr/briefing/pressReleaseView.do?newsId=156615286</a></span></div>
+<blockquote>15년 동안 공공 IT 인프라 사업을 관리한 경험은 강의와 전자책의 가장 큰 자산이다. 동시에 가장 큰 법적 위험이기도 하다. 이 노트는 그 경험을 상품으로 만들 때 <strong>무엇은 써도 되고, 무엇은 고쳐 써야 하고, 무엇은 절대 쓰면 안 되는지</strong>를 가른다. (커리큘럼 M083) 이 노트는 법률 자문이 아니다. 실제 판단은 소속사 보안 담당과 계약서를 기준으로 한다.</blockquote>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ol>
+<li>공공 정보화사업에서 무엇이 누출금지정보인지는 <strong>각 사업의 제안요청서(RFP)와 계약서에 적힌 목록</strong>으로 정해진다. 그러니 원고를 쓰기 전에 내가 참여한 사업의 목록부터 다시 확인한다.
+</li>
+<li>2024년 8월 21일부터 고의로 영업비밀을 침해하면 <strong>손해액의 최대 5배</strong>까지 배상해야 한다(종전 3배). 해외 유출 권고 형량도 최대 9년에서 12년으로 올라갔다.
+</li>
+<li>판단 기준은 이것이다. 방법론과 공개 자료, 직접 새로 만든 템플릿은 써도 된다. 특정 기관을 알아볼 수 있는 사례는 익명화하고 수치를 범위로 바꾼다. 망 구성, IP, 취약점, 계정 정보는 어떤 형태로든 쓰지 않는다.
+</li>
+</ol>
+<h2>② 핵심 개념 6가지</h2>
+<p><strong>1) 누출금지정보는 '사업별 목록'으로 정해진다</strong></p>
+<p>검색 요약으로 확인한 국가 정보보안 기본지침에 따르면 두 가지가 정해져 있다. 제13조는 발주기관이 제안요청서에 누출금지정보 목록을 넣도록 하고, 제26조는 그 사항을 계약서에 명시하도록 한다. 지침 원문과 별표 목록은 직접 열람하지 못했다. 그래서 IP 주소나 망 구성도가 지침 목록에 그대로 적혀 있는지는 [불확실]이다. 다만 취약점 분석을 외부에 맡길 때 망 구성도 같은 중요 자료의 유출 방지 대책을 세우라는 조항(제85조)은 검색 요약에 나온다.</p>
+<p><strong>2) 계약 위반은 입찰 제한으로 이어진다</strong></p>
+<p>한 지자체의 유지보수 입찰공고문은 누출금지 대상정보를 무단으로 유출하면 입찰 참가 자격이 제한된다고 적었다. 지방계약법 제31조의 부정당업자 제재는 2년 이내 범위다(검색 요약 확인, 원문 미열람). 개인 강사가 쓴 원고 한 편 때문에 <strong>소속 회사가 공공 입찰에서 빠질 수 있다</strong>는 뜻이다. 부업에서 생길 수 있는 가장 비싼 사고다.</p>
+<p><strong>3) 영업비밀의 3요건 — 비공지성·경제적 유용성·비밀관리성</strong></p>
+<p>영업비밀은 다음 세 조건을 갖춘 기술상 또는 경영상 정보다. 널리 알려지지 않았고, 독립된 경제적 가치가 있으며, 비밀로 관리된 것이어야 한다. 고객 명단, 원가, 소스코드, 설계 도면이 대표적인 예다. 비밀관리 요건은 점점 완화되었다. 2015년에 '상당한 노력'에서 '합리적 노력'으로 낮아졌고, 2019년부터는 객관적으로 비밀로 관리된 사실만 인정되어도 보호받는다.</p>
+<p><strong>4) 징벌적 손해배상 3배→5배 (2024.8.21 시행)</strong></p>
+<p>특허청은 2024년 2월 14일 개정안이 국무회의를 통과했다고 발표했다. 이 개정으로 특허 침해, 영업비밀 침해, 아이디어 탈취의 배상 한도가 5배로 올랐다. 특허청 설명으로는 미국의 영업비밀 배상 한도가 최대 2배이고, 5배를 둔 나라는 중국뿐이다. 개정 규정은 시행 뒤에 시작된 침해부터 적용된다.</p>
+<p><strong>5) 형사처벌도 무거워졌다</strong></p>
+<p>특허청의 「기술보호 4대 프로젝트」(2024.5.13)에 따르면 해외 유출 벌금은 개인 15억 원, 법인 45억 원 이하다. 이득액이 크면 이득액의 2~10배로 매긴다. 법인에는 행위자 벌금의 최대 3배를 물릴 수 있다. 처벌 대상도 넓어졌다. 영업비밀 누출의 예비와 음모, 부당 보유, 무단 반출까지 수사 범위에 들어갔다. 양형기준에서는 유출된 자료를 회수하거나 반환하거나 폐기해야 감경 사유가 된다.</p>
+<p><strong>6) 법정 다툼은 어렵지만, 그건 위안거리가 아니다</strong></p>
+<p>한국경제(2026.6.5) 칼럼에 따르면 2014년 영업비밀 사건의 무죄율은 30%를 넘었다. 일반 형사 사건은 1% 미만이었다. 비밀관리성을 입증하기가 그만큼 어렵다는 뜻이다. 하지만 영업비밀 성립이 어렵다는 것과 <strong>계약상 비밀유지 의무</strong>는 별개다. 보안서약서와 용역 계약 위반은 영업비밀 요건을 따지지 않고 바로 책임을 묻는다.</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>전자책·강의 원고 '신호등 분류표'를 만든다</strong> (이 노트가 제안하는 틀)
+<ul>
+<li>🔴 금지: 망 구성도, IP 대역, 장비 모델과 수량 조합, 취약점 점검 결과, 계정, 산출물 원본 캡처, 기관명과 사업명을 함께 쓴 장애 사례</li>
+<li>🟡 변형: 일정 지연, 예산 조정, 이해관계자 갈등 사례. 기관과 연도를 지우고, 금액은 범위로 쓰고("수십억 원대"), 사례 2~3개를 섞는다.</li>
+<li>🟢 허용: 공개된 법령과 지침, 나라장터에 공개된 RFP 구조, PMBOK 같은 일반 방법론, 퇴근 뒤 백지에서 새로 만든 점검표 템플릿</li>
+</ul></li>
+<li><strong>사내 교육과 후배 멘토링부터 시작해 검증받는다</strong>
+<br>실제 사례는 사내 교육에서 먼저 쓰고, 그 자료가 사내 보안 검토를 통과한 뒤에 외부 상품으로 옮긴다. 같은 이야기라도 사내 강의는 비밀유지 의무가 있는 청중 앞이다. 그러니 외부로 내보내는 버전은 반드시 따로 만든다.
+</li>
+<li><strong>겸업 신고와 보안 담당 사전 문의를 공식화한다</strong>
+<br>전자책과 강의 목차가 나오면 소속사 보안 담당에게 목차와 샘플 한 장(章)을 보여 주고 회신을 메일로 남긴다. 나중에 문제가 생겼을 때 '합리적으로 확인했다'는 증거가 된다. 생성형 AI로 초안을 쓸 때도 🔴·🟡 정보는 입력하지 않는다.
+</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p>지난 3년간 참여한 사업 중 하나를 골라 그 사업의 RFP 보안 요구사항 장(章)에서 <strong>누출금지정보 목록을 찾아 옮겨 적는다.</strong> 그다음 쓰고 싶은 강의 사례 1개를 신호등 분류표로 나눈다. 🔴 항목이 하나라도 있으면 그 사례는 버리고 다른 사례로 바꾼다. 15분이면 된다.</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> 2024년 8월 21일 시행된 개정 부정경쟁방지법에서 고의적 영업비밀 침해의 배상 한도는?</p>
+<ul>
+<li>정답: 손해액의 최대 5배(종전 3배)
+</li>
+<li>해설: 특허법과 함께 개정되었다. 시행 뒤 시작된 침해부터 적용된다.
+</li>
+</ul>
+<p><strong>Q2.</strong> 공공 정보화사업에서 '누출금지정보'의 구체적 범위는 어디서 확인하는가?</p>
+<ul>
+<li>정답: 해당 사업의 제안요청서와 계약서
+</li>
+<li>해설: 지침은 발주기관이 목록을 RFP에 넣고 계약서에 명시하게 한다. 그래서 사업마다 목록이 다를 수 있다.
+</li>
+</ul>
+<p><strong>Q3.</strong> "영업비밀 사건은 무죄율이 높으니 고객사 사례를 써도 크게 문제없다"는 판단이 틀린 이유는?</p>
+<ul>
+<li>정답: 계약상 비밀유지 의무(보안서약, 용역 계약)는 영업비밀 요건과 별개로 책임을 묻고, 회사의 입찰 참가 제한까지 이어질 수 있기 때문이다.
+</li>
+<li>해설: 형사 무죄 여부보다 계약 위반과 평판 손실이 실무에서 더 먼저, 더 크게 온다.
+</li>
+</ul>
+<h2>⑥ 출처</h2>
+<ul>
+<li>✔ 정책브리핑(특허청 보도자료), 「기술탈취 하면, 최대 5배 징벌배상」, 2024-02-14 — <a href="https://m.korea.kr/briefing/pressReleaseView.do?newsId=156615286">https://m.korea.kr/briefing/pressReleaseView.do?newsId=156615286</a>
+</li>
+<li>✔ 정책브리핑(특허청 브리핑), 「기술보호 4대 프로젝트 발표」, 2024-05-13 — <a href="https://www.korea.kr/briefing/policyBriefingView.do?newsId=156630361">https://www.korea.kr/briefing/policyBriefingView.do?newsId=156630361</a>
+</li>
+<li>✔ 한국경제, 「기술 패권 시대, 영업비밀 관리가 기업 생존 가른다 [황우진의 글로벌 퍼스펙티브]」, 2026-06-05 — <a href="https://www.hankyung.com/article/202606058955i">https://www.hankyung.com/article/202606058955i</a>
+</li>
+<li>✔ 위키백과, 「영업비밀」 — <a href="https://ko.wikipedia.org/wiki/영업비밀">https://ko.wikipedia.org/wiki/영업비밀</a>
+</li>
+<li>미열람(접속 불가, 검색 요약만) IT위키, 「국가 정보보안 기본지침」 제13조·제26조·제29조·제85조 — <a href="https://itwiki.kr/w/국가_정보보안_기본지침">https://itwiki.kr/w/국가_정보보안_기본지침</a>
+</li>
+<li>미열람(접속 불가, 검색 요약만) 대구광역시의회 유지보수 용역 입찰공고문(누출금지 대상정보 유출 시 입찰참가자격 제한) — <a href="https://council.daegu.go.kr/attach/bbs/bidding/06873b75113bf4968e87aba5599c497f.pdf">https://council.daegu.go.kr/attach/bbs/bidding/06873b75113bf4968e87aba5599c497f.pdf</a>
+</li>
+</ul>
+</main></body></html>
