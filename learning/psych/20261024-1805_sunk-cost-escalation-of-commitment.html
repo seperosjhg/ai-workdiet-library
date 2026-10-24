@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>매몰비용 오류와 몰입 상승</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}.ans{color:var(--muted)}.note{font-size:.92rem;color:var(--muted)}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>매몰비용 오류와 몰입 상승(Escalation of Commitment): "들인 게 아까워서"가 사업을 붙잡을 때</h1>
+<div class="meta">트랙 <strong>psych</strong> · 날짜 <strong>2026-10-24</strong><br>학습노트 · 클라우드학습 · 초안<br><span class="tag">psych</span><span class="tag">매몰비용</span><span class="tag">몰입상승</span><span class="tag">인지편향</span><span class="tag">의사결정</span><span class="tag">사업관리</span><br>원문: <a href="https://en.wikipedia.org/wiki/Escalation_of_commitment">https://en.wikipedia.org/wiki/Escalation_of_commitment</a></div>
+<h2>① 3줄 요약 (결론 먼저)</h2>
+<ul>
+<li>이미 쓴 돈·시간·노력은 돌려받을 수 없는데도, 사람은 <strong>그것이 아까워 더 나쁜 쪽을 계속 고른다</strong>(Arkes·Blumer 1985). 처음 결정한 사람이 나 자신이면 더 많이 쏟아붓는다(Staw 1976).
+</li>
+<li>생쥐·쥐·사람 모두 이미 기다린 시간이 길수록 포기를 덜 했고, 이 효과는 <strong>"하기로 정한 뒤"의 시간에서만</strong> 생겼다(Sweis 등 2018, Science). 다만 실험실 밖에서 순수한 매몰비용 효과를 가려내기는 어렵다는 반론도 있다.
+</li>
+<li>결론: 계속·중단 회의에서는 <strong>"오늘 처음 고른다면 남은 예산을 여기에 넣겠는가"</strong>만 묻는다. 처음 결정한 사람과 계속 여부를 평가하는 사람을 나누고, 중단 기준은 착수할 때 미리 적어 둔다.
+</li></ul>
+<h2>② 핵심 개념·근거 6가지</h2>
+<ol>
+<li><strong>스키 여행 시나리오.</strong> 100달러짜리 미시간 여행과, 더 즐거울 것 같은 50달러짜리 위스콘신 여행이 같은 주말에 겹쳤다. 환불은 안 된다. 합리적으로는 더 즐거운 쪽을 골라야 하지만 다수가 100달러 쪽을 골랐다(Arkes·Blumer 1985). 비율은 2차 출처에서 약 54%로 전해진다[불확실].
+</li>
+<li><strong>극장 시즌권 현장 실험.</strong> 오하이오대 극장 매표소에서 시즌권을 정가 15달러, 13달러, 8달러로 무작위로 나눠 팔았다. 정가로 산 사람이 이후 6개월 동안 공연을 더 많이 봤다. 2차 출처에 따르면 상반기 관람은 4.11편 대 3.32·3.29편이었고, 하반기에는 차이가 없었다[불확실]. 매몰비용의 힘은 시간이 지나면 옅어진다는 뜻이다.
+</li>
+<li><strong>몰입 상승과 개인 책임.</strong> Staw(1976)는 경영대생 240명에게 투자 시뮬레이션을 시켰다. 자기가 내린 결정이 실패했을 때 추가 자금을 가장 많이 넣었다. 비슷한 실험(Staw·Fox 1977)에서는 2,000만 달러 가운데 본인 책임이면 평균 1,297만 달러, 전임자 책임이면 943만 달러를 다시 넣었다(위키백과 정리 기준). 핵심 동기는 '내 판단이 틀리지 않았다'는 자기 정당화다.
+</li>
+<li><strong>결정 뒤에만 쌓이는 시간 투자.</strong> Sweis 등(2018)은 쥐에게는 먹이 '식당'이 있는 미로를, 사람에게는 영상 고르기 과제를 같은 구조로 줬다. 이미 기다린 시간이 길수록 세 종 모두 끝까지 기다렸다. 반면 고민하며 보낸 시간은 영향이 없었다(생쥐 F=1.55, 비유의). 논문의 표현으로는 "sensitivity to time invested accrued only after an initial decision had been made"다. 착수 결정 직후부터가 위험 구간이다.
+</li>
+<li><strong>메타분석이 꼽은 조건.</strong> Sleesman 등(2012, Academy of Management Journal)에 따르면 매몰비용 크기, 투입 시간, 개인 책임, 자아 위협, '거의 다 왔다'는 완료 근접성이 몰입 상승을 키웠다. 기회비용 정보와 예상 후회는 줄였다. 사회적 요인 중에는 집단 응집성이, 구조 요인 중에는 대리인 문제가 가장 컸다.
+</li>
+<li><strong>현장 사례와 한계.</strong> 덴버 공항 수하물 시스템은 약 2년·20억 달러를 초과했고, 베를린 브란덴부르크 공항은 2019년 기준 65억 유로 초과·10년 지연이었다. 소프트웨어 프로젝트의 30~40%에서 몰입 상승이 보고된다는 연구도 있다(Stray 등 2012, 위키백과 재인용). 반대로 평판이나 남이 모르는 정보 때문에 계속하는 것이 합리적일 때도 있다. 짧은 행동 과제에서는 효과가 나오지 않은 연구도 있다(Nash 등 2016 학회 포스터, 검색 요약으로만 확인).
+</li></ol>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>사업관리 보고·회의:</strong> 변경·중단 검토 보고서에서 '기집행 ○억 원'을 결론의 근거 칸에서 빼고 참고 각주로 내린다. 본문은 남은 비용 대 남은 편익 2열 표와 대안 3안(계속·축소·전환)의 기회비용으로 짠다.
+</li>
+<li><strong>후배 멘토링·사내 교육:</strong> 착수 보고 때 '중단 기준' 3개를 미리 적게 한다. 예를 들어 단계 일정 20% 이상 지연이 두 번 나거나, 핵심 요구사항 시험이 불합격하면 재검토한다. 단계 검토에는 처음 결정에 관여하지 않은 PM 1명을 평가자로 넣는다. 사회복지 현장에서 효과 없는 프로그램을 관성으로 이어 가는 사례와 묶으면 공공 청중이 공감한다.
+</li>
+<li><strong>강의·부수입:</strong> 「공공 IT 사업의 콩코드 오류」 60분 모듈을 만든다. 스키 여행 질문으로 청중 손을 들게 해 열고, 결정자·평가자 분리 실습으로 닫는다. 부업에서도 석 달째 붙잡은 전자책 원고에 '사전 판매 30건 미만이면 주제 전환' 같은 기준을 먼저 정한다.
+</li></ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p>진행 중인 업무나 부업 하나를 골라 세 줄을 쓴다. ⓐ 이미 들인 것(잊을 항목) ⓑ 오늘부터 더 들 것과 얻을 것 ⓒ 백지에서 고른다면 계속할지, 그 이유. ⓒ가 "아니오"인데도 계속하고 싶다면 그 이유가 ⓐ에 있는지 확인한다.</p>
+<h2>⑤ 퀴즈</h2>
+<ol>
+<li>Sweis 등(2018)에서 포기 확률에 영향을 준 시간은? ① 고민하던 시간 ② 하기로 정한 뒤 기다린 시간 ③ 둘 다
+<ul class="ans">
+<li><strong>정답 ②</strong> — 고민 단계의 시간은 비유의했고, 결정 뒤 투자한 시간만 계속 경향을 키웠다.</li>
+</ul>
+</li>
+<li>Staw의 연구에서 추가 투자를 가장 크게 늘린 조건은?
+<ul class="ans">
+<li><strong>정답: 실패한 첫 결정을 본인이 내렸을 때</strong> — 자기 정당화 동기 때문이다. 그래서 결정자와 평가자를 나누는 처방이 나온다.</li>
+</ul>
+</li>
+<li>극장 시즌권 실험에서 정가 구매자의 관람 우위는 시즌 내내 유지됐다? (O/X)
+<ul class="ans">
+<li><strong>정답 X</strong> — 2차 출처 기준으로 상반기에만 차이가 났다. 매몰비용의 영향은 시간이 지나면 약해진다.</li>
+</ul>
+</li></ol>
+<h2>⑥ 출처</h2>
+<ul>
+<li>✔ Wikipedia, "Escalation of commitment" — <a href="https://en.wikipedia.org/wiki/Escalation_of_commitment">https://en.wikipedia.org/wiki/Escalation_of_commitment</a>
+</li>
+<li>✔ Wikipedia, "Sunk cost" — <a href="https://en.wikipedia.org/wiki/Sunk_cost">https://en.wikipedia.org/wiki/Sunk_cost</a>
+</li>
+<li>✔ Sweis, B. M. 외 (2018). Sensitivity to "sunk costs" in mice, rats, and humans. <em>Science</em>, 361, 178–181 — <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6377599">https://pmc.ncbi.nlm.nih.gov/articles/PMC6377599</a>
+</li>
+<li>Arkes, H. R., &amp; Blumer, C. (1985). The psychology of sunk cost. <em>OBHDP</em>, 35, 124–140 — <a href="https://doi.org/10.1016/0749-5978(85">https://doi.org/10.1016/0749-5978(85</a>)90049-4 (원문 접속 실패, 검색 요약으로 확인)
+</li>
+<li>Sleesman, D. J. 외 (2012). <em>Academy of Management Journal</em>, 55(3), 541–562 (위키백과 정리로 확인)
+</li>
+<li>Nash, Imuta, Nielsen (2016), Behavioral sunk cost 포스터 — <a href="https://dlab.sauder.ubc.ca/sjdm/presentations/2016-Poster-Nash-Jeremy-Behavioral-Sunk-Cost~.pdf">https://dlab.sauder.ubc.ca/sjdm/presentations/2016-Poster-Nash-Jeremy-Behavioral-Sunk-Cost~.pdf</a> (검색 요약으로만 확인)
+</li></ul>
+</main></body></html>
