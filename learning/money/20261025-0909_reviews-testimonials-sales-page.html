@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>후기·리뷰 설계: 전자책·강좌 판매 페이지에서 &#x27;첫 5개 후기&#x27;와 &#x27;누가 썼나&#x27;가 매출을 가른다</title><style>:root{--bg:#fdfcf9;--fg:#1f2328;--muted:#5b636e;--accent:#2f5fb3;--card:#f2f0ea;--line:#ddd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}}
+:root[data-theme="dark"]{--bg:#16181c;--fg:#e6e8eb;--muted:#a3aab4;--accent:#8ab4ff;--card:#21252b;--line:#343a42}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.75 -apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}h1{font-size:1.55rem;line-height:1.4}h2{font-size:1.2rem;margin-top:2.2em;padding-bottom:.3em;border-bottom:2px solid var(--line)}
+a{color:var(--accent)}ul,ol{padding-left:1.3em}li{margin:.25em 0}blockquote{margin:1.5em 0;padding:.6em 1em;background:var(--card);border-left:4px solid var(--accent);color:var(--muted);border-radius:6px}
+.meta{font-size:.85rem;color:var(--muted);background:var(--card);padding:.7em 1em;border-radius:8px}.tag{display:inline-block;margin:2px 4px 2px 0;padding:0 8px;border:1px solid var(--line);border-radius:99px}
+.kv{display:inline-block;margin-right:1em}.kv b{color:var(--fg);font-weight:600;margin-right:.3em}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1em 0;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;line-height:1.55}th,td{padding:.5em .65em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--card);color:var(--fg);white-space:nowrap}tbody th{font-weight:600;white-space:nowrap}tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+strong{color:var(--fg)}nav{font-size:.9rem;margin-bottom:1em}</style></head><body><main><nav><a href="../index.html">← 학습노트 목록</a></nav>
+<h1>후기·리뷰 설계: 전자책·강좌 판매 페이지에서 '첫 5개 후기'와 '누가 썼나'가 매출을 가른다</h1>
+<div class="meta"><span class="kv"><b>트랙</b> money</span><span class="kv"><b>날짜</b> 2026-10-25</span><span class="kv"><b>상태</b> 초안</span><br><span class="kv"><b>출처</b> <a href="https://pubmed.ncbi.nlm.nih.gov/28825874/">https://pubmed.ncbi.nlm.nih.gov/28825874/</a></span><br><span class="tag">money</span><span class="tag">후기</span><span class="tag">리뷰</span><span class="tag">사회적증거</span><span class="tag">판매페이지</span><span class="tag">전자책</span><span class="tag">온라인강좌</span><span class="tag">추천보증</span><span class="tag">크몽</span></div>
+<h2>① 3줄 요약</h2>
+<ul>
+<li>후기는 첫 몇 개가 가장 값지다. 구매자는 평점보다 후기 개수에 끌리는데(Powell 등 2017), 통계로 보면 이는 잘못된 판단일 때가 많다. 그러니 출시 초기에 후기 5개를 모으는 일이 먼저다.</li>
+<li>후기에는 두 가지가 섞여야 한다. 숫자(평균 만족도·수강 인원)는 '믿음'을 움직이고, 한 사람의 이야기는 '사겠다는 마음'을 움직인다(Zebregs 등 2015 메타분석). 쓴 사람이 독자와 같은 처지라고 밝히면 효과가 커진다(Li·Liang 2022).</li>
+<li>무료 제공·할인·사후 사례를 대가로 받은 후기는 제목이나 첫 부분에 한국어로 분명하게 표시해야 한다(공정위 추천·보증 심사지침, 크몽 공지 2024.12.16). 후기를 조작하면 쌓은 것을 한 번에 잃는다.</li>
+</ul>
+<h2>② 핵심 개념·근거 7가지</h2>
+<p><strong>1. 0개와 5개의 차이가 가장 크다.</strong> 노스웨스턴대 스피겔 리서치센터가 리뷰 플랫폼 PowerReviews 자료로 낸 보고서(2017)는, 후기 5개가 있는 상품의 구매 가능성이 후기 0개인 상품보다 270% 높다고 했다. 그 뒤로는 후기가 늘어도 추가 효과가 빠르게 줄었다고 한다. [불확실: 보고서 원문은 열지 못했고, 여러 2차 보도에서 같은 수치를 확인함]</p>
+<p><strong>2. 비쌀수록 후기가 더 일한다.</strong> 같은 보고서는 후기를 보여 줬을 때 저가 상품은 전환이 약 190%, 고가 상품은 약 380% 올랐다고 한다. [불확실: 2차 보도 기준] 1만 원짜리 PDF보다 30만 원짜리 코호트 강좌에서 후기가 훨씬 중요하다는 뜻이다.</p>
+<p><strong>3. 만점은 오히려 의심을 산다.</strong> 구매 가능성은 평점 4.0~4.7 근처에서 가장 높고, 5.0에 가까워지면 내려간다고 보고됐다. [불확실: 2차 보도 기준] 비판적인 후기가 섞여 있어야 칭찬도 믿게 된다. 그러니 아쉬웠다는 후기를 지우지 말고, 그 아쉬움에 어떻게 답했는지를 함께 보여 준다.</p>
+<p><strong>4. 사람들은 후기 개수에 끌린다(인기 편향).</strong> Powell·Yu·DeWolf·Holyoak(2017, Psychological Science)는 아마존 실제 후기 수백만 건으로 '직관적 통계가' 모델을 만들고 실험 참가자의 선택과 비교했다. 참가자들은 어떤 조건에서, 모델이 품질이 더 높을 것으로 본 '후기 적은 상품' 대신 '후기 많은 상품'을 골랐다. 연구진은 사람들이 의미 있는 통계 추론을 하지 못했다고 결론 내렸다. 판매자 입장에서는 후기 개수 자체가 신호라는 뜻이다. 다만 이 편향을 이용해 개수를 부풀리면 기만이 된다.</p>
+<p><strong>5. 숫자는 믿음을, 이야기는 행동을 움직인다.</strong> Zebregs 등(2015, Health Communication)의 메타분석에서 통계 근거는 신념과 태도에, 서사 근거는 행동 의도에 더 크게 작용했다. 연구진은 통계는 인지 반응과, 서사는 정서 반응과 짝이 맞기 때문이라고 해석했다. 판매 페이지 위쪽에는 "수강생 42명, 평균 4.6점" 같은 숫자를, 구매 버튼 바로 위에는 한 사람의 전후 변화 이야기를 둔다.</p>
+<p><strong>6. '누가 썼나'가 후기의 무게를 바꾼다.</strong> Li·Liang(2022, Frontiers in Psychology)은 실험 세 개로 후기 작성자의 신원 단서를 시험했다. 긍정 후기에 신원 단서가 붙으면 구매 의도가 올라갔다. 부정 후기에 붙으면 구매 의도가 내려갔는데, 그 폭이 더 컸다. 독자와 같은 집단이거나 독자가 닮고 싶은 집단이면 효과가 플러스였고, 거리를 두고 싶은 집단이면 마이너스였다. "공공 SI PM 6년차" 같은 직무 표기가 "김○○ 님"보다 낫다.</p>
+<p><strong>7. 대가를 받은 후기는 표시해야 한다.</strong> 크몽 공지(2024.12.16)는 공정위 심사지침에 따라 표시해야 하는 경우를 든다. 무료 제공, 일반보다 높은 할인을 받은 체험단, 이미 쓴 후기에 사후로 대가를 준 경우, 구매대금 환급이 모두 포함된다. 표시 원칙은 넷이다. 제목이나 첫 부분에 둔다(접근성), 눈에 띄게 한다(인식 가능성), '협찬'처럼 사실대로 쓴다(명확성), 본문과 같은 언어로 쓴다(한국어 글에 "AD" 금지). 공정위는 2024년 8월 이 위치 규정을 '제목 또는 첫 부분'으로 바꾸는 개정안을 행정예고했다. [불확실: 시행일 2024.12.1은 2차 자료 기준]</p>
+<h2>③ 조차장 적용 3가지</h2>
+<ol>
+<li><strong>전자책 출시 전 '베타 독자 5명' 확보.</strong> 공공 IT PM 후배 5~7명에게 초안 PDF를 무료로 주고, 세 가지를 묻는다. 읽기 전 고민, 써먹은 장, 아쉬운 점이다. 후기에는 직무와 연차를 적고, "초안을 무료로 받아 읽고 쓴 후기입니다"를 첫 줄에 한국어로 넣는다.</li>
+<li><strong>사내 교육 만족도를 숫자 후기로 재활용.</strong> 사내 강의가 끝나면 5점 척도 1문항과 "가장 쓸모 있던 한 가지" 주관식 1문항을 받는다. 결과를 강사 소개서에 "누적 수강 N명, 평균 4.x점"과 대표 문장 2개로 넣는다. 4.9점보다 4.5점에 구체적인 개선 의견 하나가 함께 있는 편이 더 믿을 만하다. 공개 전에 회사 규정과 수강생 동의를 확인한다.</li>
+<li><strong>사업관리 보고에도 같은 공식.</strong> 시스템 개선 효과를 보고할 때 처리시간 단축률 같은 통계 1개와 현업 담당자 한 사람의 사례 1개를 짝지운다. 숫자로 납득시키고 이야기로 승인을 끌어낸다.</li>
+</ol>
+<h2>④ 오늘 바로 해볼 연습</h2>
+<p>크몽이나 클래스101에서 내 주제와 가까운 상품 3개를 연다. 상품마다 후기 개수, 평균 평점, 직무가 드러난 후기 비율, 비판 후기 유무를 표로 적는다. 그다음 내 상품의 '후기 요청 질문 3개'와 대가 표시 첫 줄 문구를 써 본다. (15분)</p>
+<h2>⑤ 퀴즈</h2>
+<p><strong>Q1.</strong> Powell 등(2017)에서 참가자들이 통계 모델과 다르게 고른 경우는?</p>
+<p>정답: 품질이 더 높을 가능성이 큰 '후기 적은 상품' 대신 '후기 많은 상품'을 골랐다. 해설: 후기 개수를 인기 신호로 과대평가하는 인기 편향이다.</p>
+<p><strong>Q2.</strong> Zebregs 등(2015) 메타분석으로 보면, 구매 버튼 바로 앞에 둘 근거로 더 적합한 것은?</p>
+<p>정답: 한 사람의 이야기(서사 근거). 해설: 서사 근거는 행동 의도에, 통계 근거는 신념과 태도에 더 크게 작용했다.</p>
+<p><strong>Q3.</strong> 베타 독자에게 전자책을 무료로 주고 받은 후기를 블로그에 올릴 때 맞는 표시는?</p>
+<p>① 글 끝에 "AD" ② 제목이나 첫 부분에 "전자책을 무료로 제공받아 작성" ③ 댓글로 "체험단"</p>
+<p>정답: ②. 해설: 접근성·명확성·언어 동일성 원칙에 맞는 것은 ②뿐이다. "AD"는 다른 언어이고, 댓글과 모호한 '체험단'은 부적절한 표시로 안내된다.</p>
+<h2>⑥ 출처</h2>
+<ul>
+<li>✔ Powell D, Yu J, DeWolf M, Holyoak KJ. The Love of Large Numbers: A Popularity Bias in Consumer Choice. Psychological Science 2017;28(10):1432-1442 (PubMed 초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/28825874/">https://pubmed.ncbi.nlm.nih.gov/28825874/</a></li>
+<li>✔ Zebregs S 외. The differential impact of statistical and narrative evidence on beliefs, attitude, and intention: a meta-analysis. Health Communication 2015;30(3):282-9 (PubMed 초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/24836931/">https://pubmed.ncbi.nlm.nih.gov/24836931/</a></li>
+<li>✔ Li J, Liang X. Reviewers' Identity Cues in Online Product Reviews and Consumers' Purchase Intention. Frontiers in Psychology 2022;12:784173 (PubMed 초록) — <a href="https://pubmed.ncbi.nlm.nih.gov/35145456/">https://pubmed.ncbi.nlm.nih.gov/35145456/</a></li>
+<li>✔ 크몽 고객센터, [공지] 올바른 경제적 이해관계 표시 방법에 대해 알려드려요! (2024.12.16) — <a href="https://kmong.com/support/customer-center/posts/19">https://kmong.com/support/customer-center/posts/19</a></li>
+<li>Spiegel Research Center, How Online Reviews Influence Sales (2017, 원문 미열람·2차 보도로 수치 확인) — <a href="https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/">https://spiegel.medill.northwestern.edu/how-online-reviews-influence-sales/</a></li>
+<li>법무법인 세종(shinkim.com) 뉴스레터, 「추천·보증 등에 관한 표시·광고 심사지침」 개정안의 행정예고 (검색 요약으로만 확인) — <a href="https://shinkim.com/kor/media/newsletter/2613">https://shinkim.com/kor/media/newsletter/2613</a></li>
+</ul>
+</main></body></html>
